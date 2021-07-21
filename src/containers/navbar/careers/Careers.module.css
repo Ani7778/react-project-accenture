@@ -1,0 +1,84 @@
+.container {
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #e4dfc6;
+    background: #ffffff;
+    padding: 40px 0;
+    margin: auto;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 1s ease;
+    position: absolute;
+    text-align: left;
+}
+
+.container.active {
+    height: 480px;
+    opacity: 1;
+    transition: all 1s ease;
+    z-index: 1;
+}
+
+.careers_container {
+    font-size: 25px;
+    color: #004dff;
+    height: 100px;
+    border-bottom: 1px solid #e4dfc6;
+    margin: 0 100px;
+}
+
+.careers_container a {
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    margin-right: 50px;
+    overflow: hidden;
+}
+
+.careers_container a:hover {
+    cursor: pointer;
+}
+
+.careers_container a {
+    display: inline-block;
+    padding-bottom:2px;
+    background-image: linear-gradient(#004dff, #004dff);
+    background-position: 0 100%;
+    background-size: 0 2px;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s
+}
+
+.careers_container a:hover {
+    background-size: 80% 2px;
+}
+
+.icon {
+    margin-left: 10px;
+}
+
+.join_us_container {
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    width: 80%;
+    height: 170px;
+    border-bottom: 1px solid #e4dfc6;
+    margin: 0 100px;
+}
+
+.join_us_container a {
+    font-size: 16px;
+    color: #004dff;
+}
+
+.join_us_items {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-top: 15px;
+}
+
+.join_us_items a {
+    color: #004dff;
+    font-size: 16px;
+    margin-bottom: 28px;
+    width: 190px;
+}

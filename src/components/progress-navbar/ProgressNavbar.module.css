@@ -1,0 +1,54 @@
+.container {
+    background-image: linear-gradient( #dcdcdc 50%, #e4dfc6);
+    height: 60px;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 50px;
+    justify-content: start;
+    cursor: pointer;
+    animation-name: fromTop;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    width: 100%;
+}
+
+@keyframes fromTop {
+    from {height: 0}
+    to {height: 60px}
+}
+
+.icon {
+    transform: translate(100%, 140%);
+    font-size: 22px;
+    cursor: pointer;
+    margin-left: 5px;
+    animation-name: icon;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes icon {
+    from {height: 5px}
+    to {height: 15px}
+}
+
+.container span {
+    font-size: 13px;
+    transform: translateY(35%);
+    font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        display: none;
+    }
+}
+
+.sticky {
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    z-index: 999;
+}
+

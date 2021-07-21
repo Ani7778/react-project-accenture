@@ -1,0 +1,262 @@
+.container {
+    position: relative;
+    margin-top: 70px;
+    text-align: center;
+    justify-content: center;
+    height: 800px;
+    width: 100%;
+}
+
+.right_btn {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    color: #ffffff;
+    font-size: 80px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.down_btn {
+    position: absolute;
+    top: 80%;
+    left: 46%;
+    color: #ffffff;
+    font-size: 100px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.left_btn {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    color: #ffffff;
+    font-size: 80px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slide {
+    opacity: 0;
+    transition-duration: 1s ;
+    position: absolute;
+}
+
+.slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1);
+}
+
+.dot {
+    cursor: pointer;
+    height: 11px;
+    width: 11px;
+    margin: 0 7px;
+    background: none;
+    border: 1px #ffffff solid;
+    border-radius: 50%;
+    display: inline-block;
+    transition:  0.6s ease;
+    transform: translate(0, -800%);
+}
+
+.active, .dot:hover {
+    background-color: #ffffff;
+}
+
+.text_container {
+    position: absolute;
+    background: none;
+    width: 100%;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    animation: moveText 1s ease;
+}
+
+@keyframes moveText {
+    from {top: 40%;opacity: 0}
+    to {top: 20%; opacity: 1}
+}
+
+.text_container h1 {
+    font-size: 80px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.text_container p {
+    font-size: 25px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.button_container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: none;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    animation: moveIconContainer 1s ease;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+@keyframes moveIconContainer {
+    from {top: 50%;opacity: 0}
+    to {top: 45%; opacity: 1}
+}
+
+.button_container p {
+    margin-left: 70px;
+    margin-right: 25px;
+    color: #ffffff;
+    font-size: 20px;
+    transform: translateY(30%);
+    animation: message 1s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+
+@keyframes message {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.button_container:hover .circle {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.circle {
+    position: absolute;
+    background: none;
+    border: 1.5px solid #ffffff;
+    border-radius: 30px;
+    width: 37px;
+    height: 37px;
+    z-index: 1;
+    animation: circle 1s ease;
+    animation-delay: 0.3s;
+}
+
+@keyframes circle {
+    from {height: 0;opacity: 0}
+    to {height: 37px; opacity: 1}
+}
+
+.icon {
+    display: flex;
+    position: absolute;
+    font-size: 35px;
+    color: #ffffff;
+    transform: translate(45%, 5%);
+    animation: icon 1s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes icon {
+    from {left: -50%; opacity: 0}
+    to {left: 5%; opacity: 1}
+}
+
+@media screen and (max-width: 1100px) {
+    .container {
+        height: 600px;
+    }
+
+    .left_btn, .right_btn {
+        top: 40%;
+        font-size: 70px;
+    }
+
+    .text_container {
+        left: 50%;
+        top: 20%;
+    }
+
+    .text_container h1 {
+        font-size: 60px;
+    }
+
+    .button_container {
+        left: 50%;
+        top: 50%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .left_btn, .right_btn {
+        top: 20%;
+        font-size: 60px;
+    }
+
+    .container {
+        margin-top: 15px;
+        height: 450px;
+    }
+
+    .text_container {
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, -50%);
+    }
+
+    .text_container h1 {
+        font-size: 35px;
+        height: 30px;
+    }
+
+    .text_container p {
+        font-size: 20px;
+    }
+
+    .button_container {
+        left: 50%;
+        top: 50%;
+    }
+
+    .button_container p {
+        margin-left: 70px;
+        color: #ffffff;
+        font-size: 16px;
+        transform: translateY(50%);
+    }
+
+    .button_container:hover .circle {
+        width: 100%;
+        border-radius: 30px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .container {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        height: 200px;
+    }
+}

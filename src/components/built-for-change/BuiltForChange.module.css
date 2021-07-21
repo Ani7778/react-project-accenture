@@ -1,0 +1,153 @@
+.container {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 5% 95%;
+    border: 1px solid #e4dfc6;
+    box-shadow:  0 0 20px #dcdcdc;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.heading {
+    animation: animateHeading 0.5s ease;
+    font-family: 'Arimo', sans-serif;
+}
+
+@keyframes animateHeading {
+    from {top: 40%;opacity: 0}
+    to {top: 20%; opacity: 1}
+}
+
+.text {
+    position: relative;
+    margin: 50px auto;
+    grid-column:  1 / span 2;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    animation: animateText 0.5s ease;
+}
+
+@keyframes animateText {
+    from {height: 0; opacity: 0}
+    to {height: 20px; opacity: 1}
+}
+
+.icon {
+    background-color: #0000ff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 25px;
+    color: #ffffff;
+    transform: translate(0, -20%);
+    padding-top: 10px ;
+    animation: animateIcon 0.5s ease;
+}
+
+@keyframes animateIcon {
+    from {height: 20px; opacity: 0}
+    to {height: 45px; opacity: 1}
+}
+
+.button_container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: none;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    grid-column:  1 / span 2;
+    width: 30%;
+    cursor: pointer;
+    animation: click 1s ease;
+    opacity: 0;
+}
+
+@keyframes click {
+    from {height: 0; opacity: 0}
+    to {height: 20px; opacity: 1}
+}
+
+.button_container p {
+    margin-left: 70px;
+    margin-right: 25px;
+    color: #0000ff;
+    font-family: 'Arimo', sans-serif;
+    font-size: 20px;
+    transform: translateY(30%);
+    animation: message 1s ease-in-out;
+    animation-delay: 1.5s;
+    cursor: pointer;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes message {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.button_container:hover .circle {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.circle {
+    position: absolute;
+    background: none;
+    border: 1.5px solid #0000ff;
+    border-radius: 30px;
+    width: 37px;
+    height: 37px;
+    z-index: 1;
+    animation: circle 1s ease;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+@keyframes circle {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+
+.btn_icon {
+    display: flex;
+    position: absolute;
+    font-size: 30px;
+    color: #0000ff;
+    transform: translate(60%, 10%);
+    animation: icon 1s ease;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes icon {
+    from {left: -50%; opacity: 0}
+    to {left: 5%; opacity: 1}
+}
+
+@media screen and (max-width: 1100px) {
+    .container {
+        margin: 50px auto 0;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .container {
+        margin: 30px auto 0;
+        width: 90%;
+        display: table;
+    }
+    .button_container {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .button_container {
+        width: 60%;
+    }
+}

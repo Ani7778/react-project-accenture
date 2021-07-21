@@ -11,3 +11,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.carousel {
+  height: 600px;
+}
+
+@media screen and (max-width: 1050px) {
+  .carousel {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .carousel {
+    height: 350px;
+  }
+}
+
+.carousel .control-dots {
+  height: 100px;
+}
+
+.carousel .control-dots .dot {
+  width: 3px;
+  height: 3px;
+  border-color: white;
+}
+
+li.dot {
+  padding: 6px;
+}
+
+.carousel.carousel-slider .control-arrow{
+  opacity: 0;
+  font-size: 100px;
+}
+
+.carousel.carousel-slider .control-arrow {
+  top: 0;
+  color: #fff;
+  font-size: 50px;
+  bottom: 0;
+  margin-top: 0;
+  padding: 5px;
+}
+
