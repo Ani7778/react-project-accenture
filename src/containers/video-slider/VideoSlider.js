@@ -1,53 +1,32 @@
 import classes from "./VideoSlider.module.css";
-import React, { useEffect } from 'react'
+import React from 'react'
 import { HiArrowNarrowRight, HiChevronRight, HiChevronLeft, HiChevronDown } from "react-icons/all";
-import { Slides } from "../video-slider/Videos";
+import { Link } from "react-scroll";
 
-const VideoSlider = ({slides}) => {
-    const [current, setCurrent] = React.useState(0);
-    const length = slides.length;
-
-    const nextSlide = () => {
-        setCurrent(current === length - 1 ? 0 : current + 1);
-    }
-
-    const prevSlide = () => {
-        setCurrent(current === 0 ? length - 1 : current - 1);
-    }
-
-    const chooseSlide = index => {
-        setCurrent(index);
-    }
-
-   useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrent((prev) => {
-                return prev + 1 === slides.length ? 0 : prev + 1;
-            });
-        }, 5000);
-        return () => {
-            clearInterval(interval);
-        };
-    }, []);
-
+const VideoSlider = ({ slides, currentSlide, next, prev, choose }) => {
     return (
-        <div className={classes.container}>
-            <div className={classes.left_btn} onClick={prevSlide}><HiChevronLeft /></div>
-            <div className={classes.right_btn} onClick={nextSlide}><span><HiChevronRight /></span></div>
-            <div className={classes.down_btn} ><span><HiChevronDown /></span></div>
-            {Slides.map((slide, index)=> {
+        <div className={classes.container} >
+            <div className={classes.left_btn} onClick={prev}><HiChevronLeft /></div>
+            <div className={classes.right_btn} onClick={next}><span><HiChevronRight /></span></div>
+            <div className={classes.down_btn} >
+                <Link
+                    to="voices"
+                    spy={true}
+                    smooth={true}
+                    offset={-120}
+                    duration={500}
+                    ><HiChevronDown />
+                </Link>
+            </div>
+            {slides.map((slide, index)=> {
                 return (
-                    <div className={index === current ? `${classes.active} ${classes.slide}` : classes.slide}
+                    <div className={index === currentSlide ? `${classes.active} ${classes.slide}` : classes.slide}
                          key={index}>
-                        {index === current && (
+                        {index === currentSlide && (
                             <>
                                 <video width="100%" height="100%" autoPlay controls={false} loop muted>
                                     <source  src={slide.video} />
                                 </video>
-                                {/*<ReactPlayer url={slide.video} width="100%" height="100%"*/}
-                                {/*             loop muted interval={4000} autoPlay controls={false}*/}
-                                {/*             playing*/}
-                                {/*/>*/}
                                 <div className={classes.text_container}>
                                     <h1>{slide.title}</h1>
                                     <p>{slide.text}</p>
@@ -61,8 +40,8 @@ const VideoSlider = ({slides}) => {
                             </>
                         )}
                         {Array.from({length: 4}).map((item, index) => (
-                            <div onClick={() => chooseSlide(index)}
-                                 className={index === current ? `${classes.active} ${classes.dot}` : classes.dot}></div>
+                            <div onClick={() => choose(index)}
+                                 className={index === currentSlide ? `${classes.active} ${classes.dot}` : classes.dot}></div>
                         ))}
                     </div>
                 )

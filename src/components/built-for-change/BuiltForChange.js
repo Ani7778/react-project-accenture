@@ -3,7 +3,6 @@ import {HiArrowNarrowRight, HiBell} from "react-icons/all";
 import classes from "../built-for-change/BuiltForChange.module.css";
 import ScrollAnimation from 'react-animate-on-scroll';
 
-
 function BuiltForChange() {
     return (
         <div className={classes.container}>

@@ -1,8 +1,20 @@
 import classes from "./Industries.module.css";
 
-function Industries({isOpen}) {
+let inState = true;
+
+function IndustriesMenu({ selected }) {
+        let className = classes.container;
+
+        if(selected) {
+                className += " " + classes.openContainer;
+        } else if (!inState) {
+                className +=  " " + classes.closeContainer;
+        } else if(inState) {
+                inState = false;
+        }
+
     return (
-        <div className={isOpen ? `${classes.container} ${classes.active}` : classes.container}>
+        <div className={className}>
             <a>Aerospace and Defense</a>
             <a>Automotive</a>
             <a>Banking</a>
@@ -27,4 +39,4 @@ function Industries({isOpen}) {
     );
 };
 
-export default Industries;
+export default IndustriesMenu;

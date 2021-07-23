@@ -4,7 +4,7 @@ import SectionContent from "./section-content/SectionContent";
 
 function VoicesOfChange() {
     return (
-        <div className={classes.container}>
+        <div className={classes.container} id="voices">
             <ScrollAnimation animateIn={classes.heading}>
                 <h1>Voices of Change</h1>
             </ScrollAnimation>

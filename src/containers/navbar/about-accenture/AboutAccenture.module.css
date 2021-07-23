@@ -1,16 +1,38 @@
 .container {
     width: 100%;
-    height: 0;
+    height: 470px;
     border-top: 1px solid #e4dfc6;
     box-shadow: 7px 5px 8px #888888;
     background: #ffffff;
     padding: 10px 40px;
     margin: auto;
     overflow: hidden;
-    opacity: 0;
-    transition: all 1s ease;
     position: absolute;
     text-align: left;
+    z-index: 999;
+    opacity: 0;
+}
+
+.openContainer {
+    opacity: 1;
+    animation: animate 0.5s ease;
+    animation-fill-mode: forwards;
+}
+
+.closeContainer {
+    opacity: 1;
+    animation: close 0.5s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+    from {height: 0; opacity: 0}
+    to {height: 470px; opacity: 1}
+}
+
+@keyframes close {
+    from {height: 470px; opacity: 1}
+    to {height: 0; opacity: 0}
 }
 
 .container.active {

@@ -1,8 +1,19 @@
 import classes from "./Services.module.css";
 
-function Services({isOpen}) {
+let inState = true;
+
+function ServicesMenu({ selected }) {
+        let className = classes.container;
+
+        if(selected) {
+                className += " " + classes.openContainer;
+        } else if (!inState) {
+                className +=  " " + classes.closeContainer;
+        } else if(inState) {
+                inState = false;
+        }
     return (
-        <div className={isOpen ? `${classes.container} ${classes.active}` : classes.container}>
+        <div className={className}>
             <a>Application Services</a>
             <a>Artificial Intelligence</a>
             <a>Automation</a>
@@ -30,4 +41,4 @@ function Services({isOpen}) {
     );
 };
 
-export default Services;
+export default ServicesMenu;

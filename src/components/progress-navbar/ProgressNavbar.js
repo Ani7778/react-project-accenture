@@ -1,27 +1,19 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import classes from  "../progress-navbar/ProgressNavbar.module.css";
 import { HiArrowNarrowRight } from "react-icons/all";
 
 function ProgressNavbar() {
-    const [header, setHeaderText] = useState(false);
+    const [header, setHeader] = useState(false);
 
     useEffect(() => {
-        const fixedText = false;
-        const whenNotFixed = true;
         const progressNavbar = document.getElementById("progress-navbar");
         const sticky = progressNavbar.offsetTop;
 
         const scrollCallBack = window.addEventListener("scroll", () => {
             if ( window.pageYOffset > sticky) {
                 progressNavbar.classList.add(classes.sticky)
-                if (progressNavbar !== fixedText) {
-                    setHeaderText(fixedText);
-                }
             } else {
                 progressNavbar.classList.remove(classes.sticky);
-                if (progressNavbar !== whenNotFixed) {
-                    setHeaderText(whenNotFixed);
-                }
             }
         });
 
@@ -30,9 +22,28 @@ function ProgressNavbar() {
         };
     }, [header]);
 
+    const [scrolled, setScrolled] = useState(false);
+    const ref = useRef();
+
+    const pageHeight = 2850;
+
+    const scrollProgressNavbar = () => {
+        console.log(window.pageYOffset);
+        ref.current.style.width = window.pageYOffset / pageHeight * 100 + "%";
+
+        if(window.pageYOffset >= 60) {
+                setScrolled(true)
+            } else {
+                setScrolled(false)
+            }
+        }
+
+    window.addEventListener("scroll", scrollProgressNavbar);
+
     return (
         <div id="progress-navbar" className={classes.container}>
-            <div className={classes.icon}><HiArrowNarrowRight /></div>
+            <div className={classes.scrolled} ref={ref}></div>
+            <div className={scrolled ? classes.animatedIcon: classes.icon}><HiArrowNarrowRight /></div>
             <span>Ideas that make an impact</span>
             <span>Join us and do extraordinary things</span>
             <span>Case studies & stories</span>

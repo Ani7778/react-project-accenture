@@ -1,8 +1,21 @@
+import React from "react";
 import classes from "./Insights.module.css";
 
-function Insights({isOpen}) {
+let inState = true;
+
+function InsightsMenu({ selected }) {
+    let className = classes.container;
+
+    if(selected) {
+        className += " " + classes.openContainer;
+    } else if (!inState) {
+        className +=  " " + classes.closeContainer;
+    } else if(inState) {
+        inState = false;
+    }
+
     return (
-        <div className={isOpen ? `${classes.container} ${classes.active}` : classes.container}>
+        <div className={className}>
             <div className={classes.first_row}>
                 <h4>FEATURED CONTENT</h4>
                 <h3>Voices of Change</h3>
@@ -25,4 +38,4 @@ function Insights({isOpen}) {
     );
 };
 
-export default Insights;
+export default InsightsMenu;

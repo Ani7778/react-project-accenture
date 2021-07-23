@@ -2,9 +2,20 @@ import classes from "./Careers.module.css";
 import { faLongArrowAltRight} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Careers({isOpen}) {
+let inState = true;
+
+function CareersMenu({ selected }) {
+    let className = classes.container;
+
+    if(selected) {
+        className += " " + classes.openContainer;
+    } else if (!inState) {
+        className +=  " " + classes.closeContainer;
+    } else if(inState) {
+        inState = false;
+    }
     return (
-        <div className={isOpen ? `${classes.container} ${classes.active}` : classes.container}>
+        <div className={className}>
            <div className={classes.careers_container}>
                <a>Careers Home<FontAwesomeIcon className={classes.icon} icon={faLongArrowAltRight} /></a>
                <a>Search Jobs<FontAwesomeIcon className={classes.icon} icon={faLongArrowAltRight} /></a>
@@ -44,4 +55,4 @@ function Careers({isOpen}) {
     );
 };
 
-export default Careers;
+export default CareersMenu;

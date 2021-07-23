@@ -1,8 +1,20 @@
 import classes from "./AboutAccenture.module.css"
 
-function AboutAccenture({isOpen}) {
+let inState = true;
+
+function AboutAccentureMenu({ selected }) {
+    let className = classes.container;
+
+    if(selected) {
+        className += " " + classes.openContainer;
+    } else if (!inState) {
+        className +=  " " + classes.closeContainer;
+    } else if(inState) {
+        inState = false;
+    }
+
     return (
-        <div className={isOpen ? `${classes.container} ${classes.active}` : classes.container}>
+        <div className={className}>
             <div className={classes.about_container}>
                 <h4>WHO WE ARE</h4>
                 <div className={classes.about_items}>
@@ -36,4 +48,4 @@ function AboutAccenture({isOpen}) {
     );
 };
 
-export default AboutAccenture;
+export default AboutAccentureMenu;
