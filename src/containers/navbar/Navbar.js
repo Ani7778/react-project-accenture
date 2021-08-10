@@ -1,24 +1,26 @@
 import React, { useState, useCallback, useEffect } from "react";
-import classes from "./Navbar.module.css";
+import classes from "./Navbar.module.scss";
 import  MenuItems  from "./MenuItems";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const handler = () => {
+    const navbar = document.getElementById("navbar");
+    const sticky = navbar.offsetTop;
+    if (window.pageYOffset > sticky) {
+        navbar.classList.add(classes.sticky);
+    } else {
+        navbar.classList.remove(classes.sticky);
+    }
+};
 
 function Navbar({click, openComponent}) {
     const [navbar, setHeaderText] = useState(false);
 
     useEffect(() => {
-        const navbar = document.getElementById("navbar");
-        const sticky = navbar.offsetTop;
-        const scrollCallBack = window.addEventListener("scroll", () => {
-            if (window.pageYOffset > sticky) {
-                navbar.classList.add(classes.sticky);
-            } else {
-                navbar.classList.remove(classes.sticky);
-            }
-        });
+        window.addEventListener("scroll", handler);
         return () => {
-            window.removeEventListener("scroll", scrollCallBack);
+            window.removeEventListener("scroll", handler);
         };
     }, [navbar]);
 

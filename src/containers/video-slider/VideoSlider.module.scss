@@ -1,3 +1,5 @@
+@import "VideoSliderVariables";
+
 .container {
     position: relative;
     text-align: center;
@@ -10,7 +12,7 @@
     position: absolute;
     top: 50%;
     right: 20px;
-    color: #ffffff;
+    color: $el-color;
     font-size: 80px;
     cursor: pointer;
     z-index: 10;
@@ -18,19 +20,20 @@
 
 .down_btn {
     position: absolute;
-    top: 80%;
+    top: 82%;
     left: 46%;
-    color: #ffffff;
-    font-size: 100px;
+    color: $el-color;
+    font-size: 70px;
     cursor: pointer;
     z-index: 10;
+    padding: 10px;
 }
 
 .left_btn {
     position: absolute;
     top: 50%;
     left: 20px;
-    color: #ffffff;
+    color: $el-color;
     font-size: 80px;
     cursor: pointer;
     z-index: 10;
@@ -54,7 +57,7 @@
     width: 11px;
     margin: 0 7px;
     background: none;
-    border: 1px #ffffff solid;
+    border: 1px $el-color solid;
     border-radius: 50%;
     display: inline-block;
     transition:  0.6s ease;
@@ -62,7 +65,7 @@
 }
 
 .active, .dot:hover {
-    background-color: #ffffff;
+    background-color: $el-color;
 }
 
 .text_container {
@@ -82,13 +85,14 @@
 
 .text_container h1 {
     font-size: 80px;
-    color: #ffffff;
+    color: $el-color;
     margin-bottom: 10px;
+    font-family: "Graphik Bold", sans-serif ;
 }
 
 .text_container p {
     font-size: 25px;
-    color: #ffffff;
+    color: $el-color;
     margin-bottom: 10px;
 }
 
@@ -113,14 +117,16 @@
 .button_container p {
     margin-left: 70px;
     margin-right: 25px;
-    color: #ffffff;
-    font-size: 20px;
+    color: $el-color;
+    font-size: 19px;
     transform: translateY(30%);
     animation: message 1s ease;
     animation-fill-mode: forwards;
     animation-delay: 1.5s;
     cursor: pointer;
     opacity: 0;
+    font-family: "Graphik Medium","Arial", sans-serif;
+    line-height: 1.25;
 }
 
 @keyframes message {
@@ -129,6 +135,7 @@
 }
 
 .button_container:hover .circle {
+    transition-duration: 1s;
     width: 100%;
     border-radius: 30px;
 }
@@ -136,7 +143,7 @@
 .circle {
     position: absolute;
     background: none;
-    border: 1.5px solid #ffffff;
+    border: 1.5px solid $el-color;
     border-radius: 30px;
     width: 37px;
     height: 37px;
@@ -154,7 +161,7 @@
     display: flex;
     position: absolute;
     font-size: 35px;
-    color: #ffffff;
+    color: $el-color;
     transform: translate(45%, 5%);
     animation: icon 1s ease;
     animation-delay: 1s;
@@ -225,7 +232,7 @@
 
     .button_container p {
         margin-left: 70px;
-        color: #ffffff;
+        color: $el-color;
         font-size: 16px;
         transform: translateY(50%);
     }

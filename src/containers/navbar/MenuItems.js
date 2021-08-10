@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, useState} from "react";
-import classes from "./Navbar.module.css";
+import React, {useState} from "react";
+import classes from "./Navbar.module.scss";
 import InsightsMenu from "./insights/InsightsMenu";
 import ServicesMenu from "./services/ServicesMenu";
 import IndustriesMenu from "./industries/IndustriesMenu";
@@ -8,47 +8,60 @@ import AboutAccentureMenu from "./about-accenture/AboutAccentureMenu";
 
 const menuItems = ["Insights", "Services", "Industries", "Careers", "About Accenture"];
 const menuItemContents = {
-    "Insights": InsightsMenu,
-    "Services":  ServicesMenu,
-    "Industries": IndustriesMenu,
-    "Careers":  CareersMenu,
-    "About Accenture":  AboutAccentureMenu,
+    [menuItems[0]]: InsightsMenu,
+    [menuItems[1]]:  ServicesMenu,
+    [menuItems[2]]: IndustriesMenu,
+    [menuItems[3]]:  CareersMenu,
+    [menuItems[4]]:  AboutAccentureMenu,
 };
 
-function MenuItems({isOpen}) {
+let forceClose = null;
+
+function MenuItems({ isOpen }) {
+     const outsideClick = () => {
+         const navbar = document.getElementById("navbar");
+         document.addEventListener('click', function(event) {
+              if (!navbar.contains(event.target)) {
+                    setSelected();
+              }
+         });
+     };
+
     const [selected, setSelected] = useState();
 
     return (
-        <div>
-            <div className={isOpen ?  `${classes.nav_menu} ${classes.active}` : classes.nav_menu}>
-                {menuItems.map((menuItem)=> {
-                    return (
-                        <span>
-                            <a className={classes.nav_links}
-                               onClick={()=> {
-                                        if(selected === menuItem) {
-                                            setSelected();
-                                        } else {
-                                            setSelected( menuItem );
-                                        }
+        <div className={isOpen ?  `${classes.nav_menu} ${classes.active}` : classes.nav_menu} onClick={outsideClick} id="navbar">
+            {menuItems.map((menuItem)=> {
+                return (
+                    <span>
+                        <a className={classes.nav_links}
+                           onClick={()=> {
+                               if(selected === menuItem) {
+                                        forceClose = null;
+                                        setSelected();
                                     }
-                                 }
-                            >
-                                {menuItem}
-                            </a>
-                        </span>
-                    )
-                    }
+                                    else if(selected){
+                                        forceClose = selected;
+                                        setSelected( menuItem );
+                                    } else {
+                                        forceClose = null;
+                                        setSelected( menuItem );
+                                    }
+                                }
+                             }
+                        >
+                            {menuItem}
+                        </a>
+                    </span>
                 )}
-            </div>
+                )}
             {
-                Object.entries(menuItemContents).map(([prop, value])=> {
-                    return React.createElement(value, {selected: selected === prop});
+                menuItems.map((value)=> {
+                    return React.createElement(menuItemContents[value], {forceClose: forceClose === value, selected: selected === value});
                 })
             }
         </div>
     )
 };
 
-export default MenuItems
-
+export default MenuItems;

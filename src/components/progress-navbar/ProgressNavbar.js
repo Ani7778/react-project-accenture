@@ -1,37 +1,37 @@
 import React, {useState, useEffect, useRef} from "react";
-import classes from  "../progress-navbar/ProgressNavbar.module.css";
+import classes from "./ProgressNavbar.module.scss";
 import { HiArrowNarrowRight } from "react-icons/all";
+
+const handler = () => {
+    const progressNavbar = document.getElementById("progress-navbar");
+    const sticky = progressNavbar.offsetTop;
+    if ( window.pageYOffset > sticky) {
+        progressNavbar.classList.add(classes.sticky)
+    } else {
+        progressNavbar.classList.remove(classes.sticky);
+    }
+};
 
 function ProgressNavbar() {
     const [header, setHeader] = useState(false);
 
     useEffect(() => {
-        const progressNavbar = document.getElementById("progress-navbar");
-        const sticky = progressNavbar.offsetTop;
-
-        const scrollCallBack = window.addEventListener("scroll", () => {
-            if ( window.pageYOffset > sticky) {
-                progressNavbar.classList.add(classes.sticky)
-            } else {
-                progressNavbar.classList.remove(classes.sticky);
-            }
-        });
-
+        window.addEventListener("scroll", handler);
         return () => {
-            window.removeEventListener("scroll", scrollCallBack);
+            window.removeEventListener("scroll", handler);
         };
     }, [header]);
 
     const [scrolled, setScrolled] = useState(false);
     const ref = useRef();
 
-    const pageHeight = 2850;
+    const pageHeight = 3000;
+    console.log(pageHeight);
 
     const scrollProgressNavbar = () => {
-        console.log(window.pageYOffset);
         ref.current.style.width = window.pageYOffset / pageHeight * 100 + "%";
 
-        if(window.pageYOffset >= 60) {
+        if(window.pageYOffset >= 50) {
                 setScrolled(true)
             } else {
                 setScrolled(false)

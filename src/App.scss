@@ -1,0 +1,57 @@
+.App {
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-active {
+  height: 320px;
+  //transform: skew(0);
+
+  img {
+    height: 110%;
+    transition: transform 0.4s ease;
+    transform: skew(0deg, 6deg);
+    margin-top: 20px;
+
+    &:hover {
+      transform: scale(1.15) skew(0deg, 6deg) translateY(6.5%);
+    }
+  }
+}
+
+.slick-active + .slick-active {
+  background-color: #01010114;
+  //transform: skew(0);
+
+  img{
+    transform: skewY(0) translateY(5%);
+    transition: transform 0.4s ease;
+    height: 100%;
+
+    &:hover {
+      transform: scale(1.15) skewY(0) translateY(10%);
+    }
+  }
+}
+
+.slick-active + .slick-active + .slick-active {
+  background: none;
+  height: 320px;
+  //transform: skew(0);
+
+  img{
+    height: 110%;
+    transition: transform 0.4s ease;
+    transform: skew(0deg, -6deg);
+    margin-top: 20px;
+
+    &:hover {
+      transform: scale(1.15) skewY(-6deg) translateY(6.5%);
+    }
+  }
+}

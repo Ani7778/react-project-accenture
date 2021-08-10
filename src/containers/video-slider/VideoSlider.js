@@ -1,4 +1,4 @@
-import classes from "./VideoSlider.module.css";
+import classes from "./VideoSlider.module.scss";
 import React from 'react'
 import { HiArrowNarrowRight, HiChevronRight, HiChevronLeft, HiChevronDown } from "react-icons/all";
 import { Link } from "react-scroll";

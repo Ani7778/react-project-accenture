@@ -1,53 +1,86 @@
-import classes from "./SectionContent.module.css";
+import classes from "./SectionContent.module.scss";
 import ScrollAnimation from 'react-animate-on-scroll';
 import img1 from "../../../images/section-img1.jpg";
 import img2 from "../../../images/section-img2.png";
 import img3 from "../../../images/section-img3.jpg";
 import img4 from "../../../images/section-img4.jpg";
-import {useState} from "react";
+import {useRef, useState} from "react";
 import {HiArrowNarrowRight} from "react-icons/all";
 
 function SectionContent() {
-    const [cursorX, setCursorX] = useState();
-    const [cursorY, setCursorY] = useState();
+    // const [cursorX, setCursorX] = useState();
+    // const [cursorY, setCursorY] = useState();
+    //
+    // window.addEventListener('mousemove', (e)=> {
+    //     setCursorX(e.pageX);
+    //     setCursorY(e.pageY);
+    // })
 
-    window.addEventListener('mousemove', (e)=> {
-        setCursorX(e.pageX);
-        setCursorY(e.pageY);
-    })
+    // const img = useRef();
+    // console.log(img);
+    //
+    // const zoomImg = (width, height) => {
+    //     img.current.style.width = `${width}px`;
+    //     img.current.style.height = `${height}px`;
+    //     img.current.addEventListener('mousemove', handleMouseMove, false);
+    // }
+    //
+    // function handleMouseMove(e) {
+    //     const dimensions = this.getBoundingClientRect();
+    //     const [x, y] = [
+    //         e.clientX - dimensions.left,
+    //         e.clientY - dimensions.top
+    //     ];
+    //     const [percentX, percentY] = [
+    //         Math.round(100 / (dimensions.width / x)),
+    //         Math.round(100 / (dimensions.height / y))
+    //     ];
+    //     this.style.setProperty('--mouse-x', percentX);
+    //     this.style.setProperty('--mouse-y', percentY);
+    // }
+    //
+    // zoomImg(320, 212);
 
     return (
         <div className={classes.container}>
             <ScrollAnimation animateIn={`${classes.section} ${classes.img1}`}>
-                <img className={`${classes.img} ${classes.img1}`} src={img1} />
+                <div className={classes.img_container}>
+                    <img className={`${classes.img} ${classes.img1}`} src={img1} />
+                </div>
                 <div className={classes.text_container}>
-                    <h5>Supply Chain</h5>
+                    <p className={classes.category_title}>Supply Chain</p>
                     <span>Supply chain transformation on the cloud</span>
-                    <p>Discover how embracing the cloud can lead to interconnected, intelligent and innovative supply chains.</p>
+                    <p className={classes.text}>Discover how embracing the cloud can lead to interconnected, intelligent and innovative supply chains.</p>
                 </div>
             </ScrollAnimation>
             <ScrollAnimation animateIn={`${classes.section} ${classes.img2}`}>
-                <img className={`${classes.img} ${classes.img2}`} src={img2} />
+                <div className={classes.img_container}>
+                    <img className={`${classes.img} ${classes.img2}`} src={img2} />
+                </div>
                 <div className={classes.text_container}>
-                    <h5>Energy</h5>
+                    <p className={classes.category_title}>Energy</p>
                     <span>Necessity is the mother of (re)invention</span>
-                    <p>It’s make-or-break for oil and gas companies. Reinvention leaders are showing the way.</p>
+                    <p className={classes.text}>It’s make-or-break for oil and gas companies. Reinvention leaders are showing the way.</p>
                 </div>
             </ScrollAnimation>
             <ScrollAnimation animateIn={`${classes.section} ${classes.img3}`}>
-                <img className={`${classes.img} ${classes.img3}`} src={img3} />
+                <div className={classes.img_container}>
+                    <img className={`${classes.img} ${classes.img3}`} src={img3} />
+                </div>
                 <div className={classes.text_container}>
-                    <h5>Artificial Intelligence</h5>
+                    <p className={classes.category_title}>Artificial Intelligence</p>
                     <span>Change how you work with AI</span>
-                    <p>Professionalize your approach to AI to change what’s possible for your business.</p>
+                    <p className={classes.text}>Professionalize your approach to AI to change what’s possible for your business.</p>
                 </div>
             </ScrollAnimation>
             <ScrollAnimation animateIn={`${classes.section} ${classes.img4}`}>
-                <img className={`${classes.img} ${classes.img4}`} src={img4} />
+                <div className={classes.img_container}>
+                    <img className={`${classes.img} ${classes.img4}`} src={img4} />
+                </div>
                 <div className={classes.text_container}>
-                    <h5>Competitive Agility</h5>
+                    <p className={classes.category_title}>Competitive Agility</p>
                     <span>Delivering on the promise of sustainability</span>
-                    <p>Learn how to create value, drive resilience and create positive change through responsible business.</p>
+                    <p className={classes.text}>Learn how to create value, drive resilience and create positive change through responsible business.</p>
                 </div>
                 <ScrollAnimation animateIn={classes.button_container}>
                     <ScrollAnimation animateIn={classes.circle}>
@@ -56,10 +89,10 @@ function SectionContent() {
                     </ScrollAnimation>
                 </ScrollAnimation>
             </ScrollAnimation>
-            <div className={classes.cursor} style={{
-                left: cursorX + 'px',
-                top: cursorY + 'px'
-            }}>explore</div>
+            {/*<div className={classes.cursor} style={{*/}
+            {/*    left: `${cursorX}px`,*/}
+            {/*    top: `${cursorY}px`*/}
+            {/*}}>explore</div>*/}
         </div>
     );
 }

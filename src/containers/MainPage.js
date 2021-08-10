@@ -3,6 +3,7 @@ import Navbar from "./navbar/Navbar";
 import ProgressNavbar from "../components/progress-navbar/ProgressNavbar";
 import VideoSlider from "./video-slider/VideoSlider";
 import { Slides } from "./video-slider/Videos";
+import { Images } from "./carousel-slider/Images";
 import BuiltForChange from "../components/built-for-change/BuiltForChange";
 import VoicesOfChange from "../components/voices-of-change/VoicesOfChange";
 import Footer from "../components/footer/Footer";
@@ -48,8 +49,8 @@ function MainPage() {
             <ProgressNavbar />
             <VideoSlider slides={Slides} currentSlide={current} next={nextSlide} prev={prevSlide} choose={chooseSlide}/>
             <BuiltForChange />
-            <VoicesOfChange id="voicesOfChange"/>
-            <CaseStudies />
+            <VoicesOfChange />
+            <CaseStudies slides={Images}/>
             <Footer />
         </div>
     );

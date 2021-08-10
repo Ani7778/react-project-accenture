@@ -1,4 +1,4 @@
-import classes from "../footer/Footer.module.css";
+import classes from "./Footer.module.scss";
 import {HiArrowNarrowRight, FaFacebook, FaLinkedin, FaTwitter, FaInstagram, FaYoutube} from "react-icons/all";
 import logo from "../../images/logo.svg";
 

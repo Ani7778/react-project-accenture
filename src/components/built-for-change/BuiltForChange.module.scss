@@ -1,5 +1,6 @@
 .container {
     width: 70%;
+    height: 350px;
     display: grid;
     grid-template-columns: 5% 95%;
     border: 1px solid #e4dfc6;
@@ -10,12 +11,14 @@
 
 .heading {
     animation: animateHeading 0.5s ease;
-    font-family: 'Arimo', sans-serif;
+    font-family: "Graphik SemiBold","Arial", sans-serif;
 }
 
 @keyframes animateHeading {
-    from {top: 40%;opacity: 0}
-    to {top: 20%; opacity: 1}
+    //from {top: 40%;opacity: 0}
+    //to {top: 20%; opacity: 1}
+    from {opacity: 0}
+    to { opacity: 1}
 }
 
 .text {
@@ -24,12 +27,12 @@
     grid-column:  1 / span 2;
     font-size: 20px;
     font-family: 'Quicksand', sans-serif;
-    animation: animateText 0.5s ease;
+    animation: animateText 0.3s ease;
 }
 
 @keyframes animateText {
-    from {height: 0; opacity: 0}
-    to {height: 20px; opacity: 1}
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
 .icon {
@@ -39,14 +42,15 @@
     border-radius: 50%;
     font-size: 25px;
     color: #ffffff;
+    font-family: "Graphik Light","Arial", sans-serif;
     transform: translate(0, -20%);
     padding-top: 10px ;
-    animation: animateIcon 0.5s ease;
+    animation: animateIcon 0.2s ease;
 }
 
 @keyframes animateIcon {
-    from {height: 20px; opacity: 0}
-    to {height: 45px; opacity: 1}
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
 .button_container {
@@ -59,13 +63,13 @@
     grid-column:  1 / span 2;
     width: 30%;
     cursor: pointer;
-    animation: click 1s ease;
+    animation: click 0.3s ease;
     opacity: 0;
 }
 
 @keyframes click {
-    from {height: 0; opacity: 0}
-    to {height: 20px; opacity: 1}
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
 .button_container p {
@@ -75,8 +79,8 @@
     font-family: 'Arimo', sans-serif;
     font-size: 20px;
     transform: translateY(30%);
-    animation: message 1s ease-in-out;
-    animation-delay: 1.5s;
+    animation: message 0.3s ease-in-out;
+    animation-delay: 0.6s;
     cursor: pointer;
     opacity: 0;
     animation-fill-mode: forwards;
@@ -95,14 +99,19 @@
 .circle {
     position: absolute;
     background: none;
-    border: 1.5px solid #0000ff;
+    border: 1.5px solid #004dff;
     border-radius: 30px;
     width: 37px;
     height: 37px;
     z-index: 1;
-    animation: circle 1s ease;
-    animation-delay: 0.5s;
+    animation: circle 0.3s ease;
+    transition: width 0.5s;
     opacity: 0;
+}
+
+.circle p {
+    font-family: "Graphik Medium","Arial", sans-serif;
+    color: #004dff;
 }
 
 @keyframes circle {
@@ -115,10 +124,10 @@
     display: flex;
     position: absolute;
     font-size: 30px;
-    color: #0000ff;
+    color: #004dff;
     transform: translate(60%, 10%);
-    animation: icon 1s ease;
-    animation-delay: 0.8s;
+    animation: icon 0.3s ease;
+    animation-delay: 0.2s;
     animation-fill-mode: forwards;
     opacity: 0;
 }

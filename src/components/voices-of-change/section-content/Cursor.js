@@ -1,4 +1,4 @@
-import classes from "./SectionContent.module.css";
+import classes from "./SectionContent.module.scss";
 import { useRef } from "react";
 
 function Cursor() {
