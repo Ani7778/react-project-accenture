@@ -27,7 +27,7 @@ function Navbar({click, openComponent}) {
 
     return (
         <div id="navbar" className={classes.navbar_items}>
-            <img alt="logo" src="https://www.accenture.com/t20180820T081710Z__w__/us-en/_acnmedia/Accenture/Dev/Redesign/Acc_Logo_Black_Purple_RGB.png" />
+            <img className={classes.img} alt="logo" src="https://www.accenture.com/t20180820T081710Z__w__/us-en/_acnmedia/Accenture/Dev/Redesign/Acc_Logo_Black_Purple_RGB.png" />
             <div className={classes.menu_icon} onClick={openComponent} >
                 <FontAwesomeIcon icon={click ? faTimes : faBars} />
             </div>

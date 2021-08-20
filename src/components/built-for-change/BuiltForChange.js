@@ -1,5 +1,5 @@
 import React from "react";
-import {HiArrowNarrowRight, HiBell} from "react-icons/all";
+import {HiOutlineArrowNarrowRight, HiBell} from "react-icons/all";
 import classes from "./BuiltForChange.module.scss";
 import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -17,7 +17,7 @@ function BuiltForChange() {
             </ScrollAnimation>
             <ScrollAnimation animateIn={classes.button_container}>
                 <ScrollAnimation animateIn={classes.circle}>
-                    <ScrollAnimation animateIn={classes.btn_icon}><HiArrowNarrowRight /></ScrollAnimation>
+                    <ScrollAnimation animateIn={classes.btn_icon}><HiOutlineArrowNarrowRight /></ScrollAnimation>
                 </ScrollAnimation>
                 <p>Listen here</p>
             </ScrollAnimation>

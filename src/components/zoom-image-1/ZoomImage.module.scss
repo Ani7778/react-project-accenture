@@ -1,0 +1,216 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 580px;
+    background-color: white;
+    margin-bottom: 100px;
+    position: relative;
+    transform: skewY(-6deg);
+}
+
+.logo_container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    /*transform: skewY(-6deg);*/
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    top: 5%;
+    //animation: animate_logo ease;
+    //animation-fill-mode: forwards;
+    position: absolute;
+    transform: scale(0) rotate(-5deg);
+}
+
+//
+//@keyframes animate_logo {
+//    from {
+//        opacity: 0.5;
+//        transform: scale(0) rotate(-30deg);
+//        top: 0
+//    }
+//    to {
+//        opacity: 0.8;
+//        transform: scale(5) rotate(-5deg) translate(-10%, 20.5%);
+//        width: 400px;
+//        height: 400px;
+//        top: 50%
+//    }
+//}
+
+.container_from_img {
+    background-color: rgba(28, 162, 157, 0.7);
+    height: 150px;
+    opacity: 0;
+    transform: skewY(6deg);
+    position: absolute;
+    perspective: 800px;
+    width: 200px;
+    left: 40%;
+    //animation: animate_container_from_img ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+//@keyframes animate_container_from_img {
+//    from {
+//        opacity: 0;
+//        height: 0;
+//        background-color: rgba(28, 162, 157, 0.5);
+//        z-index: -1;
+//    }
+//    to {
+//        opacity: 1;
+//        height: 550px;
+//        width: 100%;
+//        transform: perspective(800px) rotateY(16deg) skewY(6deg) scale(1) translateY(5.5%);
+//        left: 10.6%;
+//        background-color: rgba(28, 162, 157, 0.7);
+//        z-index: -1;
+//    }
+//}
+
+.text_container {
+    background: none;
+    top: 10%;
+    width: 80%;
+    height: 100%;
+    margin: 100px;
+    color: #ffffff;
+    z-index: 1;
+    opacity: 0;
+    transform: skewY(6deg);
+    //animation: animate_text_container ease;
+    //animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    position: relative;
+
+    .text {
+        width: 50%;
+        margin: auto;
+
+        h1 {
+            font-size: 40px;
+            font-family: "Graphik SemiBold","Arial", sans-serif;
+        }
+
+        p {
+            font-family: "Graphik Light","Arial", sans-serif;
+            margin: 20px;
+            font-size: 18px;
+            line-height: 25px;
+        }
+    }
+}
+
+.border {
+    width: 100px;
+    top: 35%;
+    left: 40%;
+    border-bottom: solid 2px rgba(255, 255, 255, 0.5);
+    position: absolute;
+}
+
+@keyframes animate_text_container {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.job_posting_container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+
+.button_container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: none;
+    left: 42%;
+    top: 5%;
+    grid-column:  1 / span 2;
+    width: 18%;
+    cursor: pointer;
+}
+
+@keyframes click {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.button_container p {
+    margin-left: 40px;
+    margin-right: 25px;
+    line-height: 40px;
+    color: #FFFFFF;
+    font-family: "Graphik SemiBold","Arial", sans-serif;
+    font-size: 17px;
+}
+
+@keyframes message {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.button_container:hover .circle {
+    width: 90%;
+    border-radius: 30px;
+}
+
+.circle {
+    position: absolute;
+    background: none;
+    border: 1.5px solid #FFFFFF;
+    border-radius: 30px;
+    width: 35px;
+    height: 35px;
+    z-index: 1;
+    animation: circle 0.3s ease;
+    transition: width 0.5s;
+}
+
+.circle p {
+    font-family: "Graphik Medium","Arial", sans-serif;
+    color: #FFFFFF;
+}
+
+@keyframes circle {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+
+.btn_icon {
+    display: flex;
+    position: absolute;
+    font-size: 28px;
+    color: #FFFFFF;
+    transform: translate(55%, 5%);
+    animation: icon 0.3s ease;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes icon {
+    from {left: -50%; opacity: 0}
+    to {left: 5%; opacity: 1}
+}
+

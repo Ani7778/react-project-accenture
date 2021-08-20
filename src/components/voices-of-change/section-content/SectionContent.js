@@ -4,8 +4,7 @@ import img1 from "../../../images/section-img1.jpg";
 import img2 from "../../../images/section-img2.png";
 import img3 from "../../../images/section-img3.jpg";
 import img4 from "../../../images/section-img4.jpg";
-import {useRef, useState} from "react";
-import {HiArrowNarrowRight} from "react-icons/all";
+import {HiOutlineArrowNarrowRight} from "react-icons/all";
 
 function SectionContent() {
     // const [cursorX, setCursorX] = useState();
@@ -84,7 +83,7 @@ function SectionContent() {
                 </div>
                 <ScrollAnimation animateIn={classes.button_container}>
                     <ScrollAnimation animateIn={classes.circle}>
-                        <ScrollAnimation animateIn={classes.btn_icon}><HiArrowNarrowRight /></ScrollAnimation>
+                        <ScrollAnimation animateIn={classes.btn_icon}><HiOutlineArrowNarrowRight /></ScrollAnimation>
                         <p>explore latest insights</p>
                     </ScrollAnimation>
                 </ScrollAnimation>

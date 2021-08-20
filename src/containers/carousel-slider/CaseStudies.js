@@ -2,7 +2,7 @@ import classes from "./CaseStudies.module.scss";
 import ScrollAnimation from 'react-animate-on-scroll';
 import CarouselSlider from "./CarouselSlider";
 import { Images } from "../carousel-slider/Images";
-import {HiArrowNarrowRight} from "react-icons/all";
+import {HiOutlineArrowNarrowRight} from "react-icons/all";
 
 function CaseStudies() {
     return (
@@ -16,7 +16,7 @@ function CaseStudies() {
             <CarouselSlider slides={Images}/>
             <ScrollAnimation animateIn={classes.button_container}>
                 <ScrollAnimation animateIn={classes.circle}>
-                    <ScrollAnimation animateIn={classes.btn_icon}><HiArrowNarrowRight /></ScrollAnimation>
+                    <ScrollAnimation animateIn={classes.btn_icon}><HiOutlineArrowNarrowRight /></ScrollAnimation>
                 </ScrollAnimation>
                 <p>see all stories</p>
             </ScrollAnimation>

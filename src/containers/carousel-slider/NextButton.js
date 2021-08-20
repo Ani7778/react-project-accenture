@@ -1,16 +1,16 @@
 import classes from "./CarouselSlider.module.scss";
-import {HiArrowNarrowRight} from "react-icons/all";
+import {HiOutlineArrowNarrowRight} from "react-icons/all";
 import React from "react";
 
 function NextArrow({next}) {
     return (
         <div
-            className={classes.next_btn}
+            className={classes.next_btn }
             onClick={next}
         >
-            <HiArrowNarrowRight />
+            <HiOutlineArrowNarrowRight />
         </div>
     );
-}
+};
 
 export default NextArrow;

@@ -12,20 +12,17 @@ const InsightsMenu = ({ selected, forceClose })=> {
                 <motion.div className={classes.container}
                     initial={{
                         opacity: 0,
-                        marginTop: -5,
                         height: 0
                     }}
                     animate={{
                         opacity: 1,
                         height: 350,
-                        marginTop: 0,
                         transition: {
                             duration: 0.5
                         }
                     }}
                     exit={{
                         opacity: 0,
-                        marginTop: -5,
                         height: 0,
                         transition: {
                             duration: 0.5
@@ -34,21 +31,21 @@ const InsightsMenu = ({ selected, forceClose })=> {
                 >
                     <motion.div className={classes.first_row}
                         initial={{
-                            y: "-40px",
                             opacity: 0,
+                            y: -70,
                         }}
                         animate={{
-                            y: 0,
                             opacity: 1,
+                            y: 0,
                             transition: {
-                                duration: 0.3,
+                                duration: 0.5,
                             }
                         }}
                         exit={{
-                            y: "-40px",
                             opacity: 0,
+                            y: -70,
                             transition: {
-                                duration: 0.3,
+                                duration: 0.5,
                             }
                         }}
                     >
@@ -59,21 +56,21 @@ const InsightsMenu = ({ selected, forceClose })=> {
                     </motion.div>
                     <motion.div className={classes.subjects}
                         initial={{
-                            y: "-40px",
                             opacity: 0,
+                            y: -100,
                         }}
                         animate={{
-                            y: 0,
                             opacity: 1,
+                            y: 0,
                             transition: {
-                                duration: 0.3,
+                                duration: 0.5,
                             }
                         }}
                         exit={{
-                            y: "-40px",
                             opacity: 0,
+                            y: -100,
                             transition: {
-                                duration: 0.3,
+                                duration: 0.5,
                             }
                         }}
                     >

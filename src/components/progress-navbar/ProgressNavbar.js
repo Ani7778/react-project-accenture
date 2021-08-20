@@ -25,13 +25,13 @@ function ProgressNavbar() {
     const [scrolled, setScrolled] = useState(false);
     const ref = useRef();
 
-    const pageHeight = 3000;
+    const pageHeight = 4000;
     console.log(pageHeight);
 
     const scrollProgressNavbar = () => {
         ref.current.style.width = window.pageYOffset / pageHeight * 100 + "%";
 
-        if(window.pageYOffset >= 50) {
+        if(window.pageYOffset >= 60) {
                 setScrolled(true)
             } else {
                 setScrolled(false)

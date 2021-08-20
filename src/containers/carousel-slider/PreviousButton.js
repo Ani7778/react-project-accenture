@@ -1,5 +1,5 @@
 import classes from "./CarouselSlider.module.scss";
-import {HiArrowNarrowLeft} from "react-icons/all";
+import {HiOutlineArrowNarrowLeft} from "react-icons/all";
 import React from "react";
 
 function PrevArrow({prev}) {
@@ -8,7 +8,7 @@ function PrevArrow({prev}) {
             className={classes.prev_btn}
             onClick={prev}
         >
-            <HiArrowNarrowLeft />
+            <HiOutlineArrowNarrowLeft />
         </div>
     );
 }

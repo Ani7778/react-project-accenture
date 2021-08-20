@@ -1,6 +1,6 @@
 import classes from "./VideoSlider.module.scss";
 import React from 'react'
-import { HiArrowNarrowRight, HiChevronRight, HiChevronLeft, HiChevronDown } from "react-icons/all";
+import { HiOutlineArrowNarrowRight, HiChevronRight, HiChevronLeft, HiChevronDown } from "react-icons/all";
 import { Link } from "react-scroll";
 
 const VideoSlider = ({ slides, currentSlide, next, prev, choose }) => {
@@ -13,7 +13,7 @@ const VideoSlider = ({ slides, currentSlide, next, prev, choose }) => {
                     to="voices"
                     spy={true}
                     smooth={true}
-                    offset={-120}
+                    offset={10}
                     duration={500}
                     ><HiChevronDown />
                 </Link>
@@ -33,7 +33,7 @@ const VideoSlider = ({ slides, currentSlide, next, prev, choose }) => {
                                 </div>
                                 <div className={classes.button_container}>
                                     <div className={classes.circle}>
-                                        <div className={classes.icon}><HiArrowNarrowRight/></div>
+                                        <div className={classes.icon}><HiOutlineArrowNarrowRight/></div>
                                     </div>
                                     <p>{slide.message}</p>
                                 </div>

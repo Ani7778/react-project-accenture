@@ -8,6 +8,7 @@ import BuiltForChange from "../components/built-for-change/BuiltForChange";
 import VoicesOfChange from "../components/voices-of-change/VoicesOfChange";
 import Footer from "../components/footer/Footer";
 import CaseStudies from "./carousel-slider/CaseStudies";
+import ZoomImage from "../components/zoom-image-1/ZoomImage";
 
 function MainPage() {
     const [clickNavbar, setClickNavbar] = useState(false);
@@ -46,10 +47,11 @@ function MainPage() {
     return (
         <div className="App">
             <Navbar click={clickNavbar} openComponent={openNavbar}/>
-            <ProgressNavbar />
+            {/*<ProgressNavbar />*/}
             <VideoSlider slides={Slides} currentSlide={current} next={nextSlide} prev={prevSlide} choose={chooseSlide}/>
             <BuiltForChange />
             <VoicesOfChange />
+            <ZoomImage />
             <CaseStudies slides={Images}/>
             <Footer />
         </div>

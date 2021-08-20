@@ -27,7 +27,7 @@
     z-index: 999;
 }
 
-img {
+.img {
     margin: 0 20px;
     padding-top: 0;
     width: 100px;
@@ -44,6 +44,7 @@ img {
     height: 40px;
     line-height: 35px;
     margin: 10px 50px;
+    z-index: 999;
 
     span {
         cursor: context-menu;
