@@ -1,5 +1,4 @@
 import classes from "./CaseStudies.module.scss";
-import ScrollAnimation from 'react-animate-on-scroll';
 import CarouselSlider from "./CarouselSlider";
 import { Images } from "../carousel-slider/Images";
 import {HiOutlineArrowNarrowRight} from "react-icons/all";
@@ -14,12 +13,12 @@ function CaseStudies() {
                 <span>We work together across the globe to make a world of difference.</span>
             </div>
             <CarouselSlider slides={Images}/>
-            <ScrollAnimation animateIn={classes.button_container}>
-                <ScrollAnimation animateIn={classes.circle}>
-                    <ScrollAnimation animateIn={classes.btn_icon}><HiOutlineArrowNarrowRight /></ScrollAnimation>
-                </ScrollAnimation>
+            <div className={classes.button_container}>
+                <div className={classes.circle}>
+                    <div className={classes.btn_icon}><HiOutlineArrowNarrowRight /></div>
+                </div>
                 <p>see all stories</p>
-            </ScrollAnimation>
+            </div>
         </div>
     );
 };
