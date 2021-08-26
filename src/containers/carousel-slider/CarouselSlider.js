@@ -11,7 +11,6 @@ import slide8 from "../../images/slide8.png";
 import slide9 from "../../images/slide9.png";
 import PreviousButton from "./PreviousButton";
 import NextButton from "./NextButton";
-import ScrollAnimation from 'react-animate-on-scroll';
 
 
 const images = [
@@ -135,16 +134,15 @@ function ImageCarousel({slides}) {
                             <div className={classes.images}>
                                 {images.map((image,index) => {
                                     return (
-                                        <ScrollAnimation animateIn={image.container} animateOnce={true}>
+                                        <div className={image.container}>
                                             <img src={image.src} className={image.image} onMouseOver={() => chooseSlide(index)}/>
-                                        </ScrollAnimation>
+                                        </div>
                                     )
                                 })}
                             </div>
                             {slides.map((image, index) => {
                                 return (
                                     <div className={index === current ? `${classes.text} ` : classes.hidden}>
-                                        <h4>{image.subject}</h4>
                                         <h3>{image.title}</h3>
                                         <p>{image.text}</p>
 

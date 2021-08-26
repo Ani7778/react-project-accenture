@@ -1,4 +1,4 @@
-$btn_heading_color: #004dff;
+$btn_heading_color: #0477e8;
 
 *,
 *::before,
@@ -9,6 +9,7 @@ $btn_heading_color: #004dff;
 
 .section_container.section_container_8 {
     overflow: hidden;
+
 }
 .section_container {
     width: 100%;
@@ -41,7 +42,7 @@ $btn_heading_color: #004dff;
         &:before {
             content: " ";
             display: block;
-            background: rgba(1,1,1,0.08);
+            background: #FFFFFF;
             width: 84%;
             height: 100%;
             position: absolute;
@@ -179,24 +180,17 @@ $btn_heading_color: #004dff;
     animation: animateText 1.5s ease ;
 
 
-    h4 {
-        font-family: "Graphik Semibold","Arial", sans-serif;
-        font-size: 0.75rem;
-        line-height: 1;
-        animation: animateText 1s ease ;
-    }
-
     h3 {
-        font-family: "Graphik Light","Arial", sans-serif;
-        font-size: 28px;
-        line-height: 1.1;
-        font-weight: normal;
+        font-family: 'Montserrat-Medium', sans-serif;
+        color: #0477e8;
+        font-size: 30px;
+        line-height: 37px;
+        animation: animateText 1s ease ;
+        font-weight: 500;
         margin-bottom: 0.55em;
-        margin-top: 0.65em;
         top: 0;
         opacity: 1;
         transition-delay: 0.2s;
-        color: blue;
 
         &:hover {
             cursor: pointer;
@@ -204,8 +198,11 @@ $btn_heading_color: #004dff;
     }
 
     p {
-        font-family: "Graphik Light","Arial", sans-serif;
-        font-size: 1.1rem;
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        color: #403b3b;
+        opacity: 0.7;
     }
 }
 
@@ -220,19 +217,25 @@ $btn_heading_color: #004dff;
 
 .next_btn {
     position: relative;
-    top: -1%;
     left: 100%;
     color: $btn_heading_color;
     font-size: 45px;
     cursor: pointer;
     z-index: 10;
-    width: 70px;
-    height: 70px;
+    width: 57.6px;
+    height: 57.6px;
     border-radius: 35px;
     padding: 10px;
     border: 1px solid $btn_heading_color;
     background-color: white;
     transition: 0.5s ease;
+
+    .arrow {
+        width: 40px;
+        height: 35px;
+        top: -20%;
+        color: #0477e8;
+    }
 
     &:hover {
         transform: scale(1.2);
@@ -240,9 +243,9 @@ $btn_heading_color: #004dff;
 }
 
 .prev_btn {
-    width: 70px;
-    height: 70px;
-    left: -13%;
+    width: 57.6px;
+    height: 57.6px;
+    left: -10%;
     border-radius: 35px;
     border: 1px solid $btn_heading_color;
     background-color: white;
@@ -254,6 +257,13 @@ $btn_heading_color: #004dff;
     cursor: pointer;
     z-index: 10;
     transition: 0.5s ease;
+
+    .arrow {
+        width: 40px;
+        height: 35px;
+        top: -20%;
+        color: #0477e8;
+    }
 
     &:hover {
         transform: scale(1.2);

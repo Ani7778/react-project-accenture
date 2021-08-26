@@ -1,7 +1,7 @@
 @import "../MenuItemsVariables";
 
 .container {
-    width: 150%;
+    width: 103.2%;
     border-top: $subject-border-bottom;
     box-shadow: $top-shadow;
     background: #ffffff;
@@ -11,8 +11,8 @@
     position: absolute;
     text-align: left;
     z-index: 999;
-    top: 50px;
-    left: -15%;
+    left: -30px;
+    top: 60px;
 
     h4 {
         font-family: "Graphik SemiBold", "Arial", sans-serif;

@@ -1,5 +1,5 @@
 import classes from "./CarouselSlider.module.scss";
-import {HiOutlineArrowNarrowRight} from "react-icons/all";
+import {HiArrowRight} from "react-icons/all";
 import React from "react";
 
 function NextArrow({next}) {
@@ -8,7 +8,7 @@ function NextArrow({next}) {
             className={classes.next_btn }
             onClick={next}
         >
-            <HiOutlineArrowNarrowRight />
+            <HiArrowRight className={classes.arrow}/>
         </div>
     );
 };

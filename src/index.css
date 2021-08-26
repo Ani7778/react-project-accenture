@@ -91,3 +91,5 @@ code {
   url("//db.onlinewebfonts.com/t/0b346e12b0256c8438cbf052c9dc8036.ttf") format("truetype"),
   url("//db.onlinewebfonts.com/t/0b346e12b0256c8438cbf052c9dc8036.svg#Graphik") format("svg");
 }
+
+@font-face {font-family: "Montserrat"; src: url("//db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.eot"); src: url("//db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.woff") format("woff"), url("//db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.svg#Montserrat") format("svg"); }

@@ -1,23 +1,32 @@
 .container {
     width: 90%;
-    height: 100%;
-    margin:  auto;
+    height: 750px;
+    margin: 100px auto;
     padding: 50px;
     text-align: center;
-    transform: translateY(0);
+    position: relative;
 }
 
 .heading {
-    animation: animateHeading 5s ease;
-    animation-fill-mode: forwards;
     position: relative;
-    font-family: 'Arimo', sans-serif;
-    font-size: 25px;
+    letter-spacing: 3px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
     left: 0;
     transform: translateY(-100%);
     opacity: 0;
-    width: 100%;
+    color: #0F183F;
 }
+
+
+.border {
+    width: 150px;
+    margin: -50px auto 0;
+    height: 1px;
+    background-color: #707070;
+}
+
 @keyframes animateHeading {
     from {opacity: 0}
     to { opacity: 1}

@@ -1,9 +1,9 @@
 import classes from "./SectionContent.module.scss";
 import ScrollAnimation from 'react-animate-on-scroll';
-import img1 from "../../../images/section-img1.jpg";
-import img2 from "../../../images/section-img2.png";
-import img3 from "../../../images/section-img3.jpg";
-import img4 from "../../../images/section-img4.jpg";
+import img1 from "../../../images/case-studies-img1.png";
+import img2 from "../../../images/case-studies-img2.png";
+import img3 from "../../../images/case-studies-img3.png";
+import img4 from "../../../images/case-studies-img4.png";
 import {HiOutlineArrowNarrowRight} from "react-icons/all";
 
 function SectionContent() {
@@ -42,7 +42,7 @@ function SectionContent() {
 
     return (
         <div className={classes.container}>
-            <ScrollAnimation animateIn={`${classes.section} ${classes.img1}`}>
+            <ScrollAnimation animateIn={`${classes.section} ${classes.img1}`} duration={1}>
                 <div className={classes.img_container}>
                     <img className={`${classes.img} ${classes.img1}`} src={img1} />
                 </div>
@@ -52,7 +52,7 @@ function SectionContent() {
                     <p className={classes.text}>Discover how embracing the cloud can lead to interconnected, intelligent and innovative supply chains.</p>
                 </div>
             </ScrollAnimation>
-            <ScrollAnimation animateIn={`${classes.section} ${classes.img2}`}>
+            <ScrollAnimation animateIn={`${classes.section} ${classes.img2}`} duration={1}>
                 <div className={classes.img_container}>
                     <img className={`${classes.img} ${classes.img2}`} src={img2} />
                 </div>
@@ -62,7 +62,7 @@ function SectionContent() {
                     <p className={classes.text}>It’s make-or-break for oil and gas companies. Reinvention leaders are showing the way.</p>
                 </div>
             </ScrollAnimation>
-            <ScrollAnimation animateIn={`${classes.section} ${classes.img3}`}>
+            <ScrollAnimation animateIn={`${classes.section} ${classes.img3}`} duration={1}>
                 <div className={classes.img_container}>
                     <img className={`${classes.img} ${classes.img3}`} src={img3} />
                 </div>
@@ -72,7 +72,7 @@ function SectionContent() {
                     <p className={classes.text}>Professionalize your approach to AI to change what’s possible for your business.</p>
                 </div>
             </ScrollAnimation>
-            <ScrollAnimation animateIn={`${classes.section} ${classes.img4}`}>
+            <ScrollAnimation animateIn={`${classes.section} ${classes.img4}`} duration={1}>
                 <div className={classes.img_container}>
                     <img className={`${classes.img} ${classes.img4}`} src={img4} />
                 </div>
@@ -81,12 +81,12 @@ function SectionContent() {
                     <span>Delivering on the promise of sustainability</span>
                     <p className={classes.text}>Learn how to create value, drive resilience and create positive change through responsible business.</p>
                 </div>
-                <ScrollAnimation animateIn={classes.button_container}>
-                    <ScrollAnimation animateIn={classes.circle}>
-                        <ScrollAnimation animateIn={classes.btn_icon}><HiOutlineArrowNarrowRight /></ScrollAnimation>
-                        <p>explore latest insights</p>
-                    </ScrollAnimation>
-                </ScrollAnimation>
+                {/*<ScrollAnimation animateIn={classes.button_container}>*/}
+                {/*    <ScrollAnimation animateIn={classes.circle}>*/}
+                {/*        <ScrollAnimation animateIn={classes.btn_icon}><HiOutlineArrowNarrowRight /></ScrollAnimation>*/}
+                {/*        <p>explore latest insights</p>*/}
+                {/*    </ScrollAnimation>*/}
+                {/*</ScrollAnimation>*/}
             </ScrollAnimation>
             {/*<div className={classes.cursor} style={{*/}
             {/*    left: `${cursorX}px`,*/}

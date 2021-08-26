@@ -8,6 +8,27 @@
     width: 100%;
 }
 
+.img_container {
+    position: relative;
+    height: 104.5%;
+}
+
+.img {
+    left: 0;
+    top: -10%;
+    width: 100%;
+    position: absolute;
+}
+
+.shadow_container {
+    opacity: 0.5;
+    background-color: #130C7B;
+    top: -10%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
 .right_btn {
     position: absolute;
     top: 50%;
@@ -20,14 +41,27 @@
 
 .down_btn {
     position: absolute;
-    top: 82%;
-    left: 46.5%;
+    top: 80%;
+    left: 47.5%;
     margin: auto;
-    color: $el-color;
-    font-size: 70px;
     cursor: pointer;
     z-index: 10;
     padding: 10px;
+    width: 57.6px;
+    height: 57.6px;
+    border-radius: 35px;
+    border: 1px solid #FFFFFF;
+    opacity: 0.5;
+    background: none;
+    transition: 0.5s ease;
+
+    .arrow {
+        width: 40px;
+        height: 35px;
+        top: 0;
+        left: -5%;
+        color: #FFFFFF;
+    }
 }
 
 .left_btn {
@@ -72,29 +106,49 @@
 .text_container {
     position: absolute;
     background: none;
-    width: 100%;
+    width: 70%;
     left: 50%;
-    top: 20%;
+    top: 40%;
+    text-align: center;
     transform: translate(-50%, -50%);
     animation: moveText 1s ease;
+
+    h1 {
+        font-size: 70px;
+        letter-spacing: 3px;
+        height: 61px;
+        color: $el-color;
+        margin-bottom: 10px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    p {
+        font-size: 20px;
+        color: $el-color;
+        margin-bottom: 10px;
+        height: 50px;
+        width: 80%;
+        left: 10%;
+        margin-top: 50px;
+        font-family: "Montserrat-Regular", sans-serif ;
+    }
 }
 
 @keyframes moveText {
-    from {top: 40%;opacity: 0}
-    to {top: 20%; opacity: 1}
+    from {top: 80%;opacity: 0}
+    to {top: 40%; opacity: 1}
 }
 
-.text_container h1 {
-    font-size: 80px;
-    color: $el-color;
-    margin-bottom: 10px;
-    font-family: "Graphik Bold", sans-serif ;
-}
-
-.text_container p {
-    font-size: 25px;
-    color: $el-color;
-    margin-bottom: 10px;
+.jobs_btn {
+    position: absolute;
+    width: 20%;
+    left: 40%;
+    top: 60%;
+    color: #FFFFFF;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .button_container {

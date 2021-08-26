@@ -19,12 +19,11 @@
 }
 
 .heading {
-    animation: animateHeading 1s ease;
-    animation-fill-mode: forwards;
+    color: #0f183f;
     position: relative;
-    margin-top: 200px;
-    font-family: "Graphik SemiBold","Arial", sans-serif;
-    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 60px;
     opacity: 1;
     width: 100%;
     line-height: 1;
@@ -35,22 +34,21 @@
     to { opacity: 1}
 }
 
-.text {
-    position: absolute;
-    margin: 10px auto;
-    font-size: 1.25rem;
-    opacity: 1;
-    font-family: "Graphik Light","Arial", sans-serif;
-    animation: animateText 0.5s ease;
-    top: 25%;
-    width: 100%;
-    animation-fill-mode: forwards;
-    line-height: 1.2;
+.border {
+    width: 150px;
+    margin: 20px auto ;
+    height: 1px;
+    background-color: #707070;
 }
 
-@keyframes animateText {
-    from { opacity: 0}
-    to { opacity: 1}
+.text {
+    margin: 10px auto;
+    font-size: 16px;
+    opacity: 1;
+    font-family: "Montserrat-Regular ", sans-serif;
+    width: 65%;
+    line-height: 1.2;
+    color: #403b3b;
 }
 
 .section {

@@ -10,16 +10,23 @@
     width: 100%;
     height: 800px;
     margin-bottom: 10px;
-    transform: translateY(10%);
 }
 
 .section {
     width: 100%;
     height: 70%;
+    padding: 10px;
     position: relative;
     border-color: #004dff;
     opacity: 1;
     overflow: hidden;
+    animation-fill-mode: forwards;
+    animation: animateImg 1s ease;
+}
+
+@keyframes animateImg {
+    from {height: 0}
+    to {height: 280px}
 }
 
 .img_container {
@@ -43,6 +50,8 @@
     margin-left: 0;
     margin-right: 40px;
     text-align: left;
+    animation-fill-mode: forwards;
+    animation: animateText 1s ease;
 
     span {
         font-family: "Graphik Light", "Arial Black", sans-serif;
@@ -58,6 +67,11 @@
         }
     }
 
+}
+
+@keyframes animateText {
+    from {opacity: 0}
+    to {height: 280px}
 }
 
 .category_title {
@@ -77,46 +91,18 @@
 
 .img1 {
     top: 0;
-    animation-fill-mode: forwards;
-    animation: animateImg1 1s ease;
 }
 
 .img2 {
     top: 7%;
-    animation-fill-mode: forwards;
-    animation: animateImg2 1s ease;
 }
 
 .img3 {
     top: 15%;
-    animation-fill-mode: forwards;
-    animation: animateImg3 1s ease;
 }
 
 .img4 {
     top: 24%;
-    animation-fill-mode: forwards;
-    animation: animateImg4 1s ease;
-}
-
-@keyframes animateImg1 {
-    from {top: -10%}
-    to {top: 0}
-}
-
-@keyframes animateImg2 {
-    from {top: 0}
-    to {top: 7%}
-}
-
-@keyframes animateImg3 {
-    from {top: 0}
-    to {top: 15%}
-}
-
-@keyframes animateImg4 {
-    from {top: 0}
-    to {top: 24%}
 }
 
 @media screen and (max-width: 900px) {

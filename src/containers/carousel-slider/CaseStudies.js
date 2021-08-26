@@ -1,24 +1,39 @@
+import React, {useEffect} from "react";
 import classes from "./CaseStudies.module.scss";
 import CarouselSlider from "./CarouselSlider";
 import { Images } from "../carousel-slider/Images";
-import {HiOutlineArrowNarrowRight} from "react-icons/all";
+import { useInView } from "react-intersection-observer";
+import {motion, useAnimation} from "framer-motion";
 
 function CaseStudies() {
+    const {ref, inView} = useInView({
+        threshold: 0.1,
+        triggerOnce: false
+    });
+
+    const animateHeading = useAnimation();
+
+    useEffect(()=> {
+        if(inView) {
+            animateHeading.start({
+                opacity: 1,
+                transition: {
+                    duration: 1.5
+                }
+            })
+        }
+        if(!inView) {
+            animateHeading.start({
+                opacity: 0,
+            })
+        }
+    })
+
     return (
-        <div className={classes.container}>
-            <div className={classes.heading}>
-                <h1>Case studies & stories</h1>
-            </div>
-            <div className={classes.text}>
-                <span>We work together across the globe to make a world of difference.</span>
-            </div>
+        <div className={classes.container} ref={ref}>
+            <motion.h1 className={classes.heading} animate={animateHeading}>Services</motion.h1>
+            <div className={classes.border}></div>
             <CarouselSlider slides={Images}/>
-            <div className={classes.button_container}>
-                <div className={classes.circle}>
-                    <div className={classes.btn_icon}><HiOutlineArrowNarrowRight /></div>
-                </div>
-                <p>see all stories</p>
-            </div>
         </div>
     );
 };

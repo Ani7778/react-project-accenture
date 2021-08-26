@@ -9,6 +9,7 @@ import VoicesOfChange from "../components/voices-of-change/VoicesOfChange";
 import Footer from "../components/footer/Footer";
 import CaseStudies from "./carousel-slider/CaseStudies";
 import ZoomImage from "../components/zoom-image-1/ZoomImage";
+import JoinTheTeam from "./video-slider/VideoSlider";
 
 function MainPage() {
     const [clickNavbar, setClickNavbar] = useState(false);
@@ -47,12 +48,10 @@ function MainPage() {
     return (
         <div className="App">
             <Navbar click={clickNavbar} openComponent={openNavbar}/>
-            {/*<ProgressNavbar />*/}
-            <VideoSlider slides={Slides} currentSlide={current} next={nextSlide} prev={prevSlide} choose={chooseSlide}/>
-            <BuiltForChange />
-            <VoicesOfChange />
-            <ZoomImage />
+            <JoinTheTeam slides={Slides} currentSlide={current} next={nextSlide} prev={prevSlide} choose={chooseSlide}/>
             <CaseStudies slides={Images}/>
+            <ZoomImage />
+            <VoicesOfChange />
             <Footer />
         </div>
     );

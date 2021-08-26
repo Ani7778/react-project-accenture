@@ -1,7 +1,7 @@
 @import "../MenuItemsVariables";
 
 .container {
-    width: 150%;
+    width: 103.2%;
     height: 400px;
     border-top: $subject-border-bottom;
     box-shadow: $top-shadow;
@@ -13,8 +13,8 @@
     overflow: hidden;
     position: absolute;
     z-index: 999;
-    top: 50px;
-    left: -15%;
+    top: 60px;
+    left: -30px;
 }
 
 .none {

@@ -43,11 +43,6 @@ function ProgressNavbar() {
     return (
         <div id="progress-navbar" className={classes.container}>
             <div className={classes.scrolled} ref={ref}></div>
-            <div className={scrolled ? classes.animatedIcon: classes.icon}><HiArrowNarrowRight /></div>
-            <span>Ideas that make an impact</span>
-            <span>Join us and do extraordinary things</span>
-            <span>Case studies & stories</span>
-            <span>Leading through change</span>
         </div>
     );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, {useState, useCallback, useEffect, useRef} from "react";
 import classes from "./Navbar.module.scss";
 import  MenuItems  from "./MenuItems";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
@@ -15,6 +15,28 @@ const handler = () => {
 };
 
 function Navbar({click, openComponent}) {
+    const [header, setHeader] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener("scroll", handler);
+        return () => {
+            window.removeEventListener("scroll", handler);
+        };
+    }, [header]);
+
+    const [scrolled, setScrolled] = useState(false);
+    const ref = useRef();
+
+    const pageHeight = 3500;
+    console.log(pageHeight);
+
+    const scrollProgressNavbar = () => {
+        ref.current.style.width = window.pageYOffset / pageHeight * 100 + "%";
+        setScrolled(true)
+    }
+
+    window.addEventListener("scroll", scrollProgressNavbar);
+
     const [navbar, setHeaderText] = useState(false);
 
     useEffect(() => {
@@ -27,7 +49,7 @@ function Navbar({click, openComponent}) {
 
     return (
         <div id="navbar" className={classes.navbar_items}>
-            <img className={classes.img} alt="logo" src="https://www.accenture.com/t20180820T081710Z__w__/us-en/_acnmedia/Accenture/Dev/Redesign/Acc_Logo_Black_Purple_RGB.png" />
+            <div className={classes.scrolled} ref={ref}></div>
             <div className={classes.menu_icon} onClick={openComponent} >
                 <FontAwesomeIcon icon={click ? faTimes : faBars} />
             </div>
