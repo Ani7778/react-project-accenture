@@ -28,6 +28,7 @@ function ZoomImage() {
                 top: "405%",
                 x: -600,
                 transition: {
+                    ease: [0.1, 0, 0.5, 0.1],
                     duration: 1.5
                 }
             })
@@ -44,6 +45,7 @@ function ZoomImage() {
                 scale: 1.08,
                 translateY: "8.5%",
                 transition: {
+                    ease: [0.5, 0, 0.5, 0.5],
                     duration: 1.5,
                     delay: 0.3
                 }

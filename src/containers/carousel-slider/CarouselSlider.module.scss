@@ -13,11 +13,11 @@ $btn_heading_color: #0477e8;
 }
 .section_container {
     width: 100%;
-    position: relative;
 }
 
 .row {
     width: 100%;
+    height: 1000px;
     margin: 0 auto;
     padding-top: 1.25em;
     padding-bottom: 1.25em;
@@ -29,22 +29,21 @@ $btn_heading_color: #0477e8;
 }
 
 .carousel {
-    position: relative;
     width: 100%;
 
     .container {
-        height: 600px;
-        width: 420px;
+        height: 500px;
+        width: 450px;
         position: relative;
         perspective: 1450px;
         margin: 60px auto;
+
 
         &:before {
             content: " ";
             display: block;
             background: #FFFFFF;
-            width: 84%;
-            height: 100%;
+            width: 100%;
             position: absolute;
             top: -4%;
             left: 10%;
@@ -54,8 +53,7 @@ $btn_heading_color: #0477e8;
 }
 
 .zoom {
-    overflow: hidden;
-    height: 650px;
+    width: 100%;
 }
 
 .images {
@@ -66,13 +64,13 @@ $btn_heading_color: #0477e8;
 
     div {
         overflow: hidden;
-        margin-left: 13%;
-        left: 2.3%;
+        //margin-left: 13%;
         padding: 0;
         display: block;
         position: absolute;
-        width: 310px;
-        height: 300px;
+        left: 13%;
+        width: 320px;
+        height: 370px;
         background: none;
         text-align: center;
         backface-visibility: hidden;
@@ -133,50 +131,28 @@ $btn_heading_color: #0477e8;
 .img_container_18 {
     transform: rotateY(-340deg) translateZ(-972px);
 }
-.images .img_container img {
-    transition: transform 0.6s ease;
-    animation: animateImg 0.4s ease;
-    animation-fill-mode: forwards;
 
-    &:hover {
-        transform: scale(1.2);
-        cursor: pointer;
+.images .img_container  {
+    img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s ease;
+
+        &:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
     }
-}
-.carousel_img {
-    width: 100%;
-}
-
-@keyframes animateImg {
-    from {height: 0}
-    to {height: 350px}
-}
-
-.img {
-    height: 100%;
-    width: 320px;
-    margin: 0px;
-    transition: 0.4s ease;
-    animation: img 1s ease;
-    position: absolute;
-    background: #000;
-    line-height: 200px;
-    text-align: center;
-    color: #FFF;
-    opacity: 1;
-    top: 20%;
-    left: 0;
-
 }
 
 .text {
     margin: 40px auto;
     text-align: left;
-    top: 50%;
-    width: 80%;
+    top: 80%;
+    width: 90%;
     height: 260px;
     padding: 20px;
-    left: 0.7%;
+    left: 2.7%;
     animation: animateText 1.5s ease ;
 
 
@@ -216,26 +192,16 @@ $btn_heading_color: #0477e8;
 }
 
 .next_btn {
-    position: relative;
-    left: 100%;
+    position: absolute;
+    right: -15%;
+    top: 90%;
     color: $btn_heading_color;
-    font-size: 45px;
+    font-size: 48px;
     cursor: pointer;
     z-index: 10;
-    width: 57.6px;
-    height: 57.6px;
-    border-radius: 35px;
     padding: 10px;
-    border: 1px solid $btn_heading_color;
     background-color: white;
     transition: 0.5s ease;
-
-    .arrow {
-        width: 40px;
-        height: 35px;
-        top: -20%;
-        color: #0477e8;
-    }
 
     &:hover {
         transform: scale(1.2);
@@ -243,29 +209,131 @@ $btn_heading_color: #0477e8;
 }
 
 .prev_btn {
-    width: 57.6px;
-    height: 57.6px;
-    left: -10%;
-    border-radius: 35px;
-    border: 1px solid $btn_heading_color;
+    left: -15%;
     background-color: white;
-    position: relative;
-    top: 10%;
+    position: absolute;
+    top: 90%;
     padding: 10px;
     color: $btn_heading_color;
-    font-size: 45px;
+    font-size: 48px;
     cursor: pointer;
     z-index: 10;
     transition: 0.5s ease;
 
-    .arrow {
-        width: 40px;
-        height: 35px;
-        top: -20%;
-        color: #0477e8;
-    }
-
     &:hover {
         transform: scale(1.2);
     }
+}
+
+@media screen and (max-width: 1500px) {
+    .images {
+        div {
+            height: 310px;
+        }
+    }
+
+    .text {
+        margin: 40px auto;
+        text-align: left;
+        top: 65%;
+        width: 80%;
+        height: 260px;
+        padding: 20px;
+        left: 1%;
+        animation: animateText 1.5s ease;
+    }
+
+    .prev_btn, .next_btn {
+        top: 70%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .container {
+        height: 600px;
+    }
+
+    .img_container_1 {
+        transform: rotateY(0deg) translateZ(-972px);
+    }
+    .img_container_2 {
+        transform: rotateY(-17deg) translateZ(-972px);
+    }
+    .img_container_3 {
+        transform: rotateY(-34deg) translateZ(-972px);
+    }
+    .img_container_4 {
+        transform: rotateY(-51deg) translateZ(-972px);
+    }
+    .img_container_5 {
+        transform: rotateY(-68deg) translateZ(-972px);
+    }
+    .img_container_6 {
+        transform: rotateY(-85deg) translateZ(-972px);
+    }
+    .img_container_7 {
+        transform: rotateY(-102deg) translateZ(-972px);
+    }
+    .img_container_8 {
+        transform: rotateY(-119deg) translateZ(-972px);
+    }
+    .img_container_9 {
+        transform: rotateY(-136deg) translateZ(-972px);
+    }
+    .img_container_10 {
+        transform: rotateY(-153deg) translateZ(-972px);
+    }
+    .img_container_11 {
+        transform: rotateY(-170deg) translateZ(-972px);
+    }
+    .img_container_12 {
+        transform: rotateY(-187deg) translateZ(-972px);
+    }
+    .img_container_13 {
+        transform: rotateY(-204deg) translateZ(-972px);
+    }
+    .img_container_14 {
+        transform: rotateY(-221deg) translateZ(-972px);
+    }
+    .img_container_15 {
+        transform: rotateY(-238deg) translateZ(-972px);
+    }
+    .img_container_16 {
+        transform: rotateY(-255deg) translateZ(-972px);
+    }
+    .img_container_17 {
+        transform: rotateY(-272deg) translateZ(-972px);
+    }
+    .img_container_18 {
+        transform: rotateY(-281deg) translateZ(-972px);
+    }
+
+
+    .images {
+        div {
+            overflow: hidden;
+            left: 15%;
+            width: 280px;
+            height: 270px;
+
+        }
+    }
+    .text {
+        margin: 40px auto;
+        text-align: left;
+        top: 65%;
+        width: 80%;
+        height: 260px;
+        padding: 20px;
+        left: 1%;
+        animation: animateText 1.5s ease;
+    }
+
+    .prev_btn {
+        top: 15%;
+    }
+    .next_btn {
+        top: 5%;
+    }
+
 }

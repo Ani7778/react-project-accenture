@@ -42,7 +42,7 @@ function SectionContent() {
 
     return (
         <div className={classes.container}>
-            <ScrollAnimation animateIn={`${classes.section} ${classes.img1}`} duration={1}>
+            <ScrollAnimation animateIn={`${classes.section} ${classes.img1}`} duration={3}>
                 <div className={classes.img_container}>
                     <img className={`${classes.img} ${classes.img1}`} src={img1} />
                 </div>
@@ -52,7 +52,7 @@ function SectionContent() {
                     <p className={classes.text}>Discover how embracing the cloud can lead to interconnected, intelligent and innovative supply chains.</p>
                 </div>
             </ScrollAnimation>
-            <ScrollAnimation animateIn={`${classes.section} ${classes.img2}`} duration={1}>
+            <ScrollAnimation animateIn={`${classes.section} ${classes.img2}`} duration={3}>
                 <div className={classes.img_container}>
                     <img className={`${classes.img} ${classes.img2}`} src={img2} />
                 </div>
@@ -62,7 +62,7 @@ function SectionContent() {
                     <p className={classes.text}>It’s make-or-break for oil and gas companies. Reinvention leaders are showing the way.</p>
                 </div>
             </ScrollAnimation>
-            <ScrollAnimation animateIn={`${classes.section} ${classes.img3}`} duration={1}>
+            <ScrollAnimation animateIn={`${classes.section} ${classes.img3}`} duration={3}>
                 <div className={classes.img_container}>
                     <img className={`${classes.img} ${classes.img3}`} src={img3} />
                 </div>
@@ -72,7 +72,7 @@ function SectionContent() {
                     <p className={classes.text}>Professionalize your approach to AI to change what’s possible for your business.</p>
                 </div>
             </ScrollAnimation>
-            <ScrollAnimation animateIn={`${classes.section} ${classes.img4}`} duration={1}>
+            <ScrollAnimation animateIn={`${classes.section} ${classes.img4}`} duration={3}>
                 <div className={classes.img_container}>
                     <img className={`${classes.img} ${classes.img4}`} src={img4} />
                 </div>

@@ -1,32 +1,25 @@
 @import "VideoSliderVariables";
 
+
 .container {
     position: relative;
     text-align: center;
     justify-content: center;
-    height: 800px;
-    width: 100%;
-}
-
-.img_container {
-    position: relative;
-    height: 104.5%;
 }
 
 .img {
-    left: 0;
-    top: -10%;
     width: 100%;
-    position: absolute;
+    display: block;
 }
 
 .shadow_container {
     opacity: 0.5;
     background-color: #130C7B;
-    top: -10%;
-    width: 100%;
-    height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .right_btn {
@@ -61,6 +54,10 @@
         top: 0;
         left: -5%;
         color: #FFFFFF;
+    }
+
+    &:hover {
+        transform: scale(1.15);
     }
 }
 
@@ -151,83 +148,7 @@
     cursor: pointer;
 }
 
-.button_container {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    background: none;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    animation: moveIconContainer 1s ease;
-    animation-fill-mode: forwards;
-    cursor: pointer;
-}
 
-@keyframes moveIconContainer {
-    from {top: 50%;opacity: 0}
-    to {top: 45%; opacity: 1}
-}
-
-.button_container p {
-    margin-left: 70px;
-    margin-right: 25px;
-    color: $el-color;
-    font-size: 19px;
-    transform: translateY(30%);
-    animation: message 1s ease;
-    animation-fill-mode: forwards;
-    animation-delay: 1.5s;
-    cursor: pointer;
-    opacity: 0;
-    font-family: "Graphik Medium","Arial", sans-serif;
-    line-height: 1.25;
-}
-
-@keyframes message {
-    0% {opacity: 0}
-    100% {opacity: 1}
-}
-
-.button_container:hover .circle {
-    width: 100%;
-    border-radius: 30px;
-}
-
-.circle {
-    position: absolute;
-    background: none;
-    border: 1.5px solid $el-color;
-    border-radius: 30px;
-    width: 37px;
-    height: 37px;
-    z-index: 1;
-    transition-duration: 1s;
-    animation: circle 1s ease;
-    animation-delay: 0.3s;
-}
-
-@keyframes circle {
-    from {height: 0;opacity: 0}
-    to {height: 37px; opacity: 1}
-}
-
-.icon {
-    display: flex;
-    position: absolute;
-    font-size: 35px;
-    color: $el-color;
-    transform: translate(42%, 0);
-    animation: icon 1s ease;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    opacity: 0;
-}
-
-@keyframes icon {
-    from {left: -50%; opacity: 0}
-    to {left: 5%; opacity: 1}
-}
 
 @media screen and (max-width: 1100px) {
     .container {

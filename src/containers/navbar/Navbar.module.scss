@@ -9,9 +9,10 @@
 .navbar_items {
     background-color: #fff;
     text-align: center;
-    //margin-right: 0;
     padding: 10px 20px;
     z-index: 999;
+    width: 100%;
+    position: fixed;
 }
 
 .container {
@@ -45,10 +46,11 @@
     background-color: #0399EE;
     position: absolute;
     opacity: 1;
-    animation: 5s ease;
+    animation: 2s ease;
     top: 0;
     left: 0;
     height: 6px;
+    transition: 1s cubic-bezier(0.1, 1, 0.5, 1);
 }
 
 .nav_menu {
@@ -83,15 +85,13 @@
 }
 
 .nav_links {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 20px;
+    line-height: 15px;
     width: 69px;
     height: 15px;
     cursor: pointer;
-    padding-top: .143em;
-    margin-bottom: 30px;
-    vertical-align: middle;
-    transform: translateY(10%);
+    top: 20%;
+    vertical-align: center;
     color: #0f183f;
     font-family: 'Montserrat', sans-serif;
 

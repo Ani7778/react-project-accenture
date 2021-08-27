@@ -5,27 +5,27 @@ import { Link } from "react-scroll";
 import team from "../../images/team.png";
 import btn from "../../images/view-jobs-btn.png"
 
-const JoinTheTeam = ({ slides, currentSlide, next, prev, choose }) => {
+const JoinTheTeam = () => {
     return (
         <div className={classes.container} >
-            <div className={classes.down_btn}>
-                <Link
-                    to="voices"
-                    spy={true}
-                    smooth={true}
-                    offset={-60}
-                    duration={500}
-                ><HiArrowDown  className={classes.arrow}/>
-                </Link>
-            </div>
-            <div className={classes.img_container}>
-                <img src={team} className={classes.img}/>
-                <div className={classes.shadow_container}></div>
+            <img src={team} className={classes.img}/>
+            <div className={classes.shadow_container}></div>
+            <div style={{position: 'absolute', left: 0, right: 0, top: 0, bottom: 0}}>
                 <div className={classes.text_container}>
                     <h1>Join The Team</h1>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                 </div>
+                </div>
                 <img src={btn} className={classes.jobs_btn}/>
+                <div className={classes.down_btn}>
+                    <Link
+                        to="voices"
+                        spy={true}
+                        smooth={true}
+                        offset={-60}
+                        duration={500}
+                    ><HiArrowDown  className={classes.arrow}/>
+                    </Link>
+                </div>
             </div>
         </div>
     )

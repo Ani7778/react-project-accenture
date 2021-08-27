@@ -1,15 +1,12 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useCallback, useRef, useState} from "react";
 import Navbar from "./navbar/Navbar";
-import ProgressNavbar from "../components/progress-navbar/ProgressNavbar";
-import VideoSlider from "./video-slider/VideoSlider";
-import { Slides } from "./video-slider/Videos";
 import { Images } from "./carousel-slider/Images";
-import BuiltForChange from "../components/built-for-change/BuiltForChange";
 import VoicesOfChange from "../components/voices-of-change/VoicesOfChange";
 import Footer from "../components/footer/Footer";
 import CaseStudies from "./carousel-slider/CaseStudies";
 import ZoomImage from "../components/zoom-image-1/ZoomImage";
 import JoinTheTeam from "./video-slider/VideoSlider";
+import classes from "./carousel-slider/CarouselSlider.module.scss";
 
 function MainPage() {
     const [clickNavbar, setClickNavbar] = useState(false);
@@ -18,42 +15,50 @@ function MainPage() {
         clickNavbar ? setClickNavbar(false) : setClickNavbar(true);
     },[clickNavbar]);
 
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const length = Images.length;
 
-    const [current, setCurrent] = useState(0);
-    const length = Slides.length;
+    const carousel = document.getElementsByClassName(classes.images);
+    let currentDegree = useRef(0);
+    const media1100 = window.matchMedia('(max-width: 1100px)');
 
-    const nextSlide = () => {
-        setCurrent(current === length - 1 ? 0 : current + 1);
+    const nextSlide = ()=> {
+        if (media1100.matches) {
+            currentDegree.current += 17;
+        } else {
+            currentDegree.current += 20;
+        }
+        carousel[0].style.transform = "translateZ(972px)";
+        carousel[0].style.transform += "rotateY("+ currentDegree.current +"deg)";
+        setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide + 1);
     }
 
-    const prevSlide = () => {
-        setCurrent(current === 0 ? length - 1 : current - 1);
+    const prevSlide = ()=> {
+        if (media1100.matches) {
+            currentDegree.current += -17;
+            console.log("17");
+        } else {
+            currentDegree.current += -20;
+            console.log("20");
+        }
+        carousel[0].style.transform = "translateZ(972px)";
+        carousel[0].style.transform += "rotateY("+ currentDegree.current +"deg)";
+        setCurrentSlide(currentSlide === 0 ? length - 1 : currentSlide - 1);
     }
 
     const chooseSlide = index => {
-        setCurrent(index);
+        setCurrentSlide(index);
     }
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrent((prev) => {
-                return prev + 1 === Slides.length ? 0 : prev + 1;
-            });
-        }, 5000);
-        return () => {
-            clearInterval(interval);
-        };
-    }, []);
-
     return (
-        <div className="App">
+        <>
             <Navbar click={clickNavbar} openComponent={openNavbar}/>
-            <JoinTheTeam slides={Slides} currentSlide={current} next={nextSlide} prev={prevSlide} choose={chooseSlide}/>
-            <CaseStudies slides={Images}/>
+            <JoinTheTeam />
+            <CaseStudies slides={Images} next={nextSlide} prev={prevSlide} choose={chooseSlide} current={currentSlide}/>
             <ZoomImage />
             <VoicesOfChange />
             <Footer />
-        </div>
+        </>
     );
 }
 

@@ -39,22 +39,6 @@
     background-image: linear-gradient(to right bottom, #0b95ff, #987bff);
 }
 
-//
-//@keyframes animate_logo {
-//    from {
-//        opacity: 0.5;
-//        transform: scale(0) rotate(-30deg);
-//        top: 0
-//    }
-//    to {
-//        opacity: 0.8;
-//        transform: scale(5) rotate(-5deg) translate(-10%, 20.5%);
-//        width: 400px;
-//        height: 400px;
-//        top: 50%
-//    }
-//}
-
 .container_from_img {
     background-color: rgba(28, 162, 157, 0.7);
     height: 150px;
@@ -68,24 +52,6 @@
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
 }
-
-//@keyframes animate_container_from_img {
-//    from {
-//        opacity: 0;
-//        height: 0;
-//        background-color: rgba(28, 162, 157, 0.5);
-//        z-index: -1;
-//    }
-//    to {
-//        opacity: 1;
-//        height: 550px;
-//        width: 100%;
-//        transform: perspective(800px) rotateY(16deg) skewY(6deg) scale(1) translateY(5.5%);
-//        left: 10.6%;
-//        background-color: rgba(28, 162, 157, 0.7);
-//        z-index: -1;
-//    }
-//}
 
 .text_container {
     background: none;
@@ -220,5 +186,10 @@
 @keyframes icon {
     from {left: -50%; opacity: 0}
     to {left: 5%; opacity: 1}
+}
+
+
+@media screen and (max-width: 1500px) {
+
 }
 
