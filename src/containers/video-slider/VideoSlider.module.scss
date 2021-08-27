@@ -1,35 +1,38 @@
 @import "VideoSliderVariables";
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 .container {
     position: relative;
-    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
+    align-items: center;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: #130C7B;
+        opacity: 0.5;
+        z-index: 1;
+    }
 }
 
 .img {
     width: 100%;
-    display: block;
-}
-
-.shadow_container {
-    opacity: 0.5;
-    background-color: #130C7B;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.right_btn {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    color: $el-color;
-    font-size: 80px;
-    cursor: pointer;
-    z-index: 10;
+    height: 100%;
 }
 
 .down_btn {
@@ -38,7 +41,7 @@
     left: 47.5%;
     margin: auto;
     cursor: pointer;
-    z-index: 10;
+    z-index: 2;
     padding: 10px;
     width: 57.6px;
     height: 57.6px;
@@ -61,51 +64,13 @@
     }
 }
 
-.left_btn {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    color: $el-color;
-    font-size: 80px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.slide {
-    opacity: 0;
-    transition-duration: 1s ;
-    position: absolute;
-}
-
-.slide.active {
-    opacity: 1;
-    transition-duration: 1s;
-    transform: scale(1);
-}
-
-.dot {
-    cursor: pointer;
-    height: 11px;
-    width: 11px;
-    margin: 0 7px;
-    background: none;
-    border: 1px $el-color solid;
-    border-radius: 50%;
-    display: inline-block;
-    transition:  0.6s ease;
-    transform: translate(0, -900%);
-}
-
-.active, .dot:hover {
-    background-color: $el-color;
-}
-
 .text_container {
     position: absolute;
     background: none;
     width: 70%;
     left: 50%;
     top: 40%;
+    z-index: 2;
     text-align: center;
     transform: translate(-50%, -50%);
     animation: moveText 1s ease;
@@ -146,49 +111,39 @@
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
+    z-index: 2;
 }
-
-
 
 @media screen and (max-width: 1100px) {
     .container {
         height: 600px;
     }
 
-    .left_btn, .right_btn {
-        top: 40%;
-        font-size: 70px;
-    }
-
     .text_container {
         left: 50%;
-        top: 20%;
+        top: 40%;
     }
 
     .text_container h1 {
         font-size: 60px;
     }
-
-    .button_container {
-        left: 50%;
-        top: 50%;
-    }
 }
 
 @media screen and (max-width: 900px) {
-    .left_btn, .right_btn {
-        top: 20%;
-        font-size: 60px;
+    .container {
+        overflow: hidden;
+
+        &:before {
+            top: 40px;
+        }
     }
 
-    .container {
-        margin-top: 15px;
-        height: 450px;
+    .img {
+        padding-top: 40px;
     }
 
     .text_container {
         left: 50%;
-        top: 20%;
         transform: translate(-50%, -50%);
     }
 
@@ -201,40 +156,73 @@
         font-size: 20px;
     }
 
-    .button_container {
-        left: 50%;
-        top: 50%;
+    .jobs_btn {
+        width: 200px;
+        left: 35%;
     }
 
-    .button_container p {
-        margin-left: 70px;
-        color: $el-color;
-        font-size: 16px;
-        transform: translateY(50%);
-    }
-
-    .button_container:hover .circle {
-        width: 100%;
-        border-radius: 30px;
+    .down_btn  {
+        left: 45%;
     }
 }
 
 @media screen and (max-width: 700px) {
     .container {
-        height: 400px;
+        height: 500px;
+    }
+    .text_container h1 {
+        font-size: 30px;
+        height: 30px;
+    }
+
+    .text_container p {
+        font-size: 18px;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .container {
-        height: 350px;
+    .text_container h1 {
+        font-size: 30px;
+        height: 30px;
+    }
+
+    .text_container p {
+        font-size: 17px;
+    }
+
+    .jobs_btn {
+        left: 32%;
+    }
+
+    .down_btn {
+
     }
 }
 
 @media screen and (max-width: 500px) {
     .container {
-        height: 300px;
+        height: 400px;
     }
+
+    .jobs_btn {
+        left: 30%;
+        top: 62%;
+        width: 200px;
+    }
+
+    .down_btn {
+        width: 45.6px;
+        height: 45.6px;
+
+        .arrow {
+            width: 30px;
+            height: 30px;
+            top: 0;
+            left: -7%;
+        }
+    }
+
+
 }
 
 @media screen and (max-width: 400px) {

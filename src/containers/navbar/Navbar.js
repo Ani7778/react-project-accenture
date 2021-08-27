@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useEffect, useRef} from "react";
+import React, {useRef} from "react";
 import classes from "./Navbar.module.scss";
 import  MenuItems  from "./MenuItems";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";

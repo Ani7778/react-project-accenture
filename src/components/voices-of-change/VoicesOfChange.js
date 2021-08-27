@@ -13,6 +13,7 @@ function VoicesOfChange() {
 
     const animateHeading = useAnimation();
     const animateText = useAnimation();
+    const animateBorder = useAnimation();
 
     useEffect(()=> {
         if(inView) {
@@ -29,6 +30,12 @@ function VoicesOfChange() {
                     duration: 1.5
                 }
             })
+            animateBorder.start({
+                opacity: 1,
+                transition: {
+                    duration: 1.5
+                }
+            })
         }
         if(!inView) {
             animateHeading.start({
@@ -38,12 +45,15 @@ function VoicesOfChange() {
             animateText.start({
                 opacity: 0,
             })
+            animateBorder.start({
+                opacity: 0,
+            })
         }
     })
     return (
         <div className={classes.container} id="voices" ref={ref}>
             <motion.h1 className={classes.heading} animate={animateHeading}>Case studies</motion.h1>
-            <div className={classes.border}></div>
+            <motion.div className={classes.border} animate={animateBorder}></motion.div>
             <div className={classes.text} >
                 <motion.span animate={animateText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</motion.span>
             </div>

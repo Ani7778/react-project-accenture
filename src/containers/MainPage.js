@@ -23,24 +23,24 @@ function MainPage() {
     const media1100 = window.matchMedia('(max-width: 1100px)');
 
     const nextSlide = ()=> {
-        if (media1100.matches) {
-            currentDegree.current += 17;
-        } else {
+        // if (media1100.matches) {
+        //     currentDegree.current += 17;
+        // } else {
             currentDegree.current += 20;
-        }
+        //}
         carousel[0].style.transform = "translateZ(972px)";
         carousel[0].style.transform += "rotateY("+ currentDegree.current +"deg)";
         setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide + 1);
     }
 
     const prevSlide = ()=> {
-        if (media1100.matches) {
-            currentDegree.current += -17;
-            console.log("17");
-        } else {
+        // if (media1100.matches) {
+        //     currentDegree.current += -17;
+        //     console.log("17");
+        // } else {
             currentDegree.current += -20;
             console.log("20");
-        }
+        //}
         carousel[0].style.transform = "translateZ(972px)";
         carousel[0].style.transform += "rotateY("+ currentDegree.current +"deg)";
         setCurrentSlide(currentSlide === 0 ? length - 1 : currentSlide - 1);

@@ -6,7 +6,7 @@ import NextButton from "./NextButton";
 function ImageCarousel({slides, prev, next, choose, current}) {
     return (
         <>
-        <div className={`${classes.section_container} ${classes.section_container_8}`}>
+        <div className={classes.section_container}>
             <div className={classes.row}>
                 <div className={classes.carousel}>
                     <div className={classes.zoom}>

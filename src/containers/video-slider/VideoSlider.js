@@ -9,8 +9,7 @@ const JoinTheTeam = () => {
     return (
         <div className={classes.container} >
             <img src={team} className={classes.img}/>
-            <div className={classes.shadow_container}></div>
-            <div style={{position: 'absolute', left: 0, right: 0, top: 0, bottom: 0}}>
+            {/*<div className={classes.shadow_container}></div>*/}
                 <div className={classes.text_container}>
                     <h1>Join The Team</h1>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
@@ -26,7 +25,6 @@ const JoinTheTeam = () => {
                     ><HiArrowDown  className={classes.arrow}/>
                     </Link>
                 </div>
-            </div>
         </div>
     )
 }
