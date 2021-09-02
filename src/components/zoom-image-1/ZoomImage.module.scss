@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 580px;
+    background-color: white;
+    margin-bottom: 100px;
+    position: relative;
+    transform: skewY(-6deg);
+}
+
+.logo_container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    /*transform: skewY(-6deg);*/
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    top: 5%;
+    //animation: animate_logo ease;
+    //animation-fill-mode: forwards;
+    position: absolute;
+    transform: scale(0) rotate(-5deg);
+}
+
+.animated {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    opacity: 0;
+    background-image: linear-gradient(to right bottom, #0b95ff, #987bff);
+}
+
+.container_from_img {
+    background-color: rgba(28, 162, 157, 0.7);
+    height: 150px;
+    opacity: 0;
+    transform: skewY(6deg);
+    position: absolute;
+    perspective: 800px;
+    width: 200px;
+    left: 40%;
+    //animation: animate_container_from_img ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.text_container {
+    background: none;
+    top: 10%;
+    width: 80%;
+    height: 100%;
+    margin: 100px auto;
+    color: #ffffff;
+    z-index: 1;
+    opacity: 0;
+    transform: skewY(6deg);
+    animation-fill-mode: forwards;
+    position: relative;
+
+    .text {
+        width: 50%;
+        margin: auto;
+
+        h1 {
+            font-size: 60px;
+            letter-spacing: 2px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        p {
+            font-family: "Graphik Light","Arial", sans-serif;
+            margin: 20px;
+            font-size: 18px;
+            line-height: 25px;
+            text-align: center;
+        }
+    }
+}
+
+.border {
+    width: 150px;
+    margin: 7px auto;
+    border-bottom: solid 2px rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
+@keyframes animate_text_container {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.job_posting_container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.removedInSmallScreen {
+    opacity: 1;
+    display: block;
+}
+
+
+.button_container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: none;
+    margin: auto;
+    top: 5%;
+    grid-column:  1 / span 2;
+    width: 18%;
+    cursor: pointer;
+}
+
+@keyframes click {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.button_container p {
+    margin-left: 40px;
+    margin-right: 25px;
+    line-height: 40px;
+    color: #FFFFFF;
+    font-family: "Graphik SemiBold","Arial", sans-serif;
+    font-size: 17px;
+}
+
+@keyframes message {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.button_container:hover .circle {
+    width: 90%;
+    border-radius: 30px;
+}
+
+.circle {
+    position: absolute;
+    background: none;
+    border: 1.5px solid #FFFFFF;
+    border-radius: 30px;
+    width: 35px;
+    height: 35px;
+    z-index: 1;
+    animation: circle 0.3s ease;
+    transition: width 0.5s;
+}
+
+.circle p {
+    font-family: "Graphik Medium","Arial", sans-serif;
+    color: #FFFFFF;
+}
+
+@keyframes circle {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.btn_icon {
+    display: flex;
+    position: absolute;
+    font-size: 28px;
+    color: #FFFFFF;
+    transform: translate(0, 5%);
+    animation: icon 0.3s ease;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes icon {
+    from {left: -50%; opacity: 0}
+    to {left: 5%; opacity: 1}
+}
+
+@media screen and (min-width: 1200px) {
+    .button_container {
+        width: 18%;
+
+        p {
+            margin-left: 60px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .text_container {
+        top: 10%;
+
+        .text {
+            h1 {
+                font-size: 40px;
+                letter-spacing: 2px;
+                font-family: 'Montserrat', sans-serif;
+            }
+            p {
+                font-size: 15px;
+            }
+
+        }
+    }
+    .job_posting_container {
+        width: 100%;
+    }
+
+    .button_container {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .text_container {
+        width: 95%;
+    }
+    .button_container {
+        width: 25%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .job_posting_container {
+        display: grid;
+        grid-template-columns: auto auto ;
+        grid-gap: 20px;
+        width: 80%;
+        margin: auto;
+
+        .removedInSmallScreen {
+            display: none;
+        }
+    }
+
+    .text_container {
+        .text {
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .job_posting_container {
+        width: 100%;
+    }
+
+    .text_container {
+        .text {
+            width: 90%;
+            h1 {
+                font-size: 30px;
+            }
+            p {
+                font-size: 15px;
+            }
+
+        }
+    }
+
+    .button_container {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .button_container {
+        width: 40%;
+        margin: auto;
+    }
+
+    .job_posting_container {
+        grid-gap: 5px;
+        margin: auto;
+    }
+}
+
+
