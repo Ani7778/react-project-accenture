@@ -1,93 +1,36 @@
-.App {
-  text-align: center;
-}
+.keen-slider {
+    top: 10%;
+    height: 200px;
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    .keen-slider__slide  {
+        width: 100%;
+        min-height: 200px;
+        padding: 5px;
 
-.swiper-container {
-  height: 370px;
-  width: 100%;
-
-  .swiper-slide div {
-    height: 280px;
-    width: 320px;
-  }
-
-  //.swiper-slide-active  img {
-  //    transform: scale(0.92);
-  //}
-  //.swiper-slide-prev  img {
-  //  transform: skewY(3deg);
-  //}
-  //.swiper-slide-next  img {
-  //  transform: skewY(-3deg);
-  //}
-
-
-
-}
-//
-//.swiper-slide .swiper-slide-duplicate .swiper-slide-prev {
-//  width: 300px;
-//  left: 25%;
-//}
-
-//.swiper-slide-active img {
-//  transform: scale(0.85);
-//}
-
-.slick-active {
-  transform: skewY(6deg);
-  transform-origin: 0 100% 0;
-  //transition: all 0.1s ease 0s;
-
-  img {
-    height: 100%;
-
-    &:hover {
-      transform:  scale(1.15)  translate(-7%, 7%);
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
     }
-  }
 }
 
-.slick-active + .slick-active {
-  background-color: #01010114;
-  //transform: skewY(0deg);
-  transform: translateZ(972px) rotateY(2180deg);
-
-  div {
-    height: 320px;
-    transform: translateY(3.5%);
-  }
-  img {
-    height: 100%;
-
-
-    &:hover {
-      transform:  scale(1.05) skewY(0deg) translate(0, 3%);
+@media screen and (max-width: 720px) {
+    .keen-slider {
+        top: 10%;
+        height: 250px;
     }
-  }
 }
 
-.slick-active + .slick-active + .slick-active {
-  background: none;
-  transform: skewY(-6deg);
-  transform-origin:  100% 0 0;
+@media screen and (max-width: 500px) {
+    .keen-slider {
+        top: 5%;
+        height: 160px;
 
-  div {
-    height: 330px;
-    transform: translateY(0);
-  }
-
-  img {
-    height: 100%;
-
-    &:hover {
-      transform:  scale(1.15) translate(7%, 7%);
+        .keen-slider__slide {
+            width: 100%;
+            min-height: 160px;
+            padding: 3px;
+        }
     }
-  }
+
 }

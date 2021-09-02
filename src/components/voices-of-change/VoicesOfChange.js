@@ -5,7 +5,7 @@ import SectionContent from "./section-content/SectionContent";
 import {useInView} from "react-intersection-observer";
 import {motion, useAnimation} from "framer-motion";
 
-function VoicesOfChange() {
+function VoicesOfChange({images}) {
     const {ref, inView} = useInView({
         threshold: 0.1,
         triggerOnce: false
@@ -19,7 +19,6 @@ function VoicesOfChange() {
         if(inView) {
             animateHeading.start({
                 opacity: 1,
-                top: 0,
                 transition: {
                     duration: 1.5
                 }
@@ -39,7 +38,6 @@ function VoicesOfChange() {
         }
         if(!inView) {
             animateHeading.start({
-                top: '10%',
                 opacity: 0,
             })
             animateText.start({
@@ -58,7 +56,7 @@ function VoicesOfChange() {
                 <motion.span animate={animateText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</motion.span>
             </div>
             <ScrollAnimation animateIn={classes.section}>
-                <SectionContent />
+                <SectionContent images={images}/>
             </ScrollAnimation>
         </div>
     );

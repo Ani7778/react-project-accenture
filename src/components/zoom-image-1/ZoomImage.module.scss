@@ -73,6 +73,7 @@
         h1 {
             font-size: 60px;
             letter-spacing: 2px;
+            text-align: center;
             font-family: 'Montserrat', sans-serif;
         }
 
@@ -81,13 +82,14 @@
             margin: 20px;
             font-size: 18px;
             line-height: 25px;
+            text-align: center;
         }
     }
 }
 
 .border {
     width: 150px;
-    margin: auto;
+    margin: 7px auto;
     border-bottom: solid 2px rgba(255, 255, 255, 0.5);
     position: relative;
 }
@@ -109,13 +111,18 @@
     margin: auto;
 }
 
+.removedInSmallScreen {
+    opacity: 1;
+    display: block;
+}
+
 
 .button_container {
     display: flex;
     flex-direction: column;
     position: relative;
     background: none;
-    left: 42%;
+    margin: auto;
     top: 5%;
     grid-column:  1 / span 2;
     width: 18%;
@@ -185,8 +192,102 @@
     to {left: 5%; opacity: 1}
 }
 
+@media screen and (min-width: 1200px) {
+    .button_container {
+        width: 18%;
 
-@media screen and (max-width: 1500px) {
-
+        p {
+            margin-left: 60px;
+        }
+    }
 }
+
+@media screen and (max-width: 1200px) {
+    .text_container {
+        top: 10%;
+
+        .text {
+            h1 {
+                font-size: 40px;
+                letter-spacing: 2px;
+                font-family: 'Montserrat', sans-serif;
+            }
+            p {
+                font-size: 15px;
+            }
+
+        }
+    }
+    .job_posting_container {
+        width: 100%;
+    }
+
+    .button_container {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .text_container {
+        width: 95%;
+    }
+    .button_container {
+        width: 25%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .job_posting_container {
+        display: grid;
+        grid-template-columns: auto auto ;
+        grid-gap: 20px;
+        width: 80%;
+        margin: auto;
+
+        .removedInSmallScreen {
+            display: none;
+        }
+    }
+
+    .text_container {
+        .text {
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .job_posting_container {
+        width: 100%;
+    }
+
+    .text_container {
+        .text {
+            width: 90%;
+            h1 {
+                font-size: 30px;
+            }
+            p {
+                font-size: 15px;
+            }
+
+        }
+    }
+
+    .button_container {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .button_container {
+        width: 40%;
+        margin: auto;
+    }
+
+    .job_posting_container {
+        grid-gap: 5px;
+        margin: auto;
+    }
+}
+
 

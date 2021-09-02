@@ -5,7 +5,7 @@ import {ReactComponent as Logo} from "../../images/softshark-logo.svg";
 
 function Footer() {
     return (
-        <div className={classes.container}>
+        <div className={classes.container} id='footer'>
             <Logo  className={classes.logo}/>
             <div className={classes.info_container}>
                 <div className={classes.info_section}>

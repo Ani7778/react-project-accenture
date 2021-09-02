@@ -48,3 +48,38 @@
   margin-top: 15px;
   font-size: 30px;
 }
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+    height: 100px;
+
+    .job_value {
+      font-size: 11px;
+      margin-left: 5px;
+      margin-right: 0px;
+      font-family: 'Montserrat-SemiBold', sans-serif;
+    }
+
+    h4 {
+      font-family: 'Montserrat', sans-serif;
+      margin: 10px 10px 0 10px;
+      font-size: 15px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    span {
+      margin-left: 10px;
+      margin-bottom: 5px;
+      text-align: left;
+      font-size: 12px;
+      display: block;
+      font-family: "Graphik Light","Arial", sans-serif;
+    }
+  }
+  .bookmark_icon {
+    margin-top: 5px;
+    font-size: 25px;
+  }
+}

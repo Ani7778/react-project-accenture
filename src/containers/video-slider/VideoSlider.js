@@ -7,7 +7,7 @@ import btn from "../../images/view-jobs-btn.png"
 
 const JoinTheTeam = () => {
     return (
-        <div className={classes.container} >
+        <div className={classes.container} id='joinTeam'>
             <img src={team} className={classes.img}/>
             {/*<div className={classes.shadow_container}></div>*/}
                 <div className={classes.text_container}>

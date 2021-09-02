@@ -1,8 +1,10 @@
-import React, {useRef} from "react";
+import React, {useRef, useEffect} from "react";
 import classes from "./Navbar.module.scss";
 import  MenuItems  from "./MenuItems";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {ReactComponent as Logo} from "../../images/logo-with-company-name.svg";
+import {Link} from "react-scroll";
 
 function Navbar({click, openComponent}) {
     const ref = useRef();
@@ -21,7 +23,10 @@ function Navbar({click, openComponent}) {
     return (
         <div id="navbar" className={classes.navbar_items}>
             <div className={classes.scrolled} ref={ref}></div>
-            <div className={classes.menu_icon} onClick={openComponent} >
+            <Link to="joinTeam" spy={true} duration={500}>
+                <Logo className={classes.logo}/>
+            </Link>
+            <div className={classes.menu_icon} onClick={openComponent}>
                 <FontAwesomeIcon icon={click ? faTimes : faBars} />
             </div>
             <MenuItems
@@ -32,4 +37,3 @@ function Navbar({click, openComponent}) {
 }
 
 export default React.memo(Navbar);
-

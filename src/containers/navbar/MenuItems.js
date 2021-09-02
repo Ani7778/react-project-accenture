@@ -1,66 +1,29 @@
-import React, {useState} from "react";
+import React from "react";
 import classes from "./Navbar.module.scss";
-import InsightsMenu from "./insights/InsightsMenu";
-import ServicesMenu from "./services/ServicesMenu";
-import IndustriesMenu from "./industries/IndustriesMenu";
-import CareersMenu from "./careers/CareersMenu";
-import AboutAccentureMenu from "./about-accenture/AboutAccentureMenu";
-import {ReactComponent as Logo} from "../../images/logo-with-company-name.svg";
-
-const menuItems = ["Services", "About Us", "Careers", "Contact Us"];
-const menuItemContents = {
-    [menuItems[0]]:  ServicesMenu,
-    [menuItems[1]]: IndustriesMenu,
-    [menuItems[2]]:  CareersMenu,
-    [menuItems[3]]:  AboutAccentureMenu,
-};
-
-let forceClose = null;
+import { Link } from "react-scroll";
 
 function MenuItems({ isOpen }) {
-     const outsideClick = () => {
-         const navbar = document.getElementById("navbar");
-         document.addEventListener('click', function(event) {
-              if (!navbar.contains(event.target)) {
-                    setSelected();
-              }
-         });
-     };
-
-    const [selected, setSelected] = useState();
-
     return (
-        <div className={isOpen ?  `${classes.nav_menu} ${classes.active}` : classes.nav_menu} onClick={outsideClick} id="navbar">
-            <Logo  height={90} className={classes.logo}/>
-            {menuItems.map((menuItem)=> {
-                return (
-                    <span>
-                        <a className={classes.nav_links}
-                           onClick={()=> {
-                               if(selected === menuItem) {
-                                        forceClose = null;
-                                        setSelected();
-                                    }
-                                    else if(selected){
-                                        forceClose = selected;
-                                        setSelected( menuItem );
-                                    } else {
-                                        forceClose = null;
-                                        setSelected( menuItem );
-                                    }
-                                }
-                             }
-                        >
-                            {menuItem}
-                        </a>
-                    </span>
-                )}
-                )}
-            {
-                menuItems.map((value)=> {
-                    return React.createElement(menuItemContents[value], {forceClose: forceClose === value, selected: selected === value});
-                })
-            }
+        <div className={isOpen ?  `${classes.nav_menu} ${classes.active}` : classes.nav_menu}>
+            <span>
+                <a className={classes.nav_links}>
+                    <Link to="services" spy={true} smooth={true} offset={-100} duration={500}>Services</Link>
+                </a>
+            </span>
+            <span>
+                <a className={classes.nav_links}>
+                    <Link to="voices" spy={true} smooth={true} offset={-100} duration={500}>About Us</Link>
+                </a>
+            </span>
+            <span>
+                <a className={classes.nav_links}>
+                    <Link to="careers" spy={true} smooth={true} offset={-70} duration={500}>Careers</Link>
+                </a>
+            </span><span>
+                <a className={classes.nav_links}>
+                    <Link to="footer" spy={true} smooth={true} offset={-10} duration={500}>Contact Us</Link>
+                </a>
+            </span>
         </div>
     )
 };

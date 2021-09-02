@@ -8,46 +8,43 @@
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     width: 100%;
-    height: 1000px;
+    height: 100%;
     margin-bottom: 10px;
 }
 
 .section {
     width: 100%;
-    height: 70%;
+    height: 100%;
     padding: 10px;
     position: relative;
     border-color: #004dff;
     opacity: 1;
     overflow: hidden;
-    animation-fill-mode: forwards;
-    animation: animateImg 1s ease;
-}
-
-@keyframes animateImg {
-    from {height: 0}
-    to {height: 100%}
 }
 
 .img_container {
     width: 100%;
+    height: 300px;
     overflow: hidden;
 }
 
 .img {
     width: 100%;
+    height: 280px;
     margin-left: 0;
     transition: 0.4s ease;
 
     &:hover {
         transform: scale(1.2);
         cursor: pointer;
+        transition: 0.4s ease;
     }
 }
 
 .text_container {
-    margin-top: 20px;
+    margin-top: 0;
     margin-left: 0;
+    height: 500px;
     margin-right: 40px;
     text-align: left;
     animation-fill-mode: forwards;
@@ -94,31 +91,15 @@
 }
 
 .img2 {
-    top: 7%;
+    top: 6%;
 }
 
 .img3 {
-    top: 15%;
+    top: 12%;
 }
 
 .img4 {
-    top: 24%;
-}
-
-@media screen and (max-width: 900px) {
-    .container{
-        margin-top: 500px;
-        display: table;
-    }
-
-    .section {
-        margin: 0;
-    }
-
-    .img {
-        width: 80%;
-        height: 200px;
-    }
+    top: 18%;
 }
 
 .cursor {
@@ -132,60 +113,116 @@
     animation: 1s ease;
 }
 
-.button_container {
-    position: relative;
-    background: none;
-    left: 50%;
-    top: 5%;
-    transform: translate(-50%, 0);
-    width: 100%;
-    cursor: pointer;
-}
+@media screen and (max-width: 900px) {
+    .container {
+        display: block;
+        width: 100%;
+    }
 
-.button_container:hover .circle {
-    width: 100%;
-    border-radius: 30px;
-}
+    .img {
+        width: 100%;
+        height: 100%;
+    }
 
-.circle {
-    position: absolute;
-    background: none;
-    border: 1.5px solid #004dff;
-    border-radius: 30px;
-    width: 37px;
-    height: 37px;
-    z-index: 1;
-    animation: circle 0.5s ease;
-    transition: width 1s;
-    opacity: 0;
+    .section {
+        margin: auto;
+        width: 90%;
+        padding: 10px;
+        position: relative;
+        border-color: #004dff;
+        opacity: 1;
+        overflow: hidden;
+    }
 
-    p {
-        font-family: "Graphik Medium","Arial", sans-serif;
-        width: 220px;
-        font-size: 17px;
-        margin-left: 40px;
-        color: #004dff;
-        transform: translateY(30%);
+    .img_container {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        animation-fill-mode: forwards;
+        animation: animateForSmallScreen 1s ease;
+
+        img {
+            height: 600px;
+        }
+    }
+
+    @keyframes animateForSmallScreen {
+        from {height: 0}
+        to {height: 300px}
+    }
+
+    .text_container {
+        height: 100px;
     }
 }
 
-@keyframes circle {
-    from { opacity: 0}
-    to {opacity: 1}
+@media screen and (max-width: 600px) {
+    .container {
+        margin-bottom: 100px;
+    }
+
+    .img {
+        transform: translateY(-10%);
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+            transform: scale(1.2) translateY(-10%);
+            cursor: pointer;
+        }
+    }
+
+    .section {
+        margin: auto;
+        width: 90%;
+        padding: 10px;
+        position: relative;
+        border-color: #004dff;
+        opacity: 1;
+        overflow: hidden;
+    }
+
+    .img_container {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        animation-fill-mode: forwards;
+        animation: animateForSmallScreen 1s ease;
+
+        img {
+            height: 400px;
+        }
+    }
+
+    @keyframes animateForSmallScreen {
+        from {height: 0}
+        to {height: 300px}
+    }
+
+    .text_container {
+        height: 150px;
+    }
 }
 
-.btn_icon {
-    display: flex;
-    position: absolute;
-    font-size: 30px;
-    color: #004dff;
-    transform: translate(55%, 10%);
-    animation: icon 1s ease;
-    animation-fill-mode: forwards;
-    opacity: 0;
-}
+//.img_container {
+//    width: 100%;
+//    height: 00px;
+//    overflow: hidden;
+//}
+//
+//.img {
+//    width: 100%;
+//    height: 280px;
+//    margin-left: 0;
+//    transition: 0.4s ease;
+//}
 
-@keyframes icon {
-    from {left: -50%; opacity: 0}
-    to {left: 5%; opacity: 1}
+@media screen and (min-width: 1500px) {
+    .img_container {
+        height: 350px;
+    }
+
+    .img {
+        height: 350px;
+    }
 }

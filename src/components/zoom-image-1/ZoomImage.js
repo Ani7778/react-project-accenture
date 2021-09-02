@@ -26,7 +26,6 @@ function ZoomImage() {
                 width: 200,
                 height: 200,
                 top: "405%",
-                x: -600,
                 transition: {
                     ease: [0.1, 0, 0.5, 0.1],
                     duration: 1.5
@@ -40,10 +39,10 @@ function ZoomImage() {
                 zIndex: -1,
                 rotateY: 16,
                 transformPerspective: 800,
-                left: "7.5%",
+                left: 0,
                 skewY: 6,
                 scale: 1.08,
-                translateY: "8.5%",
+                translateY: "3.5%",
                 transition: {
                     ease: [0.5, 0, 0.5, 0.5],
                     duration: 1.5,
@@ -73,6 +72,7 @@ function ZoomImage() {
                 opacity: 1,
                 scale: 0,
                 rotate: -30,
+                left: '40%',
                 width: 200,
                 height: 200,
             })
@@ -92,7 +92,7 @@ function ZoomImage() {
     })
 
     return (
-        <div className={classes.container} ref={ref}
+        <div className={classes.container} ref={ref} id='careers'
         >
             <div className={classes.logo_container}>
                 <motion.img src={logo} className={classes.logo}
@@ -112,8 +112,8 @@ function ZoomImage() {
                     <JobPosting />
                     <JobPosting />
                     <JobPosting />
-                    <JobPosting />
-                    <JobPosting />
+                    <JobPosting className={classes.removedInSmallScreen}/>
+                    <JobPosting className={classes.removedInSmallScreen}/>
                 </div>
                 <div className={classes.button_container} >
                     <div className={classes.circle} >
