@@ -9,7 +9,6 @@ const JoinTheTeam = () => {
     return (
         <div className={classes.container} id='joinTeam'>
             <img src={team} className={classes.img}/>
-            {/*<div className={classes.shadow_container}></div>*/}
                 <div className={classes.text_container}>
                     <h1>Join The Team</h1>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>

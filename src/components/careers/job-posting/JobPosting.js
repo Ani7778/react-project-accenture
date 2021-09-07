@@ -2,7 +2,7 @@ import classes from "../job-posting/JobPosting.module.scss";
 import ScrollAnimation from 'react-animate-on-scroll';
 import {HiBookmark} from "react-icons/all";
 
-function JobPosting({className}) {
+function JobPosting({className, deadline, description, title}) {
     return (
         <div className={classes.container + " " + className}>
             <div className={classes.border}></div>

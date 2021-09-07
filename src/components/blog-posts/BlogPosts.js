@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
-import classes from "./VoicesOfChange.module.scss";
+import classes from "./BlogPosts.module.scss";
 import ScrollAnimation from 'react-animate-on-scroll';
-import SectionContent from "./section-content/SectionContent";
+import BlogSection from "./blog-section/BlogSection";
 import {useInView} from "react-intersection-observer";
 import {motion, useAnimation} from "framer-motion";
 
-function VoicesOfChange({images}) {
+function BlogPosts() {
     const {ref, inView} = useInView({
         threshold: 0.1,
         triggerOnce: false
@@ -14,6 +14,7 @@ function VoicesOfChange({images}) {
     const animateHeading = useAnimation();
     const animateText = useAnimation();
     const animateBorder = useAnimation();
+    const animateSection = useAnimation();
 
     useEffect(()=> {
         if(inView) {
@@ -35,6 +36,12 @@ function VoicesOfChange({images}) {
                     duration: 1.5
                 }
             })
+            animateSection.start({
+                opacity: 1,
+                transition: {
+                    duration: 1.5
+                }
+            })
         }
         if(!inView) {
             animateHeading.start({
@@ -46,6 +53,9 @@ function VoicesOfChange({images}) {
             animateBorder.start({
                 opacity: 0,
             })
+            animateSection.start({
+                opacity: 0,
+            })
         }
     })
     return (
@@ -55,11 +65,11 @@ function VoicesOfChange({images}) {
             <div className={classes.text} >
                 <motion.span animate={animateText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</motion.span>
             </div>
-            <ScrollAnimation animateIn={classes.section}>
-                <SectionContent images={images}/>
-            </ScrollAnimation>
+            <motion.div animate={animateSection}>
+                <BlogSection />
+            </motion.div>
         </div>
     );
 }
 
-export default VoicesOfChange;
+export default BlogPosts;

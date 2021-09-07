@@ -2,7 +2,7 @@ import slide1 from "../../../images/case-studies-img1.png";
 import slide2 from "../../../images/case-studies-img2.png";
 import slide3 from "../../../images/case-studies-img3.png";
 import slide4 from "../../../images/case-studies-img4.png";
-import classes from "./SectionContent.module.scss";
+import classes from "./BlogSection.module.scss";
 
 export const CaseStudiesImages = [
     {

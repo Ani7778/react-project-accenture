@@ -1,12 +1,22 @@
 import React, {useEffect} from "react";
 import logo from "../../images/softshark-logo.svg";
-import classes from "./ZoomImage.module.scss";
+import classes from "./Careers.module.scss";
 import JobPosting from "./job-posting/JobPosting";
 import {HiArrowRight} from "react-icons/all";
 import {motion, useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchJobPostingsDataRequest} from "../../redux/actions/jobPostingsActions";
 
-function ZoomImage() {
+function Careers() {
+    console.log("render");
+    const dispatch = useDispatch();
+
+    const { data }= useSelector((state) => {
+        return state.jobPostings;
+    });
+    console.log(data)
+
     const {ref, inView} = useInView({
         threshold: 0.6,
         triggerOnce: true
@@ -16,6 +26,10 @@ function ZoomImage() {
     const animateAppearingContainer = useAnimation();
     const animateTextContainer = useAnimation();
     const animatedLogo = useAnimation();
+
+    useEffect(()=> {
+        dispatch(fetchJobPostingsDataRequest());
+    }, [])
 
     useEffect(()=> {
         if(inView) {
@@ -89,10 +103,10 @@ function ZoomImage() {
                 opacity: 0,
             })
         }
-    })
+    }, [inView])
 
     return (
-        <div className={classes.container} ref={ref} id='careers'
+        <div className={classes.container}  id='careers' ref={ref}
         >
             <div className={classes.logo_container}>
                 <motion.img src={logo} className={classes.logo}
@@ -108,12 +122,11 @@ function ZoomImage() {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt </p>
                 </div>
                 <div className={classes.job_posting_container}>
-                    <JobPosting />
-                    <JobPosting />
-                    <JobPosting />
-                    <JobPosting />
-                    <JobPosting className={classes.removedInSmallScreen}/>
-                    <JobPosting className={classes.removedInSmallScreen}/>
+                    {data.map((job, index)=> {
+                        return (
+                            <JobPosting deadline={job.deadline} title={job.title} description={job.description} className={index === 4 ? classes.removedInSmallScreen : index === 5 ? classes.removedInSmallScreen : ''} />
+                        )
+                    })}
                 </div>
                 <div className={classes.button_container} >
                     <div className={classes.circle} >
@@ -126,4 +139,4 @@ function ZoomImage() {
     );
 }
 
-export default ZoomImage;
+export default Careers;

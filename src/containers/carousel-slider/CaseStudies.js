@@ -4,7 +4,7 @@ import CarouselSlider from "./CarouselSlider";
 import { useInView } from "react-intersection-observer";
 import {motion, useAnimation} from "framer-motion";
 
-function CaseStudies({slides, prev, next, current, choose, smallScreen, keenRef}) {
+function CaseStudies() {
     const {ref, inView} = useInView({
         threshold: 0.1,
         triggerOnce: false
@@ -32,15 +32,7 @@ function CaseStudies({slides, prev, next, current, choose, smallScreen, keenRef}
         <div className={classes.container} ref={ref} id="services">
             <motion.h1 className={classes.heading} animate={animateHeading}>Services</motion.h1>
             <div className={classes.border}></div>
-            <CarouselSlider
-                slides={slides}
-                next={next}
-                prev={prev}
-                choose={choose}
-                current={current}
-                smallScreen={smallScreen}
-                keenRef={keenRef}
-            />
+            <CarouselSlider />
         </div>
     );
 };
