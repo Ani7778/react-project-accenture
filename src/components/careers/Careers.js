@@ -9,13 +9,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchJobPostingsDataRequest} from "../../redux/actions/jobPostingsActions";
 
 function Careers() {
-    console.log("render");
     const dispatch = useDispatch();
 
-    const { data }= useSelector((state) => {
+    const {data} = useSelector((state) => {
         return state.jobPostings;
     });
-    console.log(data)
 
     const {ref, inView} = useInView({
         threshold: 0.6,
@@ -27,12 +25,12 @@ function Careers() {
     const animateTextContainer = useAnimation();
     const animatedLogo = useAnimation();
 
-    useEffect(()=> {
+    useEffect(() => {
         dispatch(fetchJobPostingsDataRequest());
-    }, [])
+    }, []);
 
-    useEffect(()=> {
-        if(inView) {
+    useEffect(() => {
+        if (inView) {
             animateLogo.start({
                 opacity: 0,
                 scale: 30,
@@ -44,7 +42,7 @@ function Careers() {
                     ease: [0.1, 0, 0.5, 0.1],
                     duration: 1.5
                 }
-            })
+            });
             animateAppearingContainer.start({
                 opacity: 1,
                 height: 515,
@@ -62,14 +60,14 @@ function Careers() {
                     duration: 1.5,
                     delay: 0.3
                 }
-            })
+            });
             animateTextContainer.start({
                 opacity: 1,
                 transition: {
                     duration: 1,
                     delay: 0
                 }
-            })
+            });
             animatedLogo.start({
                 opacity: 1,
                 width: '100%',
@@ -81,7 +79,7 @@ function Careers() {
                 }
             })
         }
-        if(!inView) {
+        if (!inView) {
             animateLogo.start({
                 opacity: 1,
                 scale: 0,
@@ -89,28 +87,28 @@ function Careers() {
                 left: '40%',
                 width: 200,
                 height: 200,
-            })
+            });
             animateAppearingContainer.start({
                 opacity: 0,
                 height: 0,
                 backgroundColor: '#18deec',
                 zIndex: -1
-            })
+            });
             animateTextContainer.start({
                 opacity: 0
-            })
+            });
             animatedLogo.start({
                 opacity: 0,
             })
         }
-    }, [inView])
+    }, [inView]);
 
     return (
-        <div className={classes.container}  id='careers' ref={ref}
+        <div className={classes.container} id='careers' ref={ref}
         >
             <div className={classes.logo_container}>
                 <motion.img src={logo} className={classes.logo}
-                    animate={animateLogo}
+                            animate={animateLogo}
                 />
             </div>
             <motion.div className={classes.animated} animate={animatedLogo}></motion.div>
@@ -122,15 +120,14 @@ function Careers() {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt </p>
                 </div>
                 <div className={classes.job_posting_container}>
-                    {data.map((job, index)=> {
-                        return (
-                            <JobPosting deadline={job.deadline} title={job.title} description={job.description} className={index === 4 ? classes.removedInSmallScreen : index === 5 ? classes.removedInSmallScreen : ''} />
-                        )
-                    })}
+                    {data.map((job, index) => (
+                        <JobPosting deadline={job.deadline} title={job.title} description={job.description} key={job.id}
+                                    className={index === 4 ? classes.removedInSmallScreen : index === 5 ? classes.removedInSmallScreen : ''}/>
+                    ))}
                 </div>
-                <div className={classes.button_container} >
-                    <div className={classes.circle} >
-                        <div className={classes.btn_icon} ><HiArrowRight /></div>
+                <div className={classes.button_container}>
+                    <div className={classes.circle}>
+                        <div className={classes.btn_icon}><HiArrowRight/></div>
                     </div>
                     <p>View All</p>
                 </div>

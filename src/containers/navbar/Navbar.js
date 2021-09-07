@@ -1,4 +1,4 @@
-import React, {useRef, useState, useCallback} from "react";
+import React, {useRef, useState, useCallback, useEffect} from "react";
 import classes from "./Navbar.module.scss";
 import  MenuItems  from "./MenuItems";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
@@ -23,7 +23,13 @@ function Navbar() {
         ref.current.style.width = scrollPercentRounded + "%";
     }
 
-    window.addEventListener("scroll", scrollProgressNavbar);
+    useEffect(() => {
+        window.addEventListener("scroll", scrollProgressNavbar);
+
+        return () => {
+            window.removeEventListener("scroll", scrollProgressNavbar);
+        }
+    }, []);
 
     return (
         <div id="navbar" className={classes.navbar_items}>
