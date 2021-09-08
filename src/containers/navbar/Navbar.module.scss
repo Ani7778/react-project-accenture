@@ -63,9 +63,9 @@
     z-index: 999;
 
     span {
-        height: 50px;
+        height: 45px;
         width: 110px;
-        cursor: context-menu;
+        cursor: pointer;
     }
 }
 
@@ -87,13 +87,16 @@
     height: 15px;
     cursor: pointer;
     top: 10%;
-    vertical-align: center;
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
     color: #0f183f;
     font-family: 'Montserrat', sans-serif;
-
     a {
         width: 200px;
-        height: 100px;
+        height: fit-content;
+        max-height: 100px;
+        cursor: pointer;
     }
 }
 

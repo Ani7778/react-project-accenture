@@ -26,12 +26,12 @@ function CaseStudies() {
                 opacity: 0,
             })
         }
-    })
+    }, [inView]);
 
     return (
         <div className={classes.container} ref={ref} id="services">
             <motion.h1 className={classes.heading} animate={animateHeading}>Services</motion.h1>
-            <div className={classes.border}></div>
+            <div className={classes.border}/>
             <CarouselSlider />
         </div>
     );

@@ -57,7 +57,7 @@ function BlogPosts() {
                 opacity: 0,
             })
         }
-    })
+    }, [inView])
     return (
         <div className={classes.container} id="voices" ref={ref}>
             <motion.h1 className={classes.heading} animate={animateHeading}>Case studies</motion.h1>
