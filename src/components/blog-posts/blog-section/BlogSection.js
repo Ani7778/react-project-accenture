@@ -6,18 +6,25 @@ import {CaseStudiesImages} from "./CaseStudiesImages";
 
 function BlogSection() {
     const {ref, inView} = useInView({
-        threshold: 0.2,
+        threshold: 0.5,
         triggerOnce: false
     });
 
     const animateImages = useAnimation();
+    const animateText = useAnimation();
 
     useEffect(() => {
         if (inView) {
             animateImages.start({
-                height: 600,
+                height: 280,
                 transition: {
-                    duration: 1.5
+                    duration: 1
+                }
+            })
+            animateText.start({
+                opacity: 1,
+                transition: {
+                    duration: 1
                 }
             })
         }
@@ -25,13 +32,16 @@ function BlogSection() {
             animateImages.start({
                 height: 0,
             })
+            animateText.start({
+                opacity: 0,
+            })
         }
     }, [inView]);
 
     return (
         <div className={classes.container} ref={ref}>
             {CaseStudiesImages.map((image) => (
-                <React.Fragment key={image.title}>
+                 <React.Fragment key={image.title}>
                     <motion.div className={image.container} animate={animateImages}>
                         <div className={classes.img_container}>
                             <img className={classes.img} src={image.src}/>
@@ -43,7 +53,7 @@ function BlogSection() {
                         </div>
                     </motion.div>
                 </React.Fragment>
-            ))}
+            })}
         </div>
     );
 }
