@@ -6,7 +6,7 @@ import { CaseStudiesImages } from "./CaseStudiesImages";
 
 function BlogSection() {
     const {ref, inView} = useInView({
-        threshold: 0.5,
+        threshold: 0,
         triggerOnce: false
     });
 
@@ -16,7 +16,7 @@ function BlogSection() {
     useEffect(()=> {
         if(inView) {
             animateImages.start({
-                height: 280,
+                height: 600,
                 transition: {
                     duration: 1
                 }
@@ -42,8 +42,8 @@ function BlogSection() {
         <div className={classes.container} ref={ref}>
             {CaseStudiesImages.map((image)=>{
                 return (
-                    <div className={image.container} >
-                        <motion.div className={classes.img_container} animate={animateImages}>
+                    <motion.div className={image.container} animate={animateImages}>
+                        <motion.div className={classes.img_container} >
                             <img className={classes.img} src={image.src}/>
                         </motion.div>
                         <motion.div className={classes.text_container} animate={animateText}>
@@ -51,7 +51,7 @@ function BlogSection() {
                             <span>{image.title}</span>
                             <p className={classes.text}>{image.text}</p>
                         </motion.div>
-                    </div>
+                    </motion.div>
                 )
             })}
         </div>
