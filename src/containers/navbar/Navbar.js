@@ -4,7 +4,7 @@ import  MenuItems  from "./MenuItems";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {ReactComponent as Logo} from "../../images/logo-with-company-name.svg";
-import {Link} from "react-scroll";
+import {HashLink} from "react-router-hash-link";
 
 function Navbar() {
     const [clicked, setClick] = useState(false);
@@ -33,10 +33,10 @@ function Navbar() {
 
     return (
         <div id="navbar" className={classes.navbar_items}>
-            <div className={classes.scrolled} ref={ref}></div>
-            <Link to="joinTeam" spy={true} duration={500}>
+            <div className={classes.scrolled} ref={ref} />
+            <HashLink to="/#main">
                 <Logo className={classes.logo}/>
-            </Link>
+            </HashLink>
             <div className={classes.menu_icon} onClick={toggleNavbar}>
                 <FontAwesomeIcon icon={clicked ? faTimes : faBars} />
             </div>

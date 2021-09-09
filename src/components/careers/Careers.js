@@ -15,6 +15,8 @@ function Careers() {
         return state.jobPostings;
     });
 
+    console.log(data);
+
     const {ref, inView} = useInView({
         threshold: 0.6,
         triggerOnce: true
@@ -111,25 +113,25 @@ function Careers() {
                             animate={animateLogo}
                 />
             </div>
-            <motion.div className={classes.animated} animate={animatedLogo}></motion.div>
-            <motion.div className={classes.container_from_img} animate={animateAppearingContainer}></motion.div>
+            <motion.div className={classes.animated} animate={animatedLogo} />
+            <motion.div className={classes.container_from_img} animate={animateAppearingContainer} />
             <motion.div className={classes.text_container} animate={animateTextContainer}>
                 <div className={classes.text}>
                     <h1>Careers</h1>
-                    <div className={classes.border}></div>
+                    <div className={classes.border} />
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt </p>
                 </div>
                 <div className={classes.job_posting_container}>
                     {data.map((job, index) => (
-                        <JobPosting deadline={job.deadline} title={job.title} description={job.description} key={job.id}
+                        <JobPosting seniority={job.seniority} deadline={job.deadline} title={job.title} description={job.description} key={job.id}
                                     className={index === 4 ? classes.removedInSmallScreen : index === 5 ? classes.removedInSmallScreen : ''}/>
                     ))}
                 </div>
                 <div className={classes.button_container}>
-                    <div className={classes.circle}>
-                        <div className={classes.btn_icon}><HiArrowRight/></div>
-                    </div>
-                    <p>View All</p>
+                        <div className={classes.circle}>
+                            <div className={classes.btn_icon}><HiArrowRight/></div>
+                        </div>
+                        <p>View All</p>
                 </div>
             </motion.div>
         </div>

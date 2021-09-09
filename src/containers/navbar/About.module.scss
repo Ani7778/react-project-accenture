@@ -1,0 +1,266 @@
+$border-width: 140px;
+
+.about_container {
+  background-color: #28384d;
+  height: 450px;
+  color: #FFFFFF;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #28384d;
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+
+  .logo {
+    position: absolute;
+    opacity: 0.3;
+    left: -5%;
+    top: 50%;
+    height: 250%;
+    width: 100%;
+    transform: scale(1.4);
+  }
+
+  .text_container {
+    top: 25%;
+    z-index: 9;
+    color: #FFFFFF;
+    width: 55%;
+    margin: auto;
+
+    h1 {
+      font-size: 40px;
+      height: 49px;
+      letter-spacing: 2px;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .border {
+      width: $border-width;
+      margin: 10px auto;
+      border-bottom: solid 1px rgba(255, 255, 255, 0.6);
+      position: relative;
+      z-index: 1;
+    }
+
+    p {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 22px;
+      opacity: 0.6;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+}
+
+.our_team {
+  padding: 50px 50px 0 50px;
+
+  .text_container {
+    width: 55%;
+    margin: auto;
+
+    h1 {
+      font-size: 40px;
+      color: #0f183f;
+      height: 49px;
+      letter-spacing: 2px;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .border {
+      width: $border-width;
+      margin: 10px auto;
+      border-bottom: solid 1px #707070;
+      position: relative;
+      z-index: 1;
+      opacity: 0.6;
+    }
+
+    p {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 22px;
+      opacity: 0.6;
+      color: #403b3b;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+  .scheme_container {
+    width: 80%;
+    margin: 30px 6% 0;
+
+    .scheme {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}
+
+.contact_us {
+  width: 100%;
+  padding-top: 50px;
+
+  .info_container {
+    width: 100%;
+    margin-bottom: 50px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+
+    .icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 70px;
+      margin:  50px 130px 0;
+      padding: 15px;
+      color: #005eb8;
+      background-color: rgb(235, 235, 235);
+      cursor: pointer;
+    }
+
+    h4 {
+      margin: 15px 0;
+      color: #0f183f;
+      font-size: 18px;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+    }
+    p {
+      margin: 15px 0;
+      color: #0f183f;
+      opacity: 0.9;
+      font-size: 16px;
+      font-family: 'Montserrat-Regular', sans-serif;
+      text-align: center;
+    }
+  }
+}
+
+
+@media screen and (max-width: 980px) {
+  .about_container {
+    .text_container {
+      width: 80%;
+    }
+  }
+  .our_team {
+    padding: 50px 0 0 0;
+    .text_container {
+      width: 80%;
+    }
+  }
+
+  .scheme_container {
+    width: 100%;
+    margin: 30px 6% 0;
+
+    .scheme {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .contact_us {
+    .info_container {
+      grid-template-columns: repeat(3, 30%);
+
+      .icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 70px;
+        left: 35%;
+        margin:  50px 0 0 0;
+        padding: 15px;
+        color: #005eb8;
+        background-color: rgb(235, 235, 235);
+        cursor: pointer;
+      }
+
+      h4 {
+        margin: 15px 0;
+        color: #0f183f;
+        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+      }
+      p {
+        margin: 15px;
+        color: #0f183f;
+        opacity: 0.9;
+        font-size: 16px;
+        font-family: 'Montserrat-Regular', sans-serif;
+        text-align: center;
+      }
+    }
+  }
+
+
+
+}
+
+@media screen and (max-width: 680px) {
+  .our_team {
+    .text_container {
+      width: 95%;
+    }
+  }
+
+  .about_container {
+    .text_container {
+      top: 17%;
+      width: 95%;
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .border {
+        margin: auto;
+      }
+
+      p {
+        margin: 10px 0 0 0;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .scheme_container {
+    width: 80%;
+    margin: 10px auto 0;
+
+    .scheme {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .contact_us {
+    .info_container {
+      display: table;
+      text-align: center;
+
+      .icon {
+        left: 0;
+      }
+    }
+  }
+}
+

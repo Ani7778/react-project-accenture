@@ -1,5 +1,5 @@
 import classes from "./Footer.module.scss";
-import {FaFacebookF, FaLinkedinIn, FaInstagram} from "react-icons/all";
+import {FaFacebookF, FaLinkedinIn} from "react-icons/all";
 import React from "react";
 import {ReactComponent as Logo} from "../../images/softshark-logo.svg";
 
@@ -10,17 +10,15 @@ function Footer() {
             <div className={classes.info_container}>
                 <div className={classes.info_section}>
                     <h1>Get In Touch</h1>
-                    <div className={classes.border}></div>
-                    <span>Address</span>
-                    <p>Azatutyan 24/16 0014 Yerevan, Armenia</p>
-                    <span>Email</span>
-                    <p>info@softshark.io</p>
-                    <span>Phone Number</span>
-                    <p>+374 99 25 63 12</p>
+                    <div className={classes.border} />
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially </p>
                     <div className={classes.social_icons}>
-                        <div><FaLinkedinIn /></div>
-                        <div><FaFacebookF /></div>
-                        <div><FaInstagram /></div>
+                        <a href="https://www.linkedin.com/company/75872154/" target="_blank">
+                            <FaLinkedinIn className={classes.icon}/>
+                        </a>
+                        <a href="https://www.facebook.com/SoftShark-109783568013020" target="_blank">
+                            <FaFacebookF className={classes.icon}/>
+                        </a>
                     </div>
                 </div>
                 <div className={classes.form}>

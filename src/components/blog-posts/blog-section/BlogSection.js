@@ -16,7 +16,7 @@ function BlogSection() {
     useEffect(() => {
         if (inView) {
             animateImages.start({
-                height: 600,
+                height: '100%',
                 transition: {
                     duration: 1
                 }
@@ -44,7 +44,7 @@ function BlogSection() {
                 <React.Fragment key={image.title}>
                     <motion.div className={image.container} animate={animateImages}>
                         <div className={classes.img_container}>
-                            <img className={classes.img} src={image.src}/>
+                            <img className={classes.img} src={image.src} alt=''/>
                         </div>
                         <div className={classes.text_container}>
                             <p className={classes.category_title}>{image.subject}</p>

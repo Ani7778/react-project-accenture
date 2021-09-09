@@ -50,7 +50,7 @@ function ImageCarousel() {
                                     <div className={classes.images}>
                                         {slides.map((image, index) => (
                                             <div className={image.container} key={image.title + image.container}>
-                                                <img src={image.src} onMouseOver={() => setCurrentSlide(index)}/>
+                                                <img src={image.src} onMouseOver={() => setCurrentSlide(index)} alt=""/>
                                             </div>
                                         ))}
                                     </div>

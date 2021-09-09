@@ -35,6 +35,6 @@ function CaseStudies() {
             <CarouselSlider />
         </div>
     );
-};
+}
 
 export default CaseStudies;

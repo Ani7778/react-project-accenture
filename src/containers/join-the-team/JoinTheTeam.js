@@ -1,4 +1,4 @@
-import classes from "./VideoSlider.module.scss";
+import classes from "./JoinTheTeam.module.scss";
 import React from 'react'
 import {HiArrowDown} from "react-icons/all";
 import { Link } from "react-scroll";
@@ -7,7 +7,7 @@ import btn from "../../images/view-jobs-btn.png"
 
 const JoinTheTeam = () => {
     return (
-        <div className={classes.container} id='joinTeam'>
+        <div className={classes.container} id='main'>
             <img src={team} className={classes.img} alt=""/>
                 <div className={classes.text_container}>
                     <h1>Join The Team</h1>
