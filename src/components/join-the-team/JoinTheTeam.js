@@ -4,6 +4,7 @@ import {HiArrowDown} from "react-icons/all";
 import { Link } from "react-scroll";
 import team from "../../images/team.png";
 import btn from "../../images/view-jobs-btn.png"
+import {HashLink} from "react-router-hash-link";
 
 const JoinTheTeam = () => {
     return (
@@ -13,7 +14,9 @@ const JoinTheTeam = () => {
                     <h1>Join The Team</h1>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
                 </div>
-                <img src={btn} className={classes.jobs_btn} alt=""/>
+            <HashLink to="/careers#all-jobs" className={classes.jobs_btn}>
+                <img src={btn} alt="" />
+            </HashLink>
                 <div className={classes.down_btn}>
                     <Link
                         to="voices"

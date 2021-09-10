@@ -1,4 +1,4 @@
-import classes from "../job-posting/JobPosting.module.scss";
+import classes from "./JobPosting.module.scss";
 import ScrollAnimation from 'react-animate-on-scroll';
 import {HiBookmark} from "react-icons/all";
 

@@ -5,6 +5,7 @@ import navbarReducer from "./reducers/navbarReducer";
 import jobPostingsReducer from "./reducers/jobPostingsReducer";
 import { rootSaga } from './sagas/rootSaga';
 import {composeWithDevTools} from "redux-devtools-extension";
+import allJobsReducer from "./reducers/allJobsReducer";
 
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
@@ -12,7 +13,8 @@ const middleware = [sagaMiddleware];
 const reducer = combineReducers({
     navbar: navbarReducer,
     caseStudies: caseStudiesReducer,
-    jobPostings: jobPostingsReducer
+    jobPostings: jobPostingsReducer,
+    allJobs: allJobsReducer
 })
 
 const store = createStore(reducer,{}, composeWithDevTools(applyMiddleware(...middleware)));

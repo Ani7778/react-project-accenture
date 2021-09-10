@@ -116,7 +116,6 @@
     display: block;
 }
 
-
 .button_container {
     display: flex;
     flex-direction: column;
@@ -127,11 +126,7 @@
     grid-column:  1 / span 2;
     width: 18%;
     cursor: pointer;
-
-    a {
-        text-decoration: none;
-        width: 180px;
-    }
+    text-decoration: none;
 
     p {
         margin-left: 60px;

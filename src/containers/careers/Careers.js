@@ -7,6 +7,7 @@ import {motion, useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchJobPostingsDataRequest} from "../../redux/actions/jobPostingsActions";
+import {HashLink} from "react-router-hash-link";
 
 function Careers() {
     const dispatch = useDispatch();
@@ -14,8 +15,6 @@ function Careers() {
     const {data} = useSelector((state) => {
         return state.jobPostings;
     });
-
-    console.log(data);
 
     const {ref, inView} = useInView({
         threshold: 0.6,
@@ -42,7 +41,7 @@ function Careers() {
                 top: "405%",
                 transition: {
                     ease: [0.1, 0, 0.5, 0.1],
-                    duration: 1.5
+                    duration: 1
                 }
             });
             animateAppearingContainer.start({
@@ -76,8 +75,8 @@ function Careers() {
                 height: 600,
                 backgroundImage: 'linear-gradient(to right bottom, #0b95ff, #987bff)',
                 transition: {
-                    duration: 2,
-                    delay: 0.3
+                    duration: 1,
+                    delay: 0.4
                 }
             })
         }
@@ -127,12 +126,12 @@ function Careers() {
                                     className={index === 4 ? classes.removedInSmallScreen : index === 5 ? classes.removedInSmallScreen : ''}/>
                     ))}
                 </div>
-                <div className={classes.button_container}>
-                        <div className={classes.circle}>
-                            <div className={classes.btn_icon}><HiArrowRight/></div>
-                        </div>
-                        <p>View All</p>
-                </div>
+                <HashLink to="/careers#all-jobs" className={classes.button_container}>
+                    <div className={classes.circle}>
+                        <div className={classes.btn_icon}><HiArrowRight/></div>
+                    </div>
+                    <p>View All</p>
+                </HashLink>
             </motion.div>
         </div>
     );
