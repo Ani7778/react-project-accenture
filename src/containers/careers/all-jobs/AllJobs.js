@@ -5,7 +5,6 @@ import {AiOutlineSearch} from "react-icons/all";
 import AllJobsPosting from "./AllJobsPosting";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllJobsDataRequest} from "../../../redux/actions/allJobsActions";
-import JobPosting from "../job-posting/JobPosting";
 
 function AllJobs() {
     const dispatch = useDispatch();
@@ -36,7 +35,7 @@ function AllJobs() {
             </div>
             <div className={classes.all_jobs_container}>
                 {data.map((job) => (
-                    <AllJobsPosting seniority={job.seniority} deadline={job.deadline} title={job.title} key={job.id} />
+                    <AllJobsPosting seniority={job.seniority} deadline={job.deadline} title={job.title} key={job.id} id={job.id}/>
                 ))}
             </div>
         </div>

@@ -130,11 +130,14 @@ $border-width: 140px;
     font-family: 'Montserrat', sans-serif;
   }
 
-  h4 {
+  .title {
     font-family: 'Montserrat', sans-serif;
     margin: 10px 20px 10px 20px;
     text-align: left;
     cursor: pointer;
+    color: #0f183f;
+    text-decoration: none;
+
   }
 
   span {
@@ -327,10 +330,6 @@ $border-width: 140px;
 
   .job_posting {
     margin-bottom: 30px;
-
-    h4 {
-      padding-top: 10px;
-    }
   }
 }
 
