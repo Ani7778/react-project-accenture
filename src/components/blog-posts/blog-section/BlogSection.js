@@ -40,28 +40,22 @@ function BlogSection() {
 
     return (
         <div className={classes.container} ref={ref}>
-            {CaseStudiesImages.map((image) => (
-                 <React.Fragment key={image.title}>
-                    <motion.div className={image.container} animate={animateImages}>
-                        <div className={classes.img_container}>
-<<<<<<< HEAD
-                            <img className={classes.img} src={image.src} alt=''/>
-=======
-                            <img className={classes.img} src={image.src}/>
->>>>>>> c95813dac96ed76e845e2be2e971f67a356dc53c
-                        </div>
-                        <div className={classes.text_container}>
-                            <p className={classes.category_title}>{image.subject}</p>
-                            <span>{image.title}</span>
-                            <p className={classes.text}>{image.text}</p>
-                        </div>
-                    </motion.div>
-                </React.Fragment>
-<<<<<<< HEAD
-            ))}
-=======
+            {CaseStudiesImages.map((image) => {
+                return (
+                    <React.Fragment key={image.title}>
+                        <motion.div className={image.container} animate={animateImages}>
+                            <div className={classes.img_container}>
+                                <img className={classes.img} src={image.src}/>
+                            </div>
+                            <div className={classes.text_container}>
+                                <p className={classes.category_title}>{image.subject}</p>
+                                <span>{image.title}</span>
+                                <p className={classes.text}>{image.text}</p>
+                            </div>
+                        </motion.div>
+                    </React.Fragment>
+                )
             })}
->>>>>>> c95813dac96ed76e845e2be2e971f67a356dc53c
         </div>
     );
 }
