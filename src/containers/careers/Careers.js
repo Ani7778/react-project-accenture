@@ -126,12 +126,14 @@ function Careers() {
                                     className={index === 4 ? classes.removedInSmallScreen : index === 5 ? classes.removedInSmallScreen : ''}/>
                     ))}
                 </div>
-                <HashLink to="/careers#all-jobs" className={classes.button_container}>
-                    <div className={classes.circle}>
-                        <div className={classes.btn_icon}><HiArrowRight/></div>
-                    </div>
-                    <p>View All</p>
-                </HashLink>
+                {/*<HashLink to="/careers#all-jobs" className={classes.button_container}>*/}
+                {/*<div className={classes.button_container}>*/}
+                {/*    <div className={classes.circle}>*/}
+                {/*        <div className={classes.btn_icon}><HiArrowRight/></div>*/}
+                {/*    </div>*/}
+                {/*    <p>View All</p>*/}
+                {/*</div>*/}
+                {/*</HashLink>*/}
             </motion.div>
         </div>
     );

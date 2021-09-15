@@ -10,29 +10,29 @@ function CaseStudies() {
         triggerOnce: false
     });
 
-    const animateHeading = useAnimation();
+    const animateSection = useAnimation();
 
     useEffect(()=> {
         if(inView) {
-            animateHeading.start({
+            animateSection.start({
                 opacity: 1,
                 transition: {
-                    duration: 1.5
+                    duration: 0.5
                 }
             })
         }
         if(!inView) {
-            animateHeading.start({
+            animateSection.start({
                 opacity: 0,
             })
         }
     }, [inView]);
 
     return (
-        <div className={classes.container} ref={ref} id="services">
-            <motion.h1 className={classes.heading} animate={animateHeading}>Services</motion.h1>
+        <div className={classes.container} ref={ref} id="services" >
+            <motion.h1 className={classes.heading} animate={animateSection}>Services</motion.h1>
             <div className={classes.border}/>
-            <CarouselSlider />
+            <CarouselSlider animate={animateSection}/>
         </div>
     );
 }

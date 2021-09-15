@@ -34,13 +34,15 @@ function JobDescription({match}) {
     return (
         <div className={classes.container} id="job">
             <div className={classes.title_container}>
-                <h1 className={classes.title}>JS Developer</h1>
+                <h1 className={classes.title}>{title}</h1>
                 <BsFillBookmarkFill className={classes.bookmark}/>
             </div>
             <div className={classes.apply_container}>
-                <span>Deadline: <b className={classes.job_value}>2022.17.01</b></span>
-                <span>Employment type: <b className={classes.job_value}>Full time</b></span>
-                <span>Seniority: <b className={classes.job_value}>Mid Level</b></span>
+                <div className={classes.info}>
+                    <span>Deadline: <b className={classes.job_value}>{deadline}</b></span>
+                    <span>Employment type: <b className={classes.job_value}>Full time</b></span>
+                    <span>Seniority: <b className={classes.job_value}>Mid Level</b></span>
+                </div>
                 <div className={classes.apply_btn}>Apply Now</div>
             </div>
             <div className={classes.description}>{tagToText}</div>

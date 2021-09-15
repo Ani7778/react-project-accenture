@@ -1,4 +1,4 @@
-import React, {useCallback, useRef, useState} from 'react';
+import React, {useCallback, useRef, useState, Fragment} from 'react';
 import classes from "./CarouselSlider.module.scss";
 import PreviousButton from "./PreviousButton";
 import NextButton from "./NextButton";
@@ -6,8 +6,9 @@ import 'keen-slider/keen-slider.min.css';
 import {Images} from "./Images";
 import useMediaQuery from "use-mediaquery";
 import {useKeenSlider} from "keen-slider/react";
+import {motion} from "framer-motion";
 
-function ImageCarousel() {
+function ImageCarousel({animate}) {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const carousel = document.getElementsByClassName(classes.images);
@@ -42,32 +43,33 @@ function ImageCarousel() {
     return (
         <>
             {!screenIsSmall && (
-                <div className={classes.section_container}>
-                    <div className={classes.row}>
+                <motion.div className={classes.section_container} animate={animate}>
                         <div className={classes.carousel}>
-                            <div className={classes.zoom}>
-                                <div className={classes.container}>
-                                    <div className={classes.images}>
-                                        {slides.map((image, index) => (
-                                            <div className={image.container} key={image.title + image.container}>
-                                                <img src={image.src} onMouseOver={() => setCurrentSlide(index)} alt=""/>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <PreviousButton prev={prevSlide}/>
-                                    <NextButton next={nextSlide}/>
+                            <div className={classes.container}>
+                                <div className={classes.images}>
                                     {slides.map((image, index) => (
-                                        <div className={index === currentSlide ? `${classes.text} ` : classes.hidden}
-                                             key={image.title + image.container}>
-                                            <h3>{image.title}</h3>
-                                            <p>{image.text}</p>
+                                        <div className={image.container} key={image.title + image.container}>
+                                            <img
+                                                className={classes.img}
+                                                src={image.src}
+                                                onMouseOver={() => setCurrentSlide(index)}
+                                                alt=""
+                                            />
                                         </div>
                                     ))}
                                 </div>
+                                <PreviousButton prev={prevSlide}/>
+                                <NextButton next={nextSlide}/>
+                                {slides.map((image, index) => (
+                                    <div className={index === currentSlide ? `${classes.text} ` : classes.hidden}
+                                         key={image.title + image.container}>
+                                        <h3>{image.title}</h3>
+                                        <p>{image.text}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
-                    </div>
-                </div>
+                </motion.div>
             )}
             {screenIsSmall && (
                 <>
