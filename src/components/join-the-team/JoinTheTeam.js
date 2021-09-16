@@ -21,9 +21,9 @@ const JoinTheTeam = () => {
                     <h1>Join The Team</h1>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
                 </div>
-            <HashLink to="/careers#all-jobs" className={classes.jobs_btn}>
+            {/*<HashLink to="/careers#all-jobs" className={classes.jobs_btn}>*/}
                 <img src={btn} alt="" className={classes.jobs_btn}/>
-            </HashLink>
+            {/*</HashLink>*/}
                 <div className={classes.down_btn}>
                     <Link
                         to="services"

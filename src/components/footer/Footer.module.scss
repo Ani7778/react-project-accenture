@@ -186,9 +186,6 @@ select:-webkit-autofill:focus {
         background-color: #fff !important;
 
         &:focus{
-            border-radius: 4px;
-            border: none;
-            box-shadow: 0 0 0 1px  rgba(112, 112, 112, 0.3);
             outline: none;background-color: #fff;
         }
     }
@@ -208,9 +205,6 @@ select:-webkit-autofill:focus {
         background-color: #fff;
 
         &:focus{
-            border-radius: 4px;
-            border: none;
-            box-shadow: 0 0 0 1px  rgba(112, 112, 112, 0.3);
             outline: none;
         }
     }
