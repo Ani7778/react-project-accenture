@@ -1,19 +1,19 @@
 import classes from "./AllJobs.module.scss";
 import {ReactComponent as Logo} from "../../../images/softshark-logo.svg";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {AiOutlineSearch} from "react-icons/all";
 import AllJobsPosting from "./AllJobsPosting";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllJobsDataRequest} from "../../../redux/actions/allJobsActions";
 
 function AllJobs() {
+    const  [searchTerm, setSearchTerm] = useState('');
+
     const dispatch = useDispatch();
 
     const {data} = useSelector((state) => {
         return state.allJobs;
     });
-
-    console.log(data);
 
     useEffect(() => {
         dispatch(fetchAllJobsDataRequest());
@@ -30,11 +30,18 @@ function AllJobs() {
             </div>
             <div className={classes.search_job_container}>
                 <AiOutlineSearch className={classes.search_icon}/>
-                <input placeholder="Search..."/>
+                <input placeholder="Search..." onChange={event => setSearchTerm(event.target.value)}/>
                 <button>Search</button>
             </div>
             <div className={classes.all_jobs_container}>
-                {data.map((job) => (
+                {data.filter((job) => {
+                    if(searchTerm === "") {
+                        return job
+                    } else if (job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        job.deadline.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return job
+                    }
+                }).map((job) => (
                     <AllJobsPosting seniority={job.seniority} deadline={job.deadline} title={job.title} key={job.id} id={job.id}/>
                 ))}
             </div>
