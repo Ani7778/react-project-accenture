@@ -105,7 +105,7 @@ function Careers() {
     }, [inView]);
 
     return (
-        <div className={classes.container} id='careers' ref={ref}
+        <div className={classes.container} ref={ref} id='careers'
         >
             <div className={classes.logo_container}>
                 <motion.img src={logo} className={classes.logo}
@@ -120,7 +120,7 @@ function Careers() {
                     <div className={classes.border} />
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt </p>
                 </div>
-                <div className={classes.job_posting_container}>
+                <div className={classes.job_posting_container} >
                     {data.map((job, index) => (
                         <JobPosting seniority={job.seniority} deadline={job.deadline} title={job.title} description={job.description} key={job.id}
                                     className={index === 4 ? classes.removedInSmallScreen : index === 5 ? classes.removedInSmallScreen : ''}/>

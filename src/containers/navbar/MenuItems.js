@@ -1,31 +1,39 @@
 import React from "react";
 import classes from "./Navbar.module.scss";
-import { HashLink } from 'react-router-hash-link';
-import { Link } from 'react-scroll'
+import { NavHashLink } from 'react-router-hash-link';
+// import { Link } from 'react-scroll'
 
 function MenuItems({isOpen}) {
-    return (
+    const scrollWithOffset = (el, offset) => {
+        const elementPosition = el.offsetTop - offset;
+        window.scroll({
+            top: elementPosition,
+            left: 0,
+            behavior: "smooth"
+        });
+    }
+
+        return (
         <div className={isOpen ? `${classes.nav_menu} ${classes.active}` : classes.nav_menu}>
             <span className={classes.nav_links}>
-                <HashLink smooth to={'/#services'}>
+                <NavHashLink smooth to={'/#services'} scroll={el => scrollWithOffset(el, 120)}>
                     {/*<Link to="services" spy={true} smooth={true} offset={-100} duration={500}>*/}
                         Services
                     {/*</Link>*/}
-                </HashLink>
+                </NavHashLink>
             </span>
             <span className={classes.nav_links}>
-                <HashLink smooth to={'/#careers'}>
+                <NavHashLink smooth to={'/#careers'} scroll={el => scrollWithOffset(el, 150)} >
                     {/*<Link to="careers" spy={true} smooth={true} offset={-100} duration={500}>*/}
                         Careers
                     {/*</Link>*/}
-                </HashLink>
+                </NavHashLink>
             </span>
             <span className={classes.nav_links}>
-                <HashLink to="/info#about-us">About Us</HashLink>
+                <NavHashLink to="/info#about-us">About Us</NavHashLink>
             </span>
             <span className={classes.nav_links}>
-                <HashLink smooth to={'/info#contact-us'}
-                >Contact Us</HashLink>
+                <NavHashLink smooth to={'/info#contact-us'} scroll={el => scrollWithOffset(el, 50)}>Contact Us</NavHashLink>
             </span>
         </div>
     )

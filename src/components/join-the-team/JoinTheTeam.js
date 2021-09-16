@@ -1,5 +1,5 @@
 import classes from "./JoinTheTeam.module.scss";
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import {HiArrowDown} from "react-icons/all";
 import { Link } from "react-scroll";
 import team from "../../images/team.png";
@@ -7,8 +7,15 @@ import btn from "../../images/view-jobs-btn.png"
 import {HashLink} from "react-router-hash-link";
 
 const JoinTheTeam = () => {
+    const ref = useRef();
+    const screenHeight = window.innerHeight;
+
+    useEffect(()=> {
+        ref.current.style.height = screenHeight + "px";
+    })
+
     return (
-        <div className={classes.container} id='main'>
+        <div className={classes.container} id='main' ref={ref}>
             <img src={team} className={classes.img} alt=""/>
                 <div className={classes.text_container}>
                     <h1>Join The Team</h1>
@@ -22,7 +29,7 @@ const JoinTheTeam = () => {
                         to="services"
                         spy={true}
                         smooth={true}
-                        offset={-60}
+                        offset={-120}
                         duration={500}
                     ><HiArrowDown  className={classes.arrow}/>
                     </Link>
