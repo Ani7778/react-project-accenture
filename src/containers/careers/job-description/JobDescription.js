@@ -47,13 +47,10 @@ function JobDescription({match, open}) {
                         <span>Employment type: <b className={classes.job_value}>Full time</b></span>
                         <span>Seniority: <b className={classes.job_value}>Mid Level</b></span>
                     </div>
-                    <div className={classes.apply_btn} onClick={open}>Apply Now</div>
+                    <div className={classes.apply_btn} onClick={open} subject={title}>Apply Now</div>
                 </div>
                 <div className={classes.description}>{tagToText}</div>
             </div>
-            {/*{isApplyModalVisible &&*/}
-            {/*    <ApplyModal close={toggleApplyModal}/>*/}
-            {/*}*/}
         </>
     );
 };

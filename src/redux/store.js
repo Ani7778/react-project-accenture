@@ -7,6 +7,7 @@ import { rootSaga } from './sagas/rootSaga';
 import {composeWithDevTools} from "redux-devtools-extension";
 import allJobsReducer from "./reducers/allJobsReducer";
 import sendMessageReducer from "./reducers/sendMessageReducer";
+import applyToJobReducer from "./reducers/applyToJobReducer";
 
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
@@ -16,7 +17,8 @@ const reducer = combineReducers({
     caseStudies: caseStudiesReducer,
     jobPostings: jobPostingsReducer,
     allJobs: allJobsReducer,
-    sendMessage: sendMessageReducer
+    sendMessage: sendMessageReducer,
+    applyToJob: applyToJobReducer
 })
 
 const store = createStore(reducer,{}, composeWithDevTools(applyMiddleware(...middleware)));

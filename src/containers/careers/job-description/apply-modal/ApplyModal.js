@@ -1,11 +1,23 @@
 import classes from "../JobDescription.module.scss";
 import ApplyFormField from "./ApplyFormField";
 import ApplyError from "./ApplyErrors";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useForm} from "react-hook-form";
 import {ImAttachment} from "react-icons/all";
+import {useDispatch, useSelector} from "react-redux";
+import {applyToJobRequest} from "../../../../redux/actions/applyToJobActions";
 
-function ApplyModal({open, close}) {
+function ApplyModal({open, close, subject}) {
+    const dispatch = useDispatch();
+
+    // const data = useSelector((state) => {
+    //     return state.applyToJob;
+    // });
+
+    // useEffect(()=> {
+    //     console.log(data, "data from ")
+    // })
+
     const [selectedFile, setSelectedFile] = useState();
     const [isFilePicked, setIsFilePicked] = useState(false);
 
@@ -17,7 +29,12 @@ function ApplyModal({open, close}) {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const applyForJob = (data)=> {
-        console.log(data);
+        const text = "Name:" + " " + data.name + " \r\n" +
+            "Last Name:" + " " + data.lastName + " \r\n" +
+            "Email:" + " " + data.email + " \r\n" +
+            "CV:" + " " + data.cv + " \r\n" +
+            "Portfolio,s Link:" + " " + data.portfolioLink;
+        dispatch(applyToJobRequest({ ...data, subject, text }));
     }
 
     return open ? (
