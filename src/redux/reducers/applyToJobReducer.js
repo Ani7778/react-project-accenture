@@ -3,7 +3,7 @@ import { SEND_DATA_REQUEST_APPLY_TO_JOB, SEND_DATA_FAILURE_APPLY_TO_JOB, SEND_DA
 const initialState = {
     loading: false,
     data: [],
-    error: ''
+    error: '',
 }
 
 const applyToJobReducer = (state = initialState, action)=> {

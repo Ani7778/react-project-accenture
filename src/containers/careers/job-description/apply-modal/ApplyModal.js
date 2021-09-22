@@ -6,6 +6,7 @@ import {useForm} from "react-hook-form";
 import {ImAttachment} from "react-icons/all";
 import {useDispatch, useSelector} from "react-redux";
 import {applyToJobRequest} from "../../../../redux/actions/applyToJobActions";
+import UploadFileField from "./UploadFileField";
 
 function ApplyModal({open, close, subject}) {
     const dispatch = useDispatch();
@@ -32,9 +33,12 @@ function ApplyModal({open, close, subject}) {
         const text = "Name:" + " " + data.name + " \r\n" +
             "Last Name:" + " " + data.lastName + " \r\n" +
             "Email:" + " " + data.email + " \r\n" +
-            "CV:" + " " + data.cv + " \r\n" +
-            "Portfolio,s Link:" + " " + data.portfolioLink;
-        dispatch(applyToJobRequest({ ...data, subject, text }));
+            "Portfolio,s Link:" + " " + data.portfolioLink + " \r\n" ;
+            // "cv:" + " " + data.cv[0].name;
+        const filename = data.cv[0].name;
+        console.log(filename, "name")
+        console.log(text);
+        dispatch(applyToJobRequest({ ...data, subject, text, filename }));
     }
 
     return open ? (
@@ -95,32 +99,47 @@ function ApplyModal({open, close, subject}) {
                 {errors.email && errors.email.type === "pattern" &&
                 <ApplyError message="Enter a valid email address"/>
                 }
-                <div className={classes.attach_file}>
-                    {isFilePicked ? (
-                        <>
-                            <ApplyFormField
-                                value={selectedFile.name}
-                                name="cv"
-                                register={register}
-                            />
-                            <label><ImAttachment />
-                                <input type="file" onChange={changeHandler}/>
-                            </label>
-                        </>
-                    ) : (
-                        <>
-                            <ApplyFormField
-                                title="Attach Portfolio/CV"
-                                name="cv"
-                                register={register}
-                                // value={`${fileRef.current.files[0].name}`}
-                            />
-                            <label><ImAttachment />
-                                <input type="file" onChange={changeHandler}/>
-                            </label>
-                        </>
-                    )}
-                </div>
+                <UploadFileField
+                    title="Attach Portfolio/CV"
+                    name="cv"
+                    register={register}
+                    errors={errors.cv}
+                    onChange={changeHandler}
+                />
+                {/*<div className={classes.attach_file}>*/}
+                {/*    {isFilePicked ? (*/}
+                {/*        <>*/}
+                {/*            <ApplyFormField*/}
+                {/*                value={selectedFile.name}*/}
+                {/*                name="cv"*/}
+                {/*                register={register}*/}
+                {/*            />*/}
+                {/*            <label><ImAttachment />*/}
+                {/*                <input type="file" onChange={changeHandler}/>*/}
+                {/*            </label>*/}
+                {/*        </>*/}
+                {/*    ) : (*/}
+                {/*        <>*/}
+                {/*            <ApplyFormField*/}
+                {/*                title="Attach Portfolio/CV"*/}
+                {/*                name="cv"*/}
+                {/*                // options={*/}
+                {/*                //     {*/}
+                {/*                //         required: true,*/}
+                {/*                //     }*/}
+                {/*                // }*/}
+                {/*                register={register}*/}
+                {/*                // value={`${fileRef.current.files[0].name}`}*/}
+                {/*            />*/}
+                {/*            /!*{errors.cv && errors.cv.type === "required" &&*!/*/}
+                {/*            /!*<ApplyError message="Upload your CV"/>*!/*/}
+                {/*            /!*}*!/*/}
+                {/*            <label><ImAttachment />*/}
+                {/*                <input type="file" onChange={changeHandler}  />*/}
+                {/*            </label>*/}
+                {/*        </>*/}
+                {/*    )}*/}
+                {/*</div>*/}
                 <ApplyFormField
                     title="Portfolio's link"
                     name="portfolioLink"

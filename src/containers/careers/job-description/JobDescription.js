@@ -1,12 +1,19 @@
 import classes from "./JobDescription.module.scss";
 import { withRouter } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {fetchAllJobsDataRequest} from "../../../redux/actions/allJobsActions";
 import {BsFillBookmarkFill} from "react-icons/all";
 import parseHTML from 'html-react-parser';
+import ApplyModal from "./apply-modal/ApplyModal";
 
-function JobDescription({match, open}) {
+function JobDescription({match}) {
+
+    const [isApplyModalVisible, setApplyModalVisible] = useState(false);
+
+    const toggleApplyModal = ()=> {
+        setApplyModalVisible(!isApplyModalVisible);
+    }
     // const [isApplyModalVisible, setApplyModalVisible] = useState(false);
     //
     // const toggleApplyModal = ()=> {
@@ -47,10 +54,13 @@ function JobDescription({match, open}) {
                         <span>Employment type: <b className={classes.job_value}>Full time</b></span>
                         <span>Seniority: <b className={classes.job_value}>Mid Level</b></span>
                     </div>
-                    <div className={classes.apply_btn} onClick={open} subject={title}>Apply Now</div>
+                    <div className={classes.apply_btn} onClick={toggleApplyModal} >Apply Now</div>
                 </div>
                 <div className={classes.description}>{tagToText}</div>
             </div>
+            {isApplyModalVisible &&
+                <ApplyModal open={isApplyModalVisible} close={toggleApplyModal} subject={title}/>
+            }
         </>
     );
 };

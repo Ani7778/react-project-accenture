@@ -19,11 +19,11 @@ function App() {
         });
     });
 
-    const [isApplyModalVisible, setApplyModalVisible] = useState(false);
-
-    const toggleApplyModal = ()=> {
-        setApplyModalVisible(!isApplyModalVisible);
-    }
+    // const [isApplyModalVisible, setApplyModalVisible] = useState(false);
+    //
+    // const toggleApplyModal = ()=> {
+    //     setApplyModalVisible(!isApplyModalVisible);
+    // }
 
     return (
         <HashRouter>
@@ -43,13 +43,13 @@ function App() {
                           <AllJobs />
                         </Route>
                         <Route path="/careers/:id" exact>
-                            <JobDescription open={toggleApplyModal}/>
+                            <JobDescription />
                         </Route>
                     </Switch>
                 <Footer />
-                {isApplyModalVisible &&
-                    <ApplyModal open={isApplyModalVisible} close={toggleApplyModal}/>
-                }
+                {/*{isApplyModalVisible &&*/}
+                {/*    <ApplyModal open={isApplyModalVisible} close={toggleApplyModal} />*/}
+                {/*}*/}
             </Suspense>
           </HashRouter>
   );
