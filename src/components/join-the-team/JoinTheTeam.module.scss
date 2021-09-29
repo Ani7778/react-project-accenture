@@ -57,10 +57,10 @@
     transition: 0.5s ease;
 
     .arrow {
-        width: 40px;
-        height: 35px;
+        //width: 40px;
+        //height: 35px;
+        font-size: 35px;
         top: 0;
-        left: -5%;
         margin: auto;
         color: #FFFFFF;
     }
@@ -112,7 +112,7 @@
     margin: auto;
     top: 60%;
     color: #FFFFFF;
-    padding: 15px;
+    padding: 0;
     font-size: 16px;
     border-radius: 4px;
     z-index: 2;
@@ -120,40 +120,14 @@
 }
 
 @media screen and (max-width: 1100px) {
-    //.container {
-    //    height: 600px;
-    //}
-
-    //.text_container {
-    //    left: 50%;
-    //    top: 30%;
-    //}
-
     .text_container h1 {
         font-size: 60px;
     }
-    //.jobs_btn {
-    //    top: 50%
-    //}
-    //.down_btn {
-    //    top: 70%
-    //}
 }
 
 @media screen and (max-width: 900px) {
-    //.container {
-    //    overflow: hidden;
-    //
-    //    &:before {
-    //        top: 40px;
-    //    }
-    //}
-
     .img {
         padding-top: 40px;
-        //object-fit: cover;
-        //object-position: 50% 50%;
-        //height: 650px;
     }
 
     .text_container {
@@ -176,9 +150,6 @@
 }
 
 @media screen and (max-width: 700px) {
-    //.container {
-    //    height: 500px;
-    //}
     .text_container {
         h1 {
             font-size: 30px;
@@ -206,26 +177,12 @@
 }
 
 @media screen and (max-width: 500px) {
-    //.text_container {
-    //    top: 40%;
-    //    animation: moveText 1s ease;
-    //}
-    //
-    //@keyframes moveText {
-    //    from {top: 60%; opacity: 0}
-    //    to {top: 40%; opacity: 1}
-    //}
-    //.container {
-    //    height: 400px;
-    //}
-
     .jobs_btn {
         //top: 62%;
         width: 200px;
     }
 
     .down_btn {
-        //top: 80%;
         width: 45.6px;
         height: 45.6px;
 
@@ -248,7 +205,6 @@
     .text_container {
         width: 100%;
         animation: moveText 1s ease;
-        //top: 45%;
 
         h1 {
             font-size: 25px;
@@ -266,11 +222,6 @@
         }
     }
 
-    //@keyframes moveText {
-    //    from {top: 60%; opacity: 0}
-    //    to {top: 45%; opacity: 1}
-    //}
-
     .down_btn {
         //top: 75%;
         margin: auto;
@@ -286,9 +237,9 @@
         transition: 0.5s ease;
 
         .arrow {
-            width: 38px;
+            font-size: 20px;
             top: 0;
-            left: -15%;
+            left: 0;
         }
     }
 }

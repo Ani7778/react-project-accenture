@@ -8,6 +8,6 @@ function ErrorMessage({message}) {
             <span className={classes.error_message}>{message}</span>
         </div>
     )
-};
+}
 
 export default ErrorMessage;

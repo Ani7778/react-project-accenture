@@ -1,4 +1,4 @@
-import React, {Suspense, lazy, useState} from "react";
+import React, {Suspense, lazy} from "react";
 import './App.scss';
 import Navbar from "./containers/navbar/Navbar";
 import {HashRouter, Route, Switch} from "react-router-dom";
@@ -10,7 +10,6 @@ import Careers from "./containers/careers/Careers";
 import BlogPosts from "./components/blog-posts/BlogPosts";
 import AllJobs from "./containers/careers/all-jobs/AllJobs";
 import JobDescription from "./containers/careers/job-description/JobDescription";
-import ApplyModal from "./containers/careers/job-description/apply-modal/ApplyModal";
 
 function App() {
     const CaseStudies = lazy(() => {
@@ -18,12 +17,6 @@ function App() {
             setTimeout(() => resolve(import('./containers/carousel-slider/CaseStudies')), 100);
         });
     });
-
-    // const [isApplyModalVisible, setApplyModalVisible] = useState(false);
-    //
-    // const toggleApplyModal = ()=> {
-    //     setApplyModalVisible(!isApplyModalVisible);
-    // }
 
     return (
         <HashRouter>
@@ -47,9 +40,6 @@ function App() {
                         </Route>
                     </Switch>
                 <Footer />
-                {/*{isApplyModalVisible &&*/}
-                {/*    <ApplyModal open={isApplyModalVisible} close={toggleApplyModal} />*/}
-                {/*}*/}
             </Suspense>
           </HashRouter>
   );

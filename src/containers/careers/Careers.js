@@ -122,18 +122,18 @@ function Careers() {
                 </div>
                 <div className={classes.job_posting_container} >
                     {data.map((job, index) => (
-                        <JobPosting seniority={job.seniority} deadline={job.deadline} title={job.title} description={job.description} key={job.id}
+                        <JobPosting seniority={job.seniority} deadline={job.deadline} title={job.title} description={job.description} key={job.id} id={job.id}
                                     className={index === 4 ? classes.removedInSmallScreen : index === 5 ? classes.removedInSmallScreen : ''}/>
                     ))}
                 </div>
-                {/*<HashLink to="/careers#all-jobs" className={classes.button_container}>*/}
-                {/*<div className={classes.button_container}>*/}
-                {/*    <div className={classes.circle}>*/}
-                {/*        <div className={classes.btn_icon}><HiArrowRight/></div>*/}
-                {/*    </div>*/}
-                {/*    <p>View All</p>*/}
-                {/*</div>*/}
-                {/*</HashLink>*/}
+                <div className={classes.button_container}>
+                    <HashLink to="/careers#all-jobs">
+                        <div className={classes.circle}>
+                            <div className={classes.btn_icon}><HiArrowRight/></div>
+                        </div>
+                        <p>View All</p>
+                    </HashLink>
+                </div>
             </motion.div>
         </div>
     );

@@ -1,7 +1,7 @@
 import { SEND_DATA_REQUEST_APPLY_TO_JOB, SEND_DATA_FAILURE_APPLY_TO_JOB, SEND_DATA_SUCCESS_APPLY_TO_JOB } from "../types/applyToJobTypes";
 
 const initialState = {
-    loading: false,
+    status: 'initial',
     data: [],
     error: '',
 }
@@ -11,21 +11,21 @@ const applyToJobReducer = (state = initialState, action)=> {
         case SEND_DATA_REQUEST_APPLY_TO_JOB: {
             return {
                 ...state,
-                loading: true,
+                status: 'loading',
                 error: ''
             }
         }
         case SEND_DATA_SUCCESS_APPLY_TO_JOB: {
             return {
                 ...state,
-                loading: false,
+                status: "success",
                 data: action.payload,
             }
         }
         case SEND_DATA_FAILURE_APPLY_TO_JOB: {
             return {
                 ...state,
-                loading: false,
+                status: "failure",
                 error: action.error
             }
         }

@@ -7,9 +7,7 @@ function* applyToJobData(action) {
     try {
         const {payload: requestData} = action;
         console.log('payload', requestData)
-        const { data } = yield call(axios.post, 'https://9y77tbxz14.execute-api.us-east-1.amazonaws.com/dev/v1/apply-to-job', requestData);
-        // axios.post('https://9y77tbxz14.execute-api.us-east-1.amazonaws.com/dev/v1/apply-to-job', {})
-
+        const { data } = yield call(axios.post, 'https://9y77tbxz14.execute-api.us-east-1.amazonaws.com/dev/v1/frontend/apply-to-job', requestData);
         console.log(data)
         yield put(applyToJobSuccess());
     } catch (error) {

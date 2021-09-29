@@ -9,7 +9,7 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
     border: 1px solid rgba(112, 112, 112, 0.3);
     -webkit-text-fill-color: rgb(60, 60, 60);
-    -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset;
+    -webkit-box-shadow: 0 0 0 1000px #FFFFFF inset;
     transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -121,7 +121,7 @@ select:-webkit-autofill:focus {
     margin: 50px 10% 0 10%;
     width: 500px;
     padding: 30px 50px;
-    height: 600px;
+    height: 630px;
     border-radius: 10px;
     box-shadow: 0 3px 99px 0 rgba(0, 0, 0, 0.3);
     background-color: #fff;
@@ -132,34 +132,44 @@ select:-webkit-autofill:focus {
         width: 100%;
         top: 5%;
         text-align: center;
+    }
+    .feedback {
+        height: 500px;
+        padding: 30px;
+        width: 100%;
+        text-align: center;
 
-        .feedback {
-           height: 500px;
-            padding: 30px;
-            width: 100%;
-            text-align: center;
-
-            .check_done {
-                font-size: 200px;
-                color: #0477e8;
-            }
-
-            h1 {
-                text-align: center;
-                padding: 30px 0 10px;
-                font-size: 35px;
-                color: #0f183f;
-                font-family: "Montserrat", sans-serif;
-            }
-
-            p {
-                padding: 0;
-                font-size: 23px;
-                color: #0f183f;
-                font-family: "Montserrat", sans-serif;
-            }
+        .check_done {
+            font-size: 200px;
+            color: #0477e8;
         }
 
+        h1 {
+            text-align: center;
+            padding: 30px 0 10px;
+            font-size: 35px;
+            color: #0f183f;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        p {
+            padding: 0;
+            font-size: 23px;
+            color: #0f183f;
+            font-family: "Montserrat", sans-serif;
+        }
+        .fail_message {
+            text-align: center;
+            padding: 30px 0 10px;
+            font-size: 35px;
+            color: rgb(167, 0, 0);
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .not_done {
+            font-size: 200px;
+            color: rgb(196, 0, 0);
+        }
     }
 
 
@@ -237,7 +247,8 @@ select:-webkit-autofill:focus {
 
         .error_message {
             font-size: 15px;
-            line-height: 45px;
+            margin-top: 10px;
+            line-height: 15px;
             color: #0f183f;
             font-family: "Montserrat", sans-serif;
         }
@@ -334,7 +345,6 @@ select:-webkit-autofill:focus {
         margin: 50px 10% 0 5%;
         width: 330px;
         padding: 10px 20px;
-        height: 500px;
 
         h1 {
             font-size: 32px;
@@ -346,7 +356,7 @@ select:-webkit-autofill:focus {
 
         .send_btn {
             width: 180px;
-            padding: 15px;
+            padding: 10px;
             margin-top: 15px;
         }
     }

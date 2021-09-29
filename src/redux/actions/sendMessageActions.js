@@ -1,12 +1,9 @@
-import { SEND_MESSAGE_SUCCESS, SEND_MESSAGE_REQUEST, SEND_MESSAGE_FAILURE, LOADING_MESSAGE } from "../types/sendMessageTypes";
+import { SEND_MESSAGE_SUCCESS, SEND_MESSAGE_REQUEST, SEND_MESSAGE_FAILURE } from "../types/sendMessageTypes";
 
-// export const loadUsers = () => dispatch => {
-//     dispatch({ type: SEND_MESSAGE_REQUEST });
-// };
-
-const sendMessageRequest = ()=> {
+const sendMessageRequest = data => {
     return {
-        type: SEND_MESSAGE_REQUEST
+        type: SEND_MESSAGE_REQUEST,
+        payload: data
     }
 }
 
@@ -23,12 +20,5 @@ const sendMessageFailure = error => {
         payload: error
     }
 }
-
-// const loadingMessage = status => {
-//     return {
-//         type: LOADING_MESSAGE,
-//         loading: status
-//     }
-// }
 
 export { sendMessageSuccess, sendMessageFailure, sendMessageRequest  };

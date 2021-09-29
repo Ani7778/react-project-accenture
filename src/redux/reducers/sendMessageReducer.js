@@ -6,7 +6,7 @@ import {
 } from "../types/sendMessageTypes";
 
 const initialState = {
-    loading: false,
+    status: "initial",
     data: [],
     error: ''
 }
@@ -16,31 +16,24 @@ const sendMessageReducer = (state = initialState, action)=> {
         case SEND_MESSAGE_REQUEST: {
             return {
                 ...state,
-                loading: true,
+                status: "loading",
                 error: ''
             }
         }
         case SEND_MESSAGE_SUCCESS: {
             return {
                 ...state,
-                loading: false,
+                status: "success",
                 data: action.payload,
             }
         }
         case SEND_MESSAGE_FAILURE: {
             return {
                 ...state,
-                loading: false,
+                status: "failure",
                 error: action.error
             }
         }
-        // case LOADING_MESSAGE: {
-        //     return {
-        //         ...state,
-        //         loading: action.loading,
-        //     }
-        // }
-        //
          default: return state
     }
 }

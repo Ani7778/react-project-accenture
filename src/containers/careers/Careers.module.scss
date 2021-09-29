@@ -125,7 +125,10 @@
     top: 5%;
     grid-column:  1 / span 2;
     width: 18%;
-    text-decoration: none;
+
+    a {
+        text-decoration: none;
+    }
 
     p {
         margin-left: 60px;
@@ -223,7 +226,7 @@
     }
 
     .button_container {
-        width: 30%;
+        width: 25%;
     }
 }
 

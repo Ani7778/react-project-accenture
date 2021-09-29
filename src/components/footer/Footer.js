@@ -1,6 +1,5 @@
 import classes from "./Footer.module.scss";
-import {FaFacebookF, FaLinkedinIn} from "react-icons/all";
-import React, {useState} from "react";
+import {AiOutlineCheckCircle, AiOutlineCloseCircle, FaFacebookF, FaLinkedinIn} from "react-icons/all";
 import {ReactComponent as Logo} from "../../images/softshark-logo.svg";
 import {useForm, Controller} from "react-hook-form";
 import FormField from "./FormField";
@@ -11,22 +10,26 @@ import {useDispatch, useSelector} from "react-redux";
 import {sendMessageRequest} from "../../redux/actions/sendMessageActions";
 import Loading from "./Loader";
 
-
 function Footer() {
     const dispatch = useDispatch();
 
-    const {loading} = useSelector((state) => {
+    const {status} = useSelector((state) => {
         return state.sendMessage;
     });
 
     const { register, formState: { errors }, handleSubmit,control } = useForm();
 
     const sendMessage = (data)=> {
-        dispatch(sendMessageRequest());
+        const text = `<div>
+            <p>Name: <b>${data.name}</b></p>
+            <p>Phone Number: <b>${data.phone}</b></p>
+            <p>Email: <b>${data.email}</b></p>
+            <p>Message: <b>${data.message}</b></p>
+        </div>`
+        const subject = `Message from ${data.name}`
+        dispatch(sendMessageRequest({ ...data, subject, text}));
         console.log(data);
     }
-
-    const [value, setValue] = useState();
 
     return (
         <div className={classes.container} id='footer'>
@@ -46,12 +49,19 @@ function Footer() {
                     </div>
                 </div>
                 <form className={classes.form} onSubmit={handleSubmit(sendMessage)}>
-                    {loading &&
-                        <div className={classes.spinner}>
-                            <Loading />
+                    {status === "loading" &&
+                    <div className={classes.spinner}>
+                        <Loading />
+                    </div>
+                    }
+                    {status === "success" &&
+                    <div className={classes.feedback}>
+                        <AiOutlineCheckCircle className={classes.check_done}/>
+                        <h1>Thank You!</h1>
+                        <p>Your submission has been received</p>
                         </div>
                     }
-                    {!loading &&
+                    {status === "initial" &&
                         <>
                             <h1>Send Us message</h1>
                             <FormField
@@ -68,20 +78,32 @@ function Footer() {
                             {errors.name && errors.name.type === "required" &&
                             <ErrorMessage message="Name is required" />
                             }
-                            <PhoneInput
+                            <Controller
                                 name="phone"
-                                {...register("phone", { required: true })}
-                                className={`${classes.input_field} ${errors.phone ? classes.invalid : ''}`}
-                                placeholder="Phone Number"
-                                international
-                                countryCallingCodeEditable={false}
                                 control={control}
-                                rules={{ required: true }}
-                                value={value}
-                                onChange={setValue}/>
-                            {/*{errors.phone && errors.phone.type === "required" &&*/}
-                            {/*<ErrorMessage message="Phone Number is required"/>*/}
-                            {/*}*/}
+                                rules={{
+                                    required: true,
+                                    validate: (value) => isValidPhoneNumber(value)
+                                }}
+                                render={({ field: { onChange, value } }) => (
+                                    <PhoneInput
+                                        className={`${classes.input_field} ${errors.phone ? classes.invalid : ''}`}
+                                        placeholder="Phone Number"
+                                        international
+                                        countryCallingCodeEditable={false}
+                                        defaultCountry="US"
+                                        value={value}
+                                        onChange={onChange}
+                                        id="phone"
+                                    />
+                                )}
+                            />
+                            {errors.phone && errors.phone.type === "required" && (
+                                <ErrorMessage message="Choose your country code then enter your phone number"/>
+                            )}
+                            {errors.phone && errors.phone.type === "validate" &&(
+                                <ErrorMessage message="Enter valid number"/>
+                            )}
                             <FormField
                                 title="Email"
                                 name="email"
@@ -112,6 +134,13 @@ function Footer() {
                             }
                             <button type="submit" className={classes.send_btn}>Send Message</button>
                         </>
+                    }
+                    {status === "failure" &&
+                    <div className={classes.feedback}>
+                        <AiOutlineCloseCircle className={classes.not_done}/>
+                        <h1 className={classes.fail_message}>Failure!</h1>
+                        <p>Your submission has not been received. Please go back and try again</p>
+                    </div>
                     }
                 </form>
             </div>

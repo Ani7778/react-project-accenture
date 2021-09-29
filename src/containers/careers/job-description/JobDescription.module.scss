@@ -131,10 +131,7 @@
     background-color: #fff !important;
 
     &:focus{
-      border-radius: 4px;
-      border: none;
-      box-shadow: 0 0 0 1px  rgba(112, 112, 112, 0.3);
-      outline: none;background-color: #fff;
+        outline: none;background-color: #fff;
     }
   }
 
@@ -154,29 +151,67 @@
     margin: 10px 0 2px;
   }
 
-  .attach_file {
-    //display: grid;
-    //grid-template-columns: repeat(2, 90% 10%);
+  .upload_field {
+    position: relative;
+  }
 
-    input {
-      position: relative;
+  label {
+    padding: 10px;
+    background: none;
+    color: #0399ee;
+    font-size: 25px;
+    position: absolute;
+    top: 52%;
+    left: 82%;
+    cursor: pointer;
+  }
+
+  .spinner {
+    height: 400px;
+    margin: auto;
+    width: 100%;
+    top: 5%;
+    text-align: center;
+  }
+
+  .feedback {
+    height: 500px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+
+    .check_done {
+      font-size: 200px;
+      color: #0477e8;
     }
 
-    label{
-      padding: 10px;
-      background: none;
-      display: table;
-      color: #0399ee;
-      font-size: 20px;
-      position: absolute;
-      left: 90%;
-      top: 20%;
-      cursor: pointer;
+    h1 {
+      text-align: center;
+      padding: 30px 0 10px;
+      font-size: 35px;
+      color: #0f183f;
+      font-family: "Montserrat", sans-serif;
     }
 
-    input[type="file"] {
-      display: none;
+    p {
+      padding: 0;
+      font-size: 23px;
+      color: #0f183f;
+      font-family: "Montserrat", sans-serif;
     }
+
+    .fail_message {
+      text-align: center;
+      padding: 30px 0 10px;
+      font-size: 35px;
+      color: rgb(167, 0, 0);
+      font-family: "Montserrat", sans-serif;
+    }
+  }
+
+  .not_done {
+    font-size: 200px;
+    color: rgb(196, 0, 0);
   }
 
   .apply_modal_btn {
@@ -232,6 +267,14 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  .form_popup {
+    left: 20%;
+    top: -25%;
+  }
+}
+
+
 @media screen and (max-width: 780px) {
   .container {
     .title_container {
@@ -253,6 +296,11 @@
       }
     }
   }
+  .form_popup {
+    left: 10%;
+    top: -25%;
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 680px) {
@@ -261,6 +309,23 @@
       .title {
         font-size: 30px;
       }
+    }
+  }
+  .form_popup {
+    left: 5%;
+    top: -25%;
+    width: 90%;
+    padding: 20px;
+
+    label {
+      padding: 10px;
+      background: none;
+      color: #0399ee;
+      font-size: 25px;
+      position: absolute;
+      top: 50%;
+      left: 82%;
+      cursor: pointer;
     }
   }
 }
@@ -286,10 +351,17 @@
         font-size: 20px;
       }
     }
-
     .apply_container {
       padding: 0;
     }
   }
+
+  .form_popup {
+    label {
+      top: 58%;
+      left: 78%;
+    }
+  }
+
 }
 

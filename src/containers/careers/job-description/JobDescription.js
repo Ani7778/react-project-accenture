@@ -8,17 +8,11 @@ import parseHTML from 'html-react-parser';
 import ApplyModal from "./apply-modal/ApplyModal";
 
 function JobDescription({match}) {
-
     const [isApplyModalVisible, setApplyModalVisible] = useState(false);
 
     const toggleApplyModal = ()=> {
         setApplyModalVisible(!isApplyModalVisible);
     }
-    // const [isApplyModalVisible, setApplyModalVisible] = useState(false);
-    //
-    // const toggleApplyModal = ()=> {
-    //     setApplyModalVisible(!isApplyModalVisible);
-    // }
 
     const dispatch = useDispatch();
 
@@ -63,6 +57,6 @@ function JobDescription({match}) {
             }
         </>
     );
-};
+}
 
 export default withRouter(JobDescription);

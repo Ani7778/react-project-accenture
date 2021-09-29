@@ -1,6 +1,6 @@
 import { SEND_DATA_FAILURE_APPLY_TO_JOB, SEND_DATA_REQUEST_APPLY_TO_JOB, SEND_DATA_SUCCESS_APPLY_TO_JOB } from "../types/applyToJobTypes";
 
-const applyToJobRequest = (data)=> {
+const applyToJobRequest = data=> {
     return {
         type: SEND_DATA_REQUEST_APPLY_TO_JOB,
         payload: data

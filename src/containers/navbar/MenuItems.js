@@ -3,9 +3,9 @@ import classes from "./Navbar.module.scss";
 import { NavHashLink } from 'react-router-hash-link';
 import {scrollWithOffset} from "../../utils/scrollWithOffset";
 
-function MenuItems({isOpen}) {
+function MenuItems({isOpen, close}) {
     return (
-        <div className={isOpen ? `${classes.nav_menu} ${classes.active}` : classes.nav_menu}>
+        <div className={isOpen ? `${classes.nav_menu} ${classes.active}` : classes.nav_menu} onClick={close}>
             <span className={classes.nav_links}>
                 <NavHashLink smooth to={'/#services'} scroll={el => scrollWithOffset(el, 120)}>
                         Services

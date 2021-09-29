@@ -1,15 +1,15 @@
-import {put, takeLatest} from 'redux-saga/effects';
+import {call, put, takeLatest} from 'redux-saga/effects';
 import {SEND_MESSAGE_REQUEST} from "../types/sendMessageTypes";
 import {sendMessageSuccess, sendMessageFailure} from "../actions/sendMessageActions";
+import axios from "axios";
 
-function* sendData() {
+function* sendData(action) {
     try {
-        // const delay = time => new Promise(resolve => setTimeout(resolve, time));
-        console.log('saga working, waiting 2000ms')
-        setTimeout(()=> {
-            sendMessageSuccess({})
-        }, 2000)
-        console.log('finished waiting, 2000', {});
+        const {payload: requestData} = action;
+        console.log('payload', requestData)
+        const { data } = yield call(axios.post, 'https://9y77tbxz14.execute-api.us-east-1.amazonaws.com/dev/v1/frontend/send-message', requestData);
+        console.log(data)
+        yield put(sendMessageSuccess());
     } catch (error) {
         console.log(error.message);
         yield put(sendMessageFailure(error.message))
